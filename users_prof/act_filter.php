@@ -1,8 +1,4 @@
-<div class="w3-row-padding">
-<div class="w3-threequarter">
-<form action="" method="">
-<input type="date" class="date" name="act_date">
-</form>
-</div>
-<div class="w3-quarter"></div>
-</div>
+<?php
+// Shared screen shim ? canonical copy lives in shared/screens/act_filter.php
+require_once __DIR__ . '/../shared/screens/act_filter.php';
+

@@ -1,14 +1,4 @@
 <?php
-include 'connect.php';
+// Shared screen shim ? canonical copy lives in shared/screens/login_name.php
+require_once __DIR__ . '/../shared/screens/login_name.php';
 
-$login = mysqli_query($conn, "SELECT * FROM user_login WHERE username = '" . $_POST['username'] . "'");
-
-if (mysqli_num_rows($login) == 1) {
-
-$_SESSION['username'] = $_POST['username'];
-
-while ($row=mysqli_fetch_array($login)) {
-$fname = $row['name'];
-}
-}
-?>
