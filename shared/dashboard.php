@@ -120,8 +120,11 @@ include 'config/footer.php';
  *
  * - Explicit paths (containing '/') are used as-is relative to the
  *   module CWD (e.g. ../settings/..., ../users_prof/...).
- * - Bare filenames resolve module-local first (shims + module-unique
- *   files like new_tick.php), then shared/screens/.
+ * - Bare filenames resolve in order:
+ *     1. module-local (shims + module-unique files like new_tick.php)
+ *     2. shared/screens/ (consolidated screens)
+ *     3. ../users_prof/ (module-unique screens shared via the legacy
+ *        cross-module references, e.g. store -> users_prof assets)
  */
 function xtrac_resolve_screen($file)
 {
@@ -134,6 +137,14 @@ function xtrac_resolve_screen($file)
     $shared = __DIR__ . '/screens/' . $file;
     if (file_exists($shared)) {
         return $shared;
+    }
+    $legacy = '../users_prof/' . $file;
+    if (file_exists($legacy)) {
+        return $legacy;
+    }
+    $store = '../store/' . $file;
+    if (file_exists($store)) {
+        return $store;
     }
     return $file; // missing — caller's file_exists check will report it
 }
