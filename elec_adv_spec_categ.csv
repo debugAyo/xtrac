@@ -1,0 +1,51 @@
+id,spec_categ_id,type
+1,1,LED TVs
+2,1,OLED TVs
+3,1,QLED TVs
+4,1,Smart TVs
+5,2,Headphones
+6,2,Earbuds
+7,2,Speakers
+8,2,Soundbars
+9,2,Home Theater Systems
+10,3,"PlayStation (PS4, PS5)"
+11,3,"Xbox (Xbox One, Xbox Series X/S)"
+12,3,Nintendo Switch
+13,4,Blu-ray Players
+14,4,"Streaming Devices (Roku, Amazon Fire TV, Apple TV)"
+15,4,DVD Players
+16,4,Personal Devic
+17,5,"Smartwatches (Apple Watch, Samsung Galaxy Watch)"
+18,5,"Fitness Trackers (Fitbit, Garmin)"
+19,6,"Digital Cameras (DSLR, Mirrorless)"
+20,6,Action Cameras (GoPro)
+21,6,Webcams
+22,7,iPods
+23,7,MP3 Players
+24,8,Microwave Ovens
+25,8,Refrigerators
+26,8,Dishwashers
+27,8,Coffee Makers
+28,8,Toasters
+29,9,Vacuum Cleaners
+30,9,Robotic Vacuums
+31,9,Air Purifiers
+32,10,Air Conditioners
+33,10,Heaters
+34,10,Humidifiers
+35,10,Dehumidifiers
+36,11,Multimeters
+37,11,Oscilloscopes
+38,11,Spectrum Analyzers
+39,12,Thermometers
+40,12,Blood Pressure Monitors
+41,12,Glucometers
+42,13,Programmable Logic Controllers (PLCs)
+43,13,Sensors and Actuators
+44,13,Industrial Robots
+45,15,"VR Headsets (Oculus Rift, HTC Vive)"
+46,16,"AR Glasses (Microsoft HoloLens, Google Glass)"
+47,17,"Smart Speakers (Amazon Echo, Google Nest)"
+48,17,Smart Thermostats
+49,17,Smart Lighting Systems
+50,1,

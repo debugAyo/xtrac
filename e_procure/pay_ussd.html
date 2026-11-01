@@ -1,0 +1,249 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Payment via USSD</title>
+</head>
+
+<body>
+
+<table cellpadding="0" cellspacing="0" width="638" height="412">
+	<!-- MSTableType="layout" -->
+	<tr>
+		<td valign="top" colspan="4">
+		<p style="margin-top: 8px; margin-left:20px"><b>
+		<font face="Arial" color="#333333">Payment 
+		via USSD</font></b></td>
+		<td height="38"></td>
+		</tr>
+	<tr>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td height="17"></td>
+		</tr>
+	<tr>
+		<td valign="top" height="26">
+		<table cellpadding="0" cellspacing="0" border="0" width="100%" height="100%">
+			<!-- MSCellFormattingTableID="1" -->
+			<tr>
+				<td bgcolor="#CCCCB3" height="1">
+				<img alt="" width="1" height="1" src="MsSpacer.gif"></td>
+			</tr>
+			<tr>
+				<td valign="top" height="100%">
+				<!-- MSCellFormattingType="content" -->
+				<p style="margin-top: 3px">
+				<font face="Arial" style="font-size: 11pt; font-weight: 700">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>
+				<font face="Arial" style="font-size: 8.5pt; font-weight: 700">Sn&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Bank Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; USSD </font>
+				</td>
+			</tr>
+			<tr>
+				<td bgcolor="#CCCCB3" height="1" width="100%">
+				<img alt="" width="1" height="1" src="MsSpacer.gif"></td>
+			</tr>
+		</table>
+		</td>
+		<td valign="top" colspan="3" height="26">
+		<table cellpadding="0" cellspacing="0" border="0" width="100%" height="100%">
+			<!-- MSCellFormattingTableID="2" -->
+			<tr>
+				<td bgcolor="#CCCCB3" height="1">
+				<img alt="" width="1" height="1" src="MsSpacer.gif"></td>
+			</tr>
+			<tr>
+				<td valign="top" height="100%">
+				<!-- MSCellFormattingType="content" -->
+				&nbsp;</td>
+			</tr>
+			<tr>
+				<td bgcolor="#CCCCB3" height="1" width="100%">
+				<img alt="" width="1" height="1" src="MsSpacer.gif"></td>
+			</tr>
+		</table>
+		</td>
+		<td height="26"></td>
+		</tr>
+	<tr>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td height="11"></td>
+	</tr>
+	<tr>
+		<td valign="top" width="385" rowspan="2">
+		<table border="0" cellpadding="0" cellspacing="0" width="385" style="border-collapse: collapse; width: 289pt">
+			<colgroup>
+				<col width="64" style="width: 48pt">
+				<col width="240" style="width: 180pt">
+				<col width="81" style="width: 61pt">
+			</colgroup>
+			<tr height="20" style="height: 15.0pt">
+				<td height="20" style="height: 15.0pt; font-size: 10.0pt; font-family: 'Eras Medium ITC', sans-serif; text-align: center; color: black; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+				<font face="Arial" style="font-size: 8pt">1</font></td>
+				<td style="color: #0D0D0D; font-size: 10.0pt; font-family: 'Eras Medium ITC', sans-serif; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px" width="204">
+				<font face="Arial" style="font-size: 8pt">Access Bank</font></td>
+				<td style="color: #0D0D0D; font-size: 10.0pt; font-family: 'Eras Medium ITC', sans-serif; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px" align="center" width="113">
+				<font face="Arial" color="#333333" style="font-size: 8pt">*901#</font></td>
+			</tr>
+			<tr height="20" style="height: 15.0pt">
+				<td height="20" style="height: 15.0pt; font-size: 10.0pt; font-family: 'Eras Medium ITC', sans-serif; text-align: center; color: black; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+				<font face="Arial" style="font-size: 8pt">2</font></td>
+				<td style="color: #0D0D0D; font-size: 10.0pt; font-family: 'Eras Medium ITC', sans-serif; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px" width="204">
+				<font face="Arial" style="font-size: 8pt">Ecobank</font></td>
+				<td style="color: #0D0D0D; font-size: 10.0pt; font-family: 'Eras Medium ITC', sans-serif; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px" align="center" width="113">
+				<font face="Arial" color="#333333" style="font-size: 8pt">*326#</font></td>
+			</tr>
+			<tr height="20" style="height: 15.0pt">
+				<td height="20" style="height: 15.0pt; font-size: 10.0pt; font-family: 'Eras Medium ITC', sans-serif; text-align: center; color: black; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+				<font face="Arial" style="font-size: 8pt">3</font></td>
+				<td style="color: #0D0D0D; font-size: 10.0pt; font-family: 'Eras Medium ITC', sans-serif; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px" width="204">
+				<font face="Arial" style="font-size: 8pt">First Bank</font></td>
+				<td style="color: #0D0D0D; font-size: 10.0pt; font-family: 'Eras Medium ITC', sans-serif; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px" align="center" width="113">
+				<font face="Arial" color="#333333" style="font-size: 8pt">*894#</font></td>
+			</tr>
+			<tr height="20" style="height: 15.0pt">
+				<td height="20" style="height: 15.0pt; font-size: 10.0pt; font-family: 'Eras Medium ITC', sans-serif; text-align: center; color: black; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+				<font face="Arial" style="font-size: 8pt">4</font></td>
+				<td style="color: #0D0D0D; font-size: 10.0pt; font-family: 'Eras Medium ITC', sans-serif; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px" width="204">
+				<font face="Arial" style="font-size: 8pt">Fidelity Bank</font></td>
+				<td style="color: #0D0D0D; font-size: 10.0pt; font-family: 'Eras Medium ITC', sans-serif; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px" align="center" width="113">
+				<font face="Arial" color="#333333" style="font-size: 8pt">*770#</font></td>
+			</tr>
+			<tr height="20" style="height: 15.0pt">
+				<td height="20" style="height: 15.0pt; font-size: 10.0pt; font-family: 'Eras Medium ITC', sans-serif; text-align: center; color: black; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+				<font face="Arial" style="font-size: 8pt">5</font></td>
+				<td style="color: #0D0D0D; font-size: 10.0pt; font-family: 'Eras Medium ITC', sans-serif; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px" width="204">
+				<font face="Arial" style="font-size: 8pt">FCMB</font></td>
+				<td style="color: #0D0D0D; font-size: 10.0pt; font-family: 'Eras Medium ITC', sans-serif; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px" align="center" width="113">
+				<font face="Arial" color="#333333" style="font-size: 8pt">*329#</font></td>
+			</tr>
+			<tr height="20" style="height: 15.0pt">
+				<td height="20" style="height: 15.0pt; font-size: 10.0pt; font-family: 'Eras Medium ITC', sans-serif; text-align: center; color: black; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+				<font face="Arial" style="font-size: 8pt">6</font></td>
+				<td style="color: #0D0D0D; font-size: 10.0pt; font-family: 'Eras Medium ITC', sans-serif; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px" width="204">
+				<font face="Arial" style="font-size: 8pt">GTBank</font></td>
+				<td style="color: #0D0D0D; font-size: 10.0pt; font-family: 'Eras Medium ITC', sans-serif; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px" align="center" width="113">
+				<font face="Arial" color="#333333" style="font-size: 8pt">*737#</font></td>
+			</tr>
+			<tr height="20" style="height: 15.0pt">
+				<td height="20" style="height: 15.0pt; font-size: 10.0pt; font-family: 'Eras Medium ITC', sans-serif; text-align: center; color: black; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+				<font face="Arial" style="font-size: 8pt">7</font></td>
+				<td style="color: #0D0D0D; font-size: 10.0pt; font-family: 'Eras Medium ITC', sans-serif; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px" width="204">
+				<font face="Arial" style="font-size: 8pt">Heritage Bank</font></td>
+				<td style="color: #0D0D0D; font-size: 10.0pt; font-family: 'Eras Medium ITC', sans-serif; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px" align="center" width="113">
+				<font face="Arial" color="#333333" style="font-size: 8pt">*322#</font></td>
+			</tr>
+			<tr height="20" style="height: 15.0pt">
+				<td height="20" style="height: 15.0pt; font-size: 10.0pt; font-family: 'Eras Medium ITC', sans-serif; text-align: center; color: black; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+				<font face="Arial" style="font-size: 8pt">8</font></td>
+				<td style="color: #0D0D0D; font-size: 10.0pt; font-family: 'Eras Medium ITC', sans-serif; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px" width="204">
+				<font face="Arial" style="font-size: 8pt">Keystone Bank</font></td>
+				<td style="color: #0D0D0D; font-size: 10.0pt; font-family: 'Eras Medium ITC', sans-serif; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px" align="center" width="113">
+				<font face="Arial" color="#333333" style="font-size: 8pt">*533#</font></td>
+			</tr>
+			<tr height="20" style="height: 15.0pt">
+				<td height="20" style="height: 15.0pt; font-size: 10.0pt; font-family: 'Eras Medium ITC', sans-serif; text-align: center; color: black; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+				<font face="Arial" style="font-size: 8pt">9</font></td>
+				<td style="color: #0D0D0D; font-size: 10.0pt; font-family: 'Eras Medium ITC', sans-serif; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px" width="204">
+				<font face="Arial" style="font-size: 8pt">Polaris Bank</font></td>
+				<td style="color: #0D0D0D; font-size: 10.0pt; font-family: 'Eras Medium ITC', sans-serif; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px" align="center" width="113">
+				<font face="Arial" color="#333333" style="font-size: 8pt">*833#</font></td>
+			</tr>
+			<tr height="20" style="height: 15.0pt">
+				<td height="20" style="height: 15.0pt; font-size: 10.0pt; font-family: 'Eras Medium ITC', sans-serif; text-align: center; color: black; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+				<font face="Arial" style="font-size: 8pt">10</font></td>
+				<td style="color: #0D0D0D; font-size: 10.0pt; font-family: 'Eras Medium ITC', sans-serif; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px" width="204">
+				<font face="Arial" style="font-size: 8pt">Stanbic IBTC Bank</font></td>
+				<td style="color: #0D0D0D; font-size: 10.0pt; font-family: 'Eras Medium ITC', sans-serif; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px" align="center" width="113">
+				<font face="Arial" color="#333333" style="font-size: 8pt">*909#</font></td>
+			</tr>
+			<tr height="20" style="height: 15.0pt">
+				<td height="20" style="height: 15.0pt; font-size: 10.0pt; font-family: 'Eras Medium ITC', sans-serif; text-align: center; color: black; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+				<font face="Arial" style="font-size: 8pt">11</font></td>
+				<td style="color: #0D0D0D; font-size: 10.0pt; font-family: 'Eras Medium ITC', sans-serif; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px" width="204">
+				<font face="Arial" style="font-size: 8pt">Standard Chartered Bank</font></td>
+				<td style="color: #0D0D0D; font-size: 10.0pt; font-family: 'Eras Medium ITC', sans-serif; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px" align="center" width="113">
+				<font face="Arial" color="#333333" style="font-size: 8pt">*120#</font></td>
+			</tr>
+			<tr height="20" style="height: 15.0pt">
+				<td height="20" style="height: 15.0pt; font-size: 10.0pt; font-family: 'Eras Medium ITC', sans-serif; text-align: center; color: black; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+				<font face="Arial" style="font-size: 8pt">12</font></td>
+				<td style="color: #0D0D0D; font-size: 10.0pt; font-family: 'Eras Medium ITC', sans-serif; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px" width="204">
+				<font face="Arial" style="font-size: 8pt">Union Bank</font></td>
+				<td style="color: #0D0D0D; font-size: 10.0pt; font-family: 'Eras Medium ITC', sans-serif; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px" align="center" width="113">
+				<font face="Arial" color="#333333" style="font-size: 8pt">*826#</font></td>
+			</tr>
+			<tr height="20" style="height: 15.0pt">
+				<td height="20" style="height: 15.0pt; font-size: 10.0pt; font-family: 'Eras Medium ITC', sans-serif; text-align: center; color: black; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+				<font face="Arial" style="font-size: 8pt">13</font></td>
+				<td style="color: #0D0D0D; font-size: 10.0pt; font-family: 'Eras Medium ITC', sans-serif; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px" width="204">
+				<font face="Arial" style="font-size: 8pt">United Bank for Africa</font></td>
+				<td style="color: #0D0D0D; font-size: 10.0pt; font-family: 'Eras Medium ITC', sans-serif; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px" align="center" width="113">
+				<font face="Arial" color="#333333" style="font-size: 8pt">*919#</font></td>
+			</tr>
+			<tr height="20" style="height: 15.0pt">
+				<td height="20" style="height: 15.0pt; font-size: 10.0pt; font-family: 'Eras Medium ITC', sans-serif; text-align: center; color: black; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+				<font face="Arial" style="font-size: 8pt">14</font></td>
+				<td style="color: #0D0D0D; font-size: 10.0pt; font-family: 'Eras Medium ITC', sans-serif; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px" width="204">
+				<font face="Arial" style="font-size: 8pt">Unity Bank</font></td>
+				<td style="color: #0D0D0D; font-size: 10.0pt; font-family: 'Eras Medium ITC', sans-serif; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px" align="center" width="113">
+				<font face="Arial" color="#333333" style="font-size: 8pt">*7799#</font></td>
+			</tr>
+			<tr height="20" style="height: 15.0pt">
+				<td height="20" style="height: 15.0pt; font-size: 10.0pt; font-family: 'Eras Medium ITC', sans-serif; text-align: center; color: black; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+				<font face="Arial" style="font-size: 8pt">15</font></td>
+				<td style="color: #0D0D0D; font-size: 10.0pt; font-family: 'Eras Medium ITC', sans-serif; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px" width="204">
+				<font face="Arial" style="font-size: 8pt">Wema Bank</font></td>
+				<td style="color: #0D0D0D; font-size: 10.0pt; font-family: 'Eras Medium ITC', sans-serif; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px" align="center" width="113">
+				<font face="Arial" color="#333333" style="font-size: 8pt">*945#</font></td>
+			</tr>
+			<tr height="20" style="height: 15.0pt">
+				<td height="20" style="height: 15.0pt; font-size: 10.0pt; font-family: 'Eras Medium ITC', sans-serif; text-align: center; color: black; font-weight: 400; font-style: normal; text-decoration: none; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+				<font face="Arial" style="font-size: 8pt">16</font></td>
+				<td style="color: #0D0D0D; font-size: 10.0pt; font-family: 'Eras Medium ITC', sans-serif; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px" width="204">
+				<font face="Arial" style="font-size: 8pt">Zenith Bank</font></td>
+				<td style="color: #0D0D0D; font-size: 10.0pt; font-family: 'Eras Medium ITC', sans-serif; font-weight: 400; font-style: normal; text-decoration: none; text-align: general; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px" align="center" width="113">
+				<font face="Arial" color="#333333" style="font-size: 8pt">*966#</font></td>
+			</tr>
+			</table>
+		</td>
+		<td>&nbsp;</td>
+		<td valign="top" height="310">
+				<table cellpadding="0" cellspacing="0" border="0" width="100%" height="100%">
+					<!-- MSCellFormattingTableID="4" -->
+					<tr>
+						<td bgcolor="#C0C0C0" nowrap height="10">
+						<!-- MSCellFormattingType="header" -->
+						</td>
+						</tr>
+					<tr>
+						<td valign="top" height="100%">
+						<!-- MSCellFormattingType="content" -->
+						<p align="center" style="margin-top: 4px">
+		<marquee scrollamount="3" behavior="alternate"><img border="0" src="img/ussd.png" width="148" height="275"></marquee></td>
+					</tr>
+					<tr>
+						<td nowrap bgcolor="#C0C0C0" width="100%" height="10">
+						<!-- MSCellFormattingType="footer" -->
+						</td>
+						</tr>
+				</table>
+		</td>
+		<td>&nbsp;</td>
+		<td height="310"></td>
+	</tr>
+	<tr>
+		<td width="28"></td>
+		<td width="214"></td>
+		<td width="10"></td>
+		<td height="10" width="1"></td>
+	</tr>
+</table>
+
+</body>
+
+</html>

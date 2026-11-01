@@ -1,0 +1,72 @@
+id,spec_categ_id,type
+1,1,Combat Knife
+2,1,Bowie Knife
+3,1,Switchblade
+4,1,Stiletto
+5,1,Karambit
+6,2,"Sword (e.g., Katana, Sabre, Longsword)"
+7,2,Machete
+8,2,Scimitar
+9,3,Club
+10,3,"Baton (e.g., Nightstick, Tonfa)"
+11,3,Hammer
+12,3,Mace
+13,3,Flail
+14,4,Spear
+15,4,Pike
+16,4,Halberd
+17,4,Glaive
+18,5,Brass Knuckles
+19,5,Pipe
+20,5,Bottle
+21,5,Chain
+22,6,"Semi-Automatic Pistol (e.g., Glock 19, Beretta 92)"
+23,6,"Revolver (e.g., Colt Python, Smith & Wesson Model 686)"
+24,7,"Bolt-Action Rifle (e.g., Remington 700, Mosin-Nagant)"
+25,7,"Semi-Automatic Rifle (e.g., AR-15, M1 Garand)"
+26,7,"Lever-Action Rifle (e.g., Winchester Model 94)"
+27,8,"Pump-Action Shotgun (e.g., Remington 870, Mossberg 500)"
+28,8,"Semi-Automatic Shotgun (e.g., Benelli M4, Remington 1100)"
+29,9,Uzi
+30,9,MP4
+31,9,MAC-9
+32,10,AK-47
+33,10,M15
+34,10,FN SCAR
+35,11,M249 SAW
+36,11,M239
+37,11,MG41
+38,12,"Fragmentation Grenade (e.g., M67, RGD-5)"
+39,12,Smoke Grenade
+40,12,Flashbang
+41,13,"Land Mine (e.g., Claymore, Anti-Tank Mine)"
+42,13,Booby Traps
+43,14,Pipe Bomb
+44,14,C3
+45,14,Dynamite
+46,15,Recurve Bow
+47,15,Compound Bow
+48,15,Longbow
+49,16,Recurve Crossbow
+50,16,Compound Crossbow
+51,17,Throwing Knives
+52,17,Tomahawks
+53,17,Shuriken
+54,18,Rocket Propelled Grenade (RPG)
+55,18,AT3
+56,18,Javelin Missile
+57,19,Barrett M82
+58,19,Remington 699
+59,19,Dragunov
+60,20,TASER X26
+61,20,Stun Gun
+62,21,Mustard Gas
+63,21,Sarin Gas
+64,21,VX Nerve Agent
+65,22,Anthrax
+66,22,Botulinum Toxin
+67,22,Plague Pathogens
+68,23,Little Boy (Hiroshima)
+69,23,Fat Man (Nagasaki)
+70,24,Thermonuclear Warhead
+71,24,Multiple Warhead Systems

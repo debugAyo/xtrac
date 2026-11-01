@@ -1,0 +1,45 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <script src="../ckeditor/ckeditor.js"></script>
+      <script type="text/javascript">
+      window.onload = () => {
+        CKEDITOR.replace("maint_not");
+      };
+
+      function sendText() {
+        window.parent.postMessage(CKEDITOR.instances.CK1.getData(), "*");
+      }
+    </script>
+  </head>
+  <body>
+<div class="w3-row-padding">
+<div class="w3-threequarter w3-white w3-padding-large w3-border">
+<h3 class="w3-text-red w3-hover-text-green"><i class="fa fa-calculator fa-fw w3-text-blue-grey" arial-hidden="true" style="font-size:36px;"></i>  Depreciation Calculator</h3>	
+<form action="" enctype="multipart/form-data" method="post">
+<input type="hidden" name="list"  value="Depreciation Calculator Form">
+
+<label>Asset ID </label>
+<input type="text" name="dev_id" placeholder="Asset ID" >
+<label>Depreciation Method</label> 
+<input type="text" name="deprecat_method" readonly  value="Straight Line"></label>
+<label>Salvage Cost</label>
+<input type="number" class="date" name="salvage_cost"></label>
+<p><label>Depreciation Month</label>
+<select name="deprecat_month">
+	<option></option>
+	<option>12</option>
+	</select></p>
+<p><label>Account Reference</label>
+<select name="acct_ref">
+	<option></option>
+	<option>NIRSAL2018001</option>
+	</select>
+	</p>
+<input type="hidden" class="w3-text-grey" name="log_usr" readonly value="<?php echo $fname;?>">
+<p align="center"><button type="submit" name="submit" class="login-btn w3-light-green w3-hover-green" style="border-radius:50%" onmouseover title="Login"><i class="fa fa-check w3-text-white"></i></button><button type="reset" name="cancel" class="login-btn w3-hover-black w3-red" style="border-radius:50%" onmouseover title="Reset"><i class="fa fa-close w3-text-white"></i></button></p>
+</form>
+
+</div>
+<div class="w3-quarter"></div>
+</div>

@@ -1,0 +1,436 @@
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+</head>
+
+<div align="center">
+
+<table cellpadding="0" cellspacing="0" width="630" height="797">
+	<!-- MSTableType="layout" -->
+	<tr>
+		<td valign="top" colspan="2">
+		<div align="center">
+			<table cellpadding="0" cellspacing="0" width="622" height="136">
+				<!-- MSTableType="layout" -->
+				<tr>
+					<td height="94" valign="top"><?php include 'header.php'; ?></td>
+				</tr>
+				<tr>
+					<td valign="top" bgcolor="#339966" height="42" width="622">&nbsp;</td>
+				</tr>
+			</table>
+		</div>
+	</td>
+		<td height="157"></td>
+	</tr>
+	<tr>
+		<td valign="top"><?php
+    
+    //Include the barcode script
+    
+    include_once 'barcode.php';
+    
+    //Handle if text posted
+    $text = $_POST['text'];
+	
+	if($_POST['text']) {
+		
+        //Create the barcode
+        
+		$img			=	code128BarCode($_POST['text'], 1);
+		
+		
+        //Start output buffer to capture the image
+        //Output PNG image
+        
+		ob_start();
+		imagepng($img);
+		
+		
+        //Get the image from the output buffer
+        
+		$output_img		=	ob_get_clean();
+		
+		
+	}
+	
+	 
+	
+?>
+
+	
+	
+
+
+<?php if($_POST['text']) echo '<center><img src="data:image/png;base64,' . base64_encode($output_img) . '" /><br> '; echo $text; echo '';?>
+		<td valign="top"><?php
+    
+    //Include the barcode script
+    
+    include_once 'barcode.php';
+    
+    //Handle if text posted
+    $text5 = $_POST['text5'];
+	
+	if($_POST['text5']) {
+		
+        //Create the barcode
+        
+		$img5			=	code128BarCode($_POST['text5'], 1);
+		
+		
+        //Start output buffer to capture the image
+        //Output PNG image
+        
+		ob_start();
+		imagepng($img5);
+		
+		
+        //Get the image from the output buffer
+        
+		$output_img5		=	ob_get_clean();
+		
+		
+	}
+	
+	 
+	
+?>
+
+	
+	
+
+
+<?php if($_POST['text5']) echo '<center><img src="data:image/png;base64,' . base64_encode($output_img5) . '" /><br> '; echo $text5; echo '';?>
+
+</td>
+		<td height="128"></td>
+	</tr>
+	<tr>
+		<td valign="top"><?php
+    
+    //Include the barcode script
+    
+    include_once 'barcode.php';
+    
+    //Handle if text posted
+    $text1 = $_POST['text1'];
+	
+	if($_POST['text1']) {
+		
+        //Create the barcode
+        
+		$img1			=	code128BarCode($_POST['text1'], 1);
+		
+		
+        //Start output buffer to capture the image
+        //Output PNG image
+        
+		ob_start();
+		imagepng($img1);
+		
+		
+        //Get the image from the output buffer
+        
+		$output_img1		=	ob_get_clean();
+		
+		
+	}
+	
+	 
+	
+?>
+
+	
+	
+
+
+<?php if($_POST['text1']) echo '<center><img src="data:image/png;base64,' . base64_encode($output_img1) . '" /><br> '; echo $text1; echo '';?></td>
+		<td valign="top"><?php
+    
+    //Include the barcode script
+    
+    include_once 'barcode.php';
+    
+    //Handle if text posted
+    $text6 = $_POST['text6'];
+	
+	if($_POST['text6']) {
+		
+        //Create the barcode
+        
+		$img6			=	code128BarCode($_POST['text6'], 1);
+		
+		
+        //Start output buffer to capture the image
+        //Output PNG image
+        
+		ob_start();
+		imagepng($img6);
+		
+		
+        //Get the image from the output buffer
+        
+		$output_img6		=	ob_get_clean();
+		
+		
+	}
+	
+	 
+	
+?>
+
+	
+	
+
+
+<?php if($_POST['text6']) echo '<center><img src="data:image/png;base64,' . base64_encode($output_img6) . '" /><br> '; echo $text6; echo '';?></td>
+		<td height="128"></td>
+	</tr>
+	<tr>
+		<td valign="top"><?php
+    
+    //Include the barcode script
+    
+    include_once 'barcode.php';
+    
+    //Handle if text posted
+    $text2 = $_POST['text2'];
+	
+	if($_POST['text2']) {
+		
+        //Create the barcode
+        
+		$img2			=	code128BarCode($_POST['text2'], 1);
+		
+		
+        //Start output buffer to capture the image
+        //Output PNG image
+        
+		ob_start();
+		imagepng($img2);
+		
+		
+        //Get the image from the output buffer
+        
+		$output_img2		=	ob_get_clean();
+		
+		
+	}
+	
+	 
+	
+?>
+
+	
+	
+
+
+<?php if($_POST['text2']) echo '<center><img src="data:image/png;base64,' . base64_encode($output_img2) . '" /><br> '; echo $text2; echo '';?></td>
+		<td valign="top"><?php
+    
+    //Include the barcode script
+    
+    include_once 'barcode.php';
+    
+    //Handle if text posted
+    $text7 = $_POST['text7'];
+	
+	if($_POST['text7']) {
+		
+        //Create the barcode
+        
+		$img7			=	code128BarCode($_POST['text7'], 1);
+		
+		
+        //Start output buffer to capture the image
+        //Output PNG image
+        
+		ob_start();
+		imagepng($img7);
+		
+		
+        //Get the image from the output buffer
+        
+		$output_img7		=	ob_get_clean();
+		
+		
+	}
+	
+	 
+	
+?>
+
+	
+	
+
+
+<?php if($_POST['text7']) echo '<center><img src="data:image/png;base64,' . base64_encode($output_img7) . '" /><br> '; echo $text7; echo '';?>
+</td>
+		<td height="128"></td>
+	</tr>
+	<tr>
+		<td valign="top"><?php
+    
+    //Include the barcode script
+    
+    include_once 'barcode.php';
+    
+    //Handle if text posted
+    $text3 = $_POST['text3'];
+	
+	if($_POST['text3']) {
+		
+        //Create the barcode
+        
+		$img3			=	code128BarCode($_POST['text3'], 1);
+		
+		
+        //Start output buffer to capture the image
+        //Output PNG image
+        
+		ob_start();
+		imagepng($img3);
+		
+		
+        //Get the image from the output buffer
+        
+		$output_img3		=	ob_get_clean();
+		
+		
+	}
+	
+	 
+	
+?>
+
+	
+	
+
+
+<?php if($_POST['text3']) echo '<center><img src="data:image/png;base64,' . base64_encode($output_img3) . '" /><br> '; echo $text3; echo '';?></td>
+		<td valign="top"><?php
+    
+    //Include the barcode script
+    
+    include_once 'barcode.php';
+    
+    //Handle if text posted
+    $text8 = $_POST['text8'];
+	
+	if($_POST['text8']) {
+		
+        //Create the barcode
+        
+		$img8			=	code128BarCode($_POST['text8'], 1);
+		
+		
+        //Start output buffer to capture the image
+        //Output PNG image
+        
+		ob_start();
+		imagepng($img8);
+		
+		
+        //Get the image from the output buffer
+        
+		$output_img8	=	ob_get_clean();
+		
+		
+	}
+	
+	 
+	
+?>
+
+	
+	
+
+
+<?php if($_POST['text8']) echo '<center><img src="data:image/png;base64,' . base64_encode($output_img8) . '" /><br> '; echo $text8; echo '';?></td>
+		<td height="128"></td>
+	</tr>
+	<tr>
+		<td valign="top" width="314"><?php
+    
+    //Include the barcode script
+    
+    include_once 'barcode.php';
+    
+    //Handle if text posted
+    $text4 = $_POST['text4'];
+	
+	if($_POST['text5']) {
+		
+        //Create the barcode
+        
+		$img4			=	code128BarCode($_POST['text4'], 1);
+		
+		
+        //Start output buffer to capture the image
+        //Output PNG image
+        
+		ob_start();
+		imagepng($img4);
+		
+		
+        //Get the image from the output buffer
+        
+		$output_img4		=	ob_get_clean();
+		
+		
+	}
+	
+	 
+	
+?>
+
+	
+	
+
+
+<?php if($_POST['text4']) echo '<center><img src="data:image/png;base64,' . base64_encode($output_img4) . '" /><br> '; echo $text4; echo '';?></td>
+		<td valign="top" width="314"><?php
+    
+    //Include the barcode script
+    
+    include_once 'barcode.php';
+    
+    //Handle if text posted
+    $text9 = $_POST['text9'];
+	
+	if($_POST['text9']) {
+		
+        //Create the barcode
+        
+		$img9			=	code128BarCode($_POST['text9'], 1);
+		
+		
+        //Start output buffer to capture the image
+        //Output PNG image
+        
+		ob_start();
+		imagepng($img9);
+		
+		
+        //Get the image from the output buffer
+        
+		$output_img9	=	ob_get_clean();
+		
+		
+	}
+	
+	 
+	
+?>
+
+	
+	
+
+
+<?php if($_POST['text9']) echo '<center><img src="data:image/png;base64,' . base64_encode($output_img9) . '" /><br> '; echo $text9; echo '';?></td>
+		<td height="128" width="2"></td>
+	</tr>
+</table>
+</div>
+

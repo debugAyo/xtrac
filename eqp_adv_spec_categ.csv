@@ -1,0 +1,99 @@
+id,spec_categ_id,type
+1,1,Hydraulic Excavators
+2,1,Mini Excavators
+3,2, Front-End Loaders
+4,2,Skid-Steer Loaders
+5,3,Bulldozers
+6,3,Crawler Dozers
+7,4,Motor Graders
+8,5,Articulated Dump Trucks
+9,5,Rigid Dump Trucks
+10,6,Tower Cranes
+11,6,Mobile Cranes
+12,6,Crawler Cranes
+13,7,Backhoe Loaders
+14,8,Concrete Mixers
+15,8,Concrete Pumps
+16,8,Concrete Vibrators
+17,9,Utility Tractors
+18,9,Row-Crop Tractors
+19,10,Combine Harvesters
+20,10,Forage Harvesters
+21,11,Moldboard Plows
+22,11,Disc Plows
+23,12,Air Seeders
+24,12,Planters
+25,13,Round Balers
+26,13,Square Balers
+27,14,Boom Sprayers
+28,14,Airblast Sprayers
+29,15,Rotary Cultivators
+30,15,Tine Cultivators
+31,16,Lathes
+32,16,Milling Machines
+33,16,Drill Presses
+34,17,CNC Lathes
+35,17,CNC Milling Machines
+36,18,Hydraulic Presses
+37,18,Mechanical Presses
+38,19,MIG Welders
+39,19,TIG Welders
+40,19,Stick Welders
+41,20,Electric Molding Machines
+42,20,Hydraulic Molding Machines
+43,21,Belt Conveyors
+44,21,Roller Conveyors
+45,22,Paddle Mixers
+46,22,Ribbon Mixers
+47,23,Rope Shovel Draglines
+48,23,Hydraulic Draglines
+49,24,Electric Shovels
+50,24,Hydraulic Shovels
+51,25,Mining Trucks
+52,25,Haul Trucks
+53,26,LHD Loaders
+54,26,Scooptrams
+55,27,Rotary Drills
+56,27,Percussion Drills
+57,28,Jaw Crushers
+58,28,Cone Crushers
+59,28,Impact Crushers
+60,29,Vibrating Screens
+61,29,Trommel Screens
+62,30,Electric Forklifts
+63,30,LPG Forklifts
+64,31,Manual Pallet Jacks
+65,31,Electric Pallet Jacks
+66,32,Chain Hoists
+67,32,Electric Hoists
+68,33,Overhead Cranes
+69,33,Gantry Cranes
+70,34,Incline Conveyors
+71,34,Pneumatic Conveyors
+72,35,Hydraulic Dock Levelers
+73,35,Mechanical Dock Levelers
+74,36,Walk-Behind Scrubbers
+75,36,Ride-On Scrubbers
+76,37,Wet/Dry Vacuums
+77,37,HEPA Vacuums
+78,38,Electric Pressure Washers
+79,38,Gas Pressure Washers
+80,39,Scissor Lifts
+81,39,Boom Lifts
+82,40,Portable Generators
+83,40,Standby Generators
+84,41,Air Compressors
+85,41,Gas Compressors
+86,42,Steam Turbines
+87,42,Gas Turbines
+88,42,Wind Turbines
+89,43,Diesel Generators
+90,43,Gas Generators
+91,44,Step-Up Transformers
+92,44,Step-Down Transformers
+93,45,Industrial Boilers
+94,45,Power Boilers
+95,46,Centrifugal Pumps
+96,46,Positive Displacement Pumps
+97,47,Shell and Tube Heat Exchangers
+98,47,Plate Heat Exchangers

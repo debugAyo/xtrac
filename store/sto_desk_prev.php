@@ -1,0 +1,63 @@
+<h4 class="w3-text-green w3-hover-text-red"><i class="fa fa-info-circle fa-fw w3-text-blue-grey" arial-hidden="true" style="font-size:36px;"></i>  Asset's Information</h4>	
+
+<?php 
+echo '<font size=2, face=tahoma>';
+//$id = $_POST['id'];
+
+$sql="SELECT * FROM additem WHERE devid='$dev_id'";
+$result=mysqli_query($conn,$sql);
+
+$rows=mysqli_fetch_array($result);
+
+$id = $rows['sn'];
+
+
+include '../link/connect.php';
+ $image = mysqli_query($conn,"SELECT * FROM additem WHERE sn='$id'");
+
+while($row = mysqli_fetch_assoc($image))
+{
+echo '<p><img src="../users_prof/'. $row['pic']. '" style="width:100%; height:auto; border:0px solid grey; padding:4px"></p>';
+}
+?>
+
+<?php
+$sql="SELECT * FROM additem WHERE devid='$dev_idecho '<p><img src="../users_prof/'. $row['pic']. '" style="width:100%; height:auto; border:0px solid grey; padding:4px"></p>';'";
+$result=mysqli_query($conn,$sql);
+while ($row= mysqli_fetch_array($result))
+{
+
+
+echo '<tr>
+<th style="text-align:left; font-size:12px">Asset ID</th><td style="text-align:left; font-size:12px">".$row["devid"]."</td></tr>
+<tr><th style="text-align:left; font-size:12px">Name</th><td style="text-align:left; font-size:12px">".$row["devname"]."</td></tr>
+<tr><th style="text-align:left; font-size:12px">Manufactured Date</th><td style="text-align:left; font-size:12px">".$row["mandate"]."</td></tr>
+<tr><th style="text-align:left; font-size:12px">Asset Type</th><td style="text-align:left; font-size:12px">".$row["devtype"]."</td></tr>
+<tr><th style="text-align:left; font-size:12px">Manufacturer </th><td style="text-align:left; font-size:12px">".$row["manuname"]."</td></tr>
+
+
+<tr><th style="text-align:left; font-size:12px">Serial No</th><td style="text-align:left; font-size:12px">".$row["serial"]."</td></tr>
+<tr><th style="text-align:left; font-size:12px">Date Procured</th><td style="text-align:left; font-size:12px">".$row["prodate"]."</td></tr>
+<tr><th style="text-align:left; font-size:12px">CPU Model</th><td style="text-align:left; font-size:12px">".$row["cpumode"]."</td></tr>
+<tr><th style="text-align:left; font-size:12px">CPU Speed</th><td style="text-align:left; font-size:12px">".$row["corecpu"]."</td></tr>
+<tr><th style="text-align:left; font-size:12px">RAM Size</th><td style="text-align:left; font-size:12px">".$row["ramsize"]."</td></tr>
+
+<tr><th style="text-align:left; font-size:12px">HDD Size</th><td style="text-align:left; font-size:12px">".$row["hardrive"]."</td></tr>
+<tr><th style="text-align:left; font-size:12px">Department</th><td style="text-align:left; font-size:12px">".$row["deptmnt"]."</td></tr>
+<tr><th style="text-align:left; font-size:12px">Location</th><td style="text-align:left; font-size:12px">".$row["location"]."</td></tr>
+<tr><th style="text-align:left; font-size:12px">Status</th><td style="text-align:left; font-size:12px">".$row["devstat"]."</td></tr>
+<tr><th style="text-align:left; font-size:12px">Dependency</th><td style="text-align:left; font-size:12px">".$row["dependnt"]."</td></tr>			
+
+<tr><th style="text-align:left; font-size:12px">Waranty</th><td style="text-align:left; font-size:12px">".$row["waranty"]."</td></tr>
+<tr><th style="text-align:left; font-size:12px">Recommendation</th><td style="text-align:left; font-size:12px">".$row["recommnd"]."</td></tr>
+<tr><th style="text-align:left; font-size:12px">Owner</th><td style="text-align:left; font-size:12px">".$row["owner"]."</td></tr>
+<tr><th style="text-align:left; font-size:12px">End of Life</th><td style="text-align:left; font-size:12px">".$row["endlife"]."</td></tr>
+
+</tr>';
+
+}
+
+?>
+
+<p><button class="login-btn"><i class="fa fa-check fx-2a"></i></button></p>
+

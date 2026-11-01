@@ -1,0 +1,23 @@
+id,category_id,spec_name
+1,1,Televisions
+2,1,Audio Equipment
+3,1,Gaming Consoles
+4,1,Media Players
+5,1,Wearables
+6,1,Cameras
+7,1,Portable Music Players
+8,2,Kitchen Appliances
+9,2,Cleaning Appliances
+10,2,Climate Control
+11,3,Measurement and Testing Instruments
+12,3,Medical Devices
+13,3,Automation and Control Systems
+14,4,Interactive Whiteboards
+15,4,Digital Microscopes
+16,4,Educational Tablets
+17,5,Virtual Reality (VR) Devices
+18,5,Augmented Reality (AR) Devices
+19,5,Smart Home Devices
+20,6,Solar Panels
+21,6,Battery Storage Systems
+22,6,Smart Meters

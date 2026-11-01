@@ -1,0 +1,25 @@
+id,category_id,spec_list
+1,1,Knives and Daggers
+2,1,Blades
+3,1,Blunt Weapons
+4,1,Polearms
+5,1,Improvised Weapons
+6,2,Handguns
+7,2,Rifles
+8,2,Shotguns
+9,2,Submachine Guns
+10,2,Assault Rifles
+11,2,Machine Guns
+12,3,Hand Grenades
+13,3,Mines
+14,3,Improvised Explosives
+15,4,Bows
+16,4,Crossbows
+17,4,Throwing Weapons
+18,5,Anti-Tank Weapons
+19,5,Sniper Rifles
+20,5,Taser and Stun Guns
+21,6,Chemical Weapons
+22,6,Biological Weapons
+23,7,Atomic Bombs
+24,7,Hydrogen Bombs

@@ -1,0 +1,32 @@
+id,category_id,spec_name
+1,1,Sedans
+2,1,Hatchbacks
+3,1,Convertibles
+4,1,Luxury Vehicles
+5,2,Compact SUVs
+6,2,Mid-Size SUVs
+7,2,Full-Size SUVs
+8,2,Crossovers
+9,2,Luxury SUVs
+10,3,Compact Trucks
+11,3,Full-Size Trucks
+12,3,Heavy-Duty Trucks
+13,3,Pickup Trucks
+14,4,Minivans
+15,4,Cargo Vans
+16,4,Passenger Vans
+17,5,Cruisers
+18,5,Sportbikes
+19,5,Touring Bikes
+20,5,Dirt Bikes
+21,5,Dual-Sport Bikes
+22,6,Electric Vehicles (EVs)
+23,6,Plug-In Hybrids (PHEVs)
+24,6,Hybrid Vehicles
+25,7,Luxury Sports Cars
+26,7,Off-Road Vehicles
+27,7,Classic Cars
+28,7,Recreational Vehicles (RVs)
+29,8,Delivery Vans
+30,8,Box Trucks
+31,8,Tow Trucks

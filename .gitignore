@@ -1,0 +1,12 @@
+# AI API key config (never commit secrets)
+shared/ai/config.php
+
+# OS / editor
+Thumbs.db
+.DS_Store
+*.swp
+.idea/
+.vscode/
+
+# Optional local overrides
+config/db.local.php

@@ -1,0 +1,205 @@
+<div class="w3-col">
+<div class="w3-half">
+
+<?php
+	
+$dropdown = $_POST['dropdown'];
+	
+		include '../link/connect.php';
+		
+		$sql = "SELECT * FROM project_title WHERE id='$dropdown'";
+		$result = mysqli_query($conn, $sql);
+			while ($row=mysqli_fetch_array($result)) {
+			
+			$program = $row['protitle'];
+			}
+	
+		$sql = "SELECT *, COUNT(id) AS educ_qua FROM live_report WHERE consent='Yes' && protitle_id='$dropdown' GROUP BY education";
+
+		$result = $conn->query($sql);
+		
+		$jsonArray = array();
+		
+		if ($result->num_rows > 0) {
+		  
+		  while($row = $result->fetch_assoc()) {
+		    $jsonArrayItem = array();
+		    $jsonArrayItem['y'] = $row['education'];
+		    $jsonArrayItem['a'] = $row['educ_qua'];
+		   $jsonArrayItem['color'] = '#9b59b6';
+		    
+		    
+		    //append the above created object into the main array.
+		    array_push($jsonArray, $jsonArrayItem);
+		  }
+		}
+		//Closing the connection to DB
+		$conn->close();
+		
+		//header('Content-type: application/json');
+		 
+		//echo json_encode($jsonArray);
+		echo '<br>';
+		
+	?>
+
+
+
+
+<html>
+<head>
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
+</head>
+
+<body>
+
+<div id="myfirstchart" style="height: 250px;"></div>
+
+<script>
+Morris.Bar({
+  // ID of the element in which to draw the chart.
+  element: 'myfirstchart',
+  
+  
+  // Chart data records -- each entry in this array corresponds to a point on
+  // the chart.
+  
+  data: <?php echo json_encode($jsonArray);?>,
+   
+   // The name of the data record attribute that contains x-values.
+  //xkey: 'cron_time',
+  xkey: ['y'],
+  
+  // A list of names of data record attributes that contain y-values.
+   //ykeys: ['images_processed', 'images_failed'],
+  
+ ykeys: ['a'],
+  // Labels for the ykeys -- will be displayed when you hover over the
+  // chart.
+  //labels: ['Images Processed', 'Images Failed'],
+   
+ labels: ['Total'],
+ 
+ /* To customize the bar colors, use the functions below:*/
+ 
+barColors: function (row, series, type) {
+    if (type === 'bar') {
+      var green = Math.ceil(255 * row.y / this.ymax);
+      return 'rgb(0,' + green + ',0)';
+    }
+    else {
+      return '#000';
+    }
+  } 
+ 
+ 
+});
+</script>
+
+</body>
+</html>
+<h7><center>Total Immunized by Education Level</center></h7>
+<?php
+		include '../link/connect.php';
+		
+		//$sql = "SELECT *, COUNT(id) AS age_grp FROM live_report WHERE consent='Yes' && protitle_id='$dropdown' GROUP BY age";
+		
+		$sql = "SELECT
+    CASE
+        WHEN age < 20 THEN 'Under 20'
+        WHEN age BETWEEN 20 and 29 THEN '20 - 29'
+        WHEN age BETWEEN 30 and 39 THEN '30 - 39'
+        WHEN age BETWEEN 40 and 49 THEN '40 - 49'
+        WHEN age BETWEEN 50 and 59 THEN '50 - 59'
+        WHEN age BETWEEN 60 and 69 THEN '60 - 69'
+        WHEN age BETWEEN 70 and 79 THEN '70 - 79'
+        WHEN age >= 80 THEN 'Over 80'
+        WHEN age IS NULL THEN 'Not Filled In (NULL)'
+    END as age_range,
+    
+    COUNT(id) AS age_grp FROM live_report WHERE consent='Yes' && protitle_id='1' GROUP BY age_range";
+
+		$result = $conn->query($sql);
+		
+		$jsonArray = array();
+		
+		if ($result->num_rows > 0) {
+		  
+		  while($row = $result->fetch_assoc()) {
+		    /*$jsonArrayItem = array();
+		    $jsonArrayItem['value'] = $row['age_grp'];
+		   $jsonArrayItem['label'] = $row['age_range'];*/
+		   
+		   
+		   $agegrp[] = $row['age_grp'];
+		   $agerange[] = $row['age_range'];
+		   
+		    //append the above created object into the main array.
+		    //array_push($jsonArray, $jsonArrayItem);
+		  }
+		}
+		//Closing the connection to DB
+		$conn->close();
+		
+		//header('Content-type: application/json');
+		 
+		 //echo json_encode($agegrp);
+		 
+		//echo json_encode($jsonArray);
+		echo '<br>';
+	?>
+
+<!DOCTYPE html>
+<html>
+
+<script src="../plotter/js/Chart.min.js"></script>
+
+<body>
+
+<canvas id="myChart" style="width:100%;max-width:400px"></canvas>
+
+<script>
+var xValues = <?php echo json_encode($agerange);?>;
+var yValues = <?php echo json_encode($agegrp);?>;;
+var barColors = [
+  "#b91d47",
+  "#00aba9",
+  "#2b5797",
+  "#e8c3b9",
+  "#1e7145"
+];
+
+new Chart("myChart", {
+  type: "pie",
+  data: {
+    labels: xValues,
+    datasets: [{
+      backgroundColor: barColors,
+      data: yValues
+    }]
+  },
+  options: {
+    title: {
+      display: true,
+      text: "Total Immunized by Age Group"
+    }
+  }
+});
+</script>
+
+</body>
+</html>
+
+<h7><center></center></h7>
+</div>
+
+<div class="w3-half">
+<?php include 'new.php'; ?>
+<h7><center>Total Turnout by Platform</center></h7>
+<?php include 'gender.php'; ?>
+<h7><center>Total Vaccinated by Gender</center></h7>
+</div>
+</div>

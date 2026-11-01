@@ -1,0 +1,23 @@
+
+groupname
+grouplead
+groupleadphone
+groupexco
+groupdesc
+grouptype
+grouppurp
+groupsize
+agerange
+malegender
+fmalegender
+local
+region
+nation
+actdescp
+grpobj
+commopt
+addinfo
+
+/*image files*/
+leadpass
+excopass

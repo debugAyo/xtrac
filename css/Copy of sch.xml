@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<school xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<admission>
+		<title>Curtin College Western Australia, Australia</title>
+		<url>curtincollege.php</url>
+		<logos>1.jpg</logos>
+	</admission>
+	<admission>
+		<title>Deakin College Victoria, Australia</title>
+		<url>deakincollege.php</url>
+		<logos>2.jpg</logos>
+	</admission>
+	<admission>
+		<title>Edith Cowan College Western Australia, Australia</title>
+		<url>edithcowancollege.php</url>
+		<logos>3.jpg</logos>
+	</admission>
+	<admission>
+		<title>Edith Cowan University  Colombo, Sri Lanka</title>
+		<url>ecu.php</url>
+		<logos>4.jpg</logos>
+	</admission>
+	<admission>
+		<title>Eynesbury College South Australia, Australia</title>
+		<url>eynesbury.php</url>
+		<logos>5.jpg</logos>
+	</admission>
+	<admission>
+		<title>Griffith College Queensland, Australia</title>
+		<url>griffith.php</url>
+		<logos>6.jpg</logos>
+	</admission>
+	<admission>
+		<title>La Trobe College Australia Victoria Australia</title>
+		<url>latrobecollegeaustralia.php</url>
+		<logos>7.jpg</logos>
+	</admission>
+	<admission>
+		<title>La Trobe University Sydney Campus New South Wales, Australia</title>
+		<url>latrobecampus.php</url>
+		<logos>8.jpg</logos>
+	</admission>
+	<admission>
+		<title>Newcastle International College New South Wales, Australia</title>
+		<url>nic-nswcollege.php</url>
+		<logos>9.jpg</logos>
+	</admission>
+	<admission>
+		<title>South Australian Institute of Business and Technology, Australia</title>
+		<url>saibt-saand.php</url>
+		<logos>10.jpg</logos>
+	</admission>
+	<admission>
+		<title>Sydney Institute of Business and Technology New South Wales, Australia</title>
+		<url>sibt-nswtechnology.php</url>
+		<logos>11.jpg</logos>
+	</admission>
+	<admission>
+		<title>University of Canterbury International College New Zealand</title>
+		<url>uciccanterbury.php</url>
+		<logos>12.jpg</logos>
+	</admission>
+	<admission>
+		<title>University of Canberra College Australian Capital Territory, Australia</title>
+		<url>canberracollege.php</url>
+		<logos>13.jpg</logos>
+	</admission>
+	<admission>
+		<title>Western Sydney University International College New South Wales, Australia</title>
+		<url>westernsydneycollege.php</url>
+		<logos>14.jpg</logos>
+	</admission>
+	<admission>
+		<title>Western Sydney University Sydney City Campus New South Wales, Australia</title>
+		<url>westernsydneycampus.php</url>
+		<logos>15.jpg</logos>
+	</admission>
+	<admission>
+		<title>ARU College UK</title>
+		<url>arucollege.php</url>
+		<logos>16.jpg</logos>
+	</admission>
+	<admission>
+		<title>Birmingham City University International College UK</title>
+		<url>bcuic-navitas.php</url>
+		<logos>17.jpg</logos>
+	</admission>
+	<admission>
+		<title>Brunel University London Pathway College UK</title>
+		<url>brunel-ac.php</url>
+		<logos>18.jpg</logos>
+	</admission>
+	<admission>
+		<title>Hertfordshire International College UK</title>
+		<url>hic-navitas.php</url>
+		<logos>19.jpg</logos>
+	</admission>
+	<admission>
+		<title>International College at Robert Gordon University UK</title>
+		<url>icrgu-navitas.php</url>
+		<logos>20.jpg</logos>
+	</admission>
+	<admission>
+		<title>International College Portsmouth UK</title>
+		<url>icp-navitas.php</url>
+		<logos>21.jpg</logos>
+	</admission>
+	<admission>
+		<title>Keele University International College UK</title>
+		<url>keele-ac.php</url>
+		<logos>22.jpg</logos>
+	</admission>
+	<admission>
+		<title>Lancaster University, Leipzig Germany</title>
+		<url>lancasteruniversity.php</url>
+		<logos>23.jpg</logos>
+	</admission>
+	<admission>
+		<title>Leicester University Global Study Centre UK</title>
+		<url>leicestergsc.php</url>
+		<logos>24.jpg</logos>
+	</admission>
+	<admission>
+		<title>The College, Swansea University UK</title>
+		<url>swansea-ac.php</url>
+		<logos>25.jpg</logos>
+	</admission>
+	<admission>
+		<title>The Hague Pathway College Netherlands</title>
+		<url>thehaguepathway.php</url>
+		<logos>26.jpg</logos>
+	</admission>
+	<admission>
+		<title>Twente Pathway College Netherlands</title>
+		<url>twentepathway.php</url>
+		<logos>27.jpg</logos>
+	</admission>
+	<admission>
+		<title>University of Northampton International College UK</title>
+		<url>unic-navitas.php</url>
+		<logos>28.jpg</logos>
+	</admission>
+	<admission>
+		<title>UA92 Global UK</title>
+		<url>ua92-ac.php</url>
+		<logos>29.jpg</logos>
+	</admission>
+	<admission>
+		<title>University of Plymouth International College UK</title>
+		<url>upic-navitas.php</url>
+		<logos>30.jpg</logos>
+	</admission>
+	<admission>
+		<title>Fraser International College Canada</title>
+		<url>fraseric.php</url>
+		<logos>31.jpg</logos>
+	</admission>
+	<admission>
+		<title>International College of Manitoba Canada</title>
+		<url>icmanitoba.php</url>
+		<logos>32.jpg</logos>
+	</admission>
+	<admission>
+		<title>Richard Bland College of William &amp; Mary Global Student Success Program US</title>
+		<url>rbcglobal.php</url>
+		<logos>33.jpg</logos>
+	</admission>
+	<admission>
+		<title>Ryerson University International College Canada</title>
+		<url>ryersonuic-ryersonuic.php</url>
+		<logos>34.jpg</logos>
+	</admission>
+	<admission>
+		<title>UMass Boston Navitas Global Student Success Program US</title>
+		<url>umbnavitasgssp.php</url>
+		<logos>35.jpg</logos>
+	</admission>
+	<admission>
+		<title>Queens College Global Student Success Program US</title>
+		<url>queensgssp.php</url>
+		<logos>36.jpg</logos>
+	</admission>
+	<admission>
+		<title>Wilfrid Laurier International College Canada</title>
+		<url>laurieric.php</url>
+		<logos>37.jpg</logos>
+	</admission>
+	<admission>
+		<title>Australian College of Business and Technology Sri Lanka</title>
+		<url>acbt.php</url>
+		<logos>38.jpg</logos>
+	</admission>
+	<admission>
+		<title>Curtin Singapore</title>
+		<url>curtin-edu.php</url>
+		<logos>39.jpg</logos>
+	</admission>
+	<admission>
+		<title>Murdoch University Dubai United Arab Emirates</title>
+		<url>murdochuniversitydubai.php</url>
+		<logos>40.jpg</logos>
+	</admission>
+</school>

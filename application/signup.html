@@ -1,0 +1,132 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+  <meta charset="utf-8">
+  <title>FixApp - Tech Finder</title>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../css/w3.css">
+<link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+<!-- Styles -->
+
+<style>
+
+
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<script>
+function showUser(str) {
+  if (str=="") {
+    document.getElementById("txtHint").innerHTML="";
+    return;
+  } 
+  if (window.XMLHttpRequest) {
+    // code for IE7+, Firefox, Chrome, Opera, Safari
+    xmlhttp=new XMLHttpRequest();
+  } else { // code for IE6, IE5
+    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+  xmlhttp.onreadystatechange=function() {
+    if (this.readyState==4 && this.status==200) {
+      document.getElementById("txtHint").innerHTML=this.responseText;
+    }
+  }
+  xmlhttp.open("GET","get_user.php?q="+str,true);
+  xmlhttp.send();
+}
+
+  
+</script>
+<script>
+var cur = 0;
+function displayDiv(idx) {
+    document.getElementById("div"+cur).style.display = "none";
+    document.getElementById("div"+idx).style.display = "block";
+    cur = idx;
+    return true;
+}
+</script>
+
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    $( "#datepicker" ).datepicker();
+  } );
+  </script>
+
+
+
+</head>
+
+
+
+<body>
+
+<div class="card-banner">
+<div class="s4-btn">Create Account</div>
+
+<form action="../application/auth_signup.php" method="POST"><br />
+
+<p>
+<label for="accttype"></label>
+<select size="1" class="body-parag w3-text-grey" name="acct_typ" >
+<option>Type of Account</option>
+<option value="Student">Student</option>
+<option value="Agent">Agent / Reseller</option>
+<option valu="Partner">Partner University</option>
+</select></p>
+
+<input type="text" class="body-parag" name="username" placeholder="Create Username" >
+<input type="text" class="body-parag" name="psswrd" placeholder="Create Password" >
+<input type="text" class="body-parag" name="con_psswrd" placeholder="Confirm Password" >
+
+<input type="text" class="body-parag" name="cal_name" placeholder="Name" >
+<input type="text" class="body-parag" name="cal_phone" placeholder="Phone No" >
+<input type="text" class="body-parag" name="cal_address" placeholder="Address">
+<input type="text" class="body-parag" name="cal_email" placeholder="E-mail Address">
+
+
+<label for="Date"></label>
+<input type="text" id="datepicker" class="body-parag" placeholder="Date of Birth" name="birth_dt" value="">
+
+<p>
+<label for="Marital"></label>
+<select size="1" class="body-parag w3-text-grey" name="mar_status" >
+<option>Select Martial Status</option>
+<option>Married</option>
+<option>Single</option>
+</select></p>
+
+<p>
+<label for="Gender"></label>
+<select size="1" class="body-parag w3-text-grey" name="gender" >
+<option>Select Gender</option>
+<option>Female</option>
+<option>Male</option>
+</select></p>
+
+
+<label for=""></label>
+
+ <p><center><input type="submit" name="submit" value="Submit" class="s4-btn"><input type="reset" name="reset" value="Cancel" class="s4-btn"></center></p></form>
+ </div>
+
+</div>
+</div>
+</div>
+
+  <div class="w3-row-padding"> 
+  <div class="w3-col"><h2 class="w3-text-grey"></h2>
+    <p class="w3-text-grey"></p>
+      
+ </div></div>
+
+</body>
+</html>

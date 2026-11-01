@@ -1,0 +1,93 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>New Page 1</title>
+</head>
+
+<body>
+<?php
+$date1 = $_POST['date1'];$date2=$_POST['date2'];
+mysql_select_db("hospital",$db);
+//$sql = "SELECT * FROM pharm_billing WHERE patient_id = '$_POST[pat_id]' && billtime = '$_POST[tym]'";
+$sql = "SELECT * FROM receipt WHERE datepay BETWEEN '$_POST[date1]' AND '$_POST[date2]' && mode='cash'";
+$result = mysql_query($sql);
+while($rows=mysql_fetch_array($result)){
+echo '<table width="600" border="0" align="center" cellpadding="0" cellspacing="1">';
+echo "<tr bgcolor='#33CC33'>
+<td><font face=arial, size='2'><b>Date Billed</td><td colspan=2><font face=Courier New, size='2'><center>".$rows['billdate']."</td><td><font face=arial, size='2'><center><b>Invoice No</td><td><font face=Courier New, size='2'><center>".$rows['billdate']."/".$rows['sn']."</td>
+</tr><br />";
+echo "<tr bgcolor='#FFFF99'>
+<td><font face=arial, size='2'><center><b>Description of Item</td><td><font face=arial, size='3'><center><b>Quantity</td><td colspan=2><font face=arial, size='3'><center><b>Rate (<strike>N</strike>) </td><td colspan=2><font face=arial, size='3'><center><b>HMO Support</td><td><font face=arial, size='2'><center><b>OWN Pay</b></td><td><font face=arial, size='2'><center><b>Subtotal(<strike>N</strike>)</b></td>
+</tr>";
+echo "<tr bgcolor='#009933'>
+<td><font face=Courier New, size='1' color='#ffffff'>".$rows['proname']."</td><td><font face=Courier New, size='1' color='#ffffff'><center>".$rows['qty']."</td><td colspan=2><font face=Courier New, size='1' color='#ffffff'><center>".$rows['rate']."</td><td colspan=2><font face=Courier New, size='1' color='#ffffff'><center>".$rows['prodpricehmo']."</td><td><font face=Courier New, size='1' color='#ffffff'><center>".$rows['prodpriceown']."</td><td><font face=Courier New, size='1' color='#ffffff'><center>".$rows['prodprice']."</td>
+</tr>";
+echo "<tr bgcolor='#009933'>
+<td><font face=Courier New, size='1' color='#ffffff'>".$rows['proname1']."</td><td><font face=Courier New, size='1' color='#ffffff'><center>".$rows['qty1']."</td><td colspan=2><font face=Courier New, size='1' color='#ffffff'><center>".$rows['rate1']."</td><td colspan=2><font face=Courier New, size='1' color='#ffffff'><center>".$rows['prodpricehmo1']."</td><td><font face=Courier New, size='1' color='#ffffff'><center>".$rows['prodpriceown1']."</td><td><font face=Courier New, size='1' color='#ffffff'><center>".$rows['prodprice1']."</td>
+</tr>";
+echo "<tr bgcolor='#009933'>
+<td><font face=Courier New, size='1' color='#ffffff'>".$rows['proname2']."</td><td><font face=Courier New, size='1' color='#ffffff'><center>".$rows['qty2']."</td><td colspan=2><font face=Courier New, size='1' color='#ffffff'><center>".$rows['rate2']."</td><td colspan=2><font face=Courier New, size='1' color='#ffffff'><center>".$rows['prodpricehmo2']."</td><td><font face=Courier New, size='1' color='#ffffff'><center>".$rows['prodpriceown2']."</td><td><font face=Courier New, size='1' color='#ffffff'><center>".$rows['prodprice2']."</td>
+</tr>";
+echo "<tr bgcolor='#009933'>
+<td><font face=Courier New, size='1' color='#ffffff'>".$rows['proname3']."</td><td><font face=Courier New, size='1' color='#ffffff'><center>".$rows['qty3']."</td><td colspan=2><font face=Courier New, size='1' color='#ffffff'><center>".$rows['rate3']."</td><td colspan=2><font face=Courier New, size='1' color='#ffffff'><center>".$rows['prodpricehmo3']."</td><td><font face=Courier New, size='1' color='#ffffff'><center>".$rows['prodpriceown3']."</td><td><font face=Courier New, size='1' color='#ffffff'><center>".$rows['prodprice3']."</td>
+</tr>";
+echo "<tr bgcolor='#009933'>
+<td><font face=Courier New, size='1' color='#ffffff'>".$rows['proname4']."</td><td><font face=Courier New, size='1' color='#ffffff'><center>".$rows['qty4']."</td><td colspan=2><font face=Courier New, size='1' color='#ffffff'><center>".$rows['rate4']."</td><td colspan=2><font face=Courier New, size='1' color='#ffffff'><center>".$rows['prodpricehmo4']."</td><td><font face=Courier New, size='1' color='#ffffff'><center>".$rows['prodpriceown4']."</td><td><font face=Courier New, size='1' color='#ffffff'><center>".$rows['prodprice4']."</td>
+</tr>";
+echo "<tr bgcolor='#009933'>
+<td><font face=Courier New, size='1' color='#ffffff'>".$rows['proname5']."</td><td><font face=Courier New, size='1' color='#ffffff'><center>".$rows['qty5']."</td><td colspan=2><font face=Courier New, size='1' color='#ffffff'><center>".$rows['rate5']."</td><td colspan=2><font face=Courier New, size='1' color='#ffffff'><center>".$rows['prodpricehmo5']."</td><td><font face=Courier New, size='1' color='#ffffff'><center>".$rows['prodpriceown5']."</td><td><font face=Courier New, size='1' color='#ffffff'><center>".$rows['prodprice5']."</td>
+</tr>";
+echo "<tr bgcolor='#009933'>
+<td><font face=Courier New, size='1' color='#ffffff'>".$rows['proname6']."</td><td><font face=Courier New, size='1' color='#ffffff'><center>".$rows['qty6']."</td><td colspan=2><font face=Courier New, size='1' color='#ffffff'><center>".$rows['rate6']."</td><td colspan=2><font face=Courier New, size='1' color='#ffffff'><center>".$rows['prodpricehmo6']."</td><td><font face=Courier New, size='1' color='#ffffff'><center>".$rows['prodpriceown6']."</td><td><font face=Courier New, size='1' color='#ffffff'><center>".$rows['prodprice6']."</td>
+</tr>";
+echo "<tr bgcolor='#009933'>
+<td><font face=Courier New, size='1' color='#ffffff'>".$rows['proname7']."</td><td><font face=Courier New, size='1' color='#ffffff'><center>".$rows['qty7']."</td><td colspan=2><font face=Courier New, size='1' color='#ffffff'><center>".$rows['rate7']."</td><td colspan=2><font face=Courier New, size='1' color='#ffffff'><center>".$rows['prodpricehmo7']."</td><td><font face=Courier New, size='1' color='#ffffff'><center>".$rows['prodpriceown7']."</td><td><font face=Courier New, size='1' color='#ffffff'><center>".$rows['prodprice7']."</td>
+</tr>";
+echo "<tr bgcolor='#009933'>
+<td><font face=Courier New, size='1' color='#ffffff'>".$rows['proname8']."</td><td><font face=Courier New, size='1' color='#ffffff'><center>".$rows['qty8']."</td><td colspan=2><font face=Courier New, size='1' color='#ffffff'><center>".$rows['rate8']."</td><td colspan=2><font face=Courier New, size='1' color='#ffffff'><center>".$rows['prodpricehmo8']."</td><td><font face=Courier New, size='1' color='#ffffff'><center>".$rows['prodpriceown8']."</td><td><font face=Courier New, size='1' color='#ffffff'><center>".$rows['prodprice8']."</td>
+</tr>";
+echo "<tr bgcolor='#009933'>
+<td><font face=Courier New, size='1' color='#ffffff'>".$rows['proname9']."</td><td><font face=Courier New, size='1' color='#ffffff'><center>".$rows['qty9']."</td><td colspan=2><font face=Courier New, size='1' color='#ffffff'><center>".$rows['rate9']."</td><td colspan=2><font face=Courier New, size='1' color='#ffffff'><center>".$rows['prodpricehmo9']."</td><td><font face=Courier New, size='1' color='#ffffff'><center>".$rows['prodpriceown9']."</td><td><font face=Courier New, size='1' color='#ffffff'><center>".$rows['prodprice9']."</td>
+</tr>";
+echo "<tr bgcolor='#FF2D2D'>
+<td><font face=arial, size='2' color='#ffffff'><center><b>TOTAL IN EACH CASE</td><td colspan=3></td><td colspan=2><font face=arial, size='2' color='#ffffff'><center><b>Payable by HMO</td><td><font face=arial, size='2' color='#ffffff'><center><b>Payable by SELF</b></td><td><font face=arial, size='2' color='#ffffff'><center><b>GRAND Total</b></td>
+</tr>";
+echo "<tr bgcolor='#FFFF99'>
+<td><font face=Courier New, size='1' color='#000000'></td><td colspan=3></td><td colspan=2><font face=Courier New, size='1' color='#000000'><center><strike>N</strike>".$rows['total_hmo']."</td><td><font face=Courier New, size='1' color='#000000'><center><strike>N</strike>".$rows['total_own']."</td><td><font face=Courier New, size='1' color='#000000'><center><strike>N</strike>".$rows['total']."</td>
+</tr>";
+echo '<font face=arial, size=2 align=right>';
+echo '<br />';
+echo '<b>THIS IS THE SUMMARY OF YOUR BILL</b><br />';
+echo '<font face=Webdings color=#FF0000>4</font>HMO PAY: <font face=Courier New size=2><strike>N</strike>'.number_format($rows['total_hmo'],2).'</font><br />';
+echo '<font face=Webdings color=#006699>4</font>OWN PAY: <font face=Courier New size=2><strike>N</strike>'.number_format($rows['total_own'],2).'</font><br />';
+echo '<b>GRAND TOTAL: <font face=Courier New size=2><strike>N</strike>'.number_format($rows['total'],2).'</font><br /><br />';
+echo '<b>SEE BILL DETAIL BELOW</b>';
+echo "<tr bgcolor='#CCCCCC'>
+<td colspan=8><font face=arial, size='2'><font face=Marlett color=#FF0000>u</font></td><td <font face=Courier New, size='2'><center></td>
+</tr><br />";
+echo "<tr bgcolor='#33CC33'>
+<td><font face=arial, size='2'><b>Department</td><td colspan=2><font face=Courier New, size='2'><center>".$rows['department']."</td><td colspan=5></td><td></td>
+</tr><br />";
+echo "<tr bgcolor='#33CC33'>
+<td><font face=arial, size='2'><b>Consultant</td><td colspan=2><font face=Courier New, size='2'><center>".$rows['docode']."</td><td colspan=5></td><td></td>
+</tr><br />";
+
+echo '<table width="600" border="0" align="center" cellpadding="0" cellspacing="1">';
+echo "<tr bgcolor='#FFFF99'>
+<td colspan=4><font face=arial, size='2'>If you have sponsors or insurance cover, your bill will be sent to any or all of these sponsors:</td><td></td>
+</tr><br />";
+echo "<tr bgcolor='#CCCCCC'>
+<td><font face=arial, size='2'><center><b>BILLED TO</font><font face=Webdings color=#FF0000>4</font></td><td><font face=arial, size='2'><center><b>EMPLOYER</td><td colspan=2><font face=arial, size='2'><center><b>HEALTH INSURANCE</b></td><td><font face=arial, size='2'><center><b>FAMILY</b></td>
+</tr>";
+echo "<tr bgcolor='#FFFF99'>
+<td><font face=Courier New, size='1' color='#000000'></td><td><font face=Courier New, size='1' color='#000000'>".$rows['organization']."</td><td colspan=2><font face=Courier New, size='1' color='#000000'><center>".$rows['hmo']."</td><td><font face=Courier New, size='1' color='#000000'><center>".$rows['fam_name']."</td>
+</tr><br />";
+echo '</table>';
+echo "</font>";
+}
+
+?>
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+id,category_id,spec_list
+1,1,Excavators
+2,1, Loaders
+3,1,Dozers
+4,1,Graders
+5,1,Dump Trucks
+6,1,Cranes
+7,1,Backhoes
+8,1,Concrete Equipment
+9,2,Tractors
+10,2,Harvesters
+11,2,Plows
+12,2,Seeders
+13,2,Balers
+14,2,Sprayers
+15,2,Cultivators
+16,3,Machining Tools
+17,3,CNC Machines
+18,3,Presses
+19,3,Welding Equipment
+20,3,Injection Molding Machines
+21,3,Conveyors
+22,3,Mixers
+23,4,Draglines
+24,4,Shovels
+25,4,Dump Trucks
+26,4,Underground Loaders
+27,4,Drills
+28,4,Crushers
+29,4,Screening Equipment
+30,5,Forklifts
+31,5,Palet Jacks
+32,5,Hoists
+33,5,Cranes
+34,5,Conveyors
+35,5,Dock Levelers
+36,6,Floor Scrubbers
+37,6,Vacuum Cleaners
+38,6,Pressure Washers
+39,6,Lifts
+40,6,Generators
+41,6,Compressors
+42,7,Turbines
+43,7,Generators
+44,7,Transformers
+45,7,Boilers
+46,7,Pumps
+47,7,Heat Exchangers

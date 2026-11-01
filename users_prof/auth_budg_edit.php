@@ -1,0 +1,58 @@
+<?php
+$id=$_POST['id']; 
+$qty1=$_POST['qty1']; 
+$rt1=$_POST['rt1']; 
+$price1=$_POST['price1']; 
+$fy_row1=$_POST['fy_row1']; 
+$desc1=$_POST['desc1']; 
+$year=$_POST['year'];
+$bud_type=$_POST['bud_type'];
+$bud_categ=$_POST['bud_categ'];
+
+//$subtot_fy = ($fy_row1+$fy_row2+$fy_row3+$fy_row4+$fy_row5);
+//$subtot_fy1 = ($fy_row6+$fy_row6+$fy_row6+$fy_row6+$fy_row10);
+//$subtot_fy2= ($fy_row11+$fy_row12+$fy_row13+$fy_row14+$fy_row15);
+//$subtot_srv = ($price1+$price2+$price3+$price4+$price5);
+//$subtot_net = ($price6+$price7+$price8+$price9+$price10);
+//$subtot_str = ($price11+$price12+$price13+$price14+$price15);
+
+
+if (!$year) {
+echo 'Please Select the Fiscal year for your Budget';
+exit();
+}
+
+include '../link/connect.php';
+
+$price1=mysqli_real_escape_string($conn,$_POST['price1']); 
+$fy_row1=mysqli_real_escape_string($conn,$_POST['fy_row1']); 
+$desc1=mysqli_real_escape_string($conn,$_POST['desc1']); 
+$year=mysqli_real_escape_string($conn,$_POST['year']);
+$bud_type=mysqli_real_escape_string($conn,$_POST['bud_type']);
+$bud_categ=mysqli_real_escape_string($conn,$_POST['bud_categ']);
+
+$sql = "UPDATE budgets SET year='$year', desc1='$desc1', fy_row='$fy_row1', qty='$qty1', rate='$rt1', price='$price1', budtype='$bud_type', budcateg='$bud_categ' WHERE id='$id'";
+
+$result = mysqli_query($conn, $sql);
+
+if ($result > 0)
+{
+echo '<p> Budget Information Successfully Added </p>';
+if ($bud_categ == 'Hardware Budget') {
+include 'bugt_hardware.php';
+}
+if ($bud_categ == 'Software Budget') {
+include 'bugt_software.php';
+}
+if ($bud_categ == 'Special Projects Budget') {
+include 'bugt_sproject.php';
+}
+
+if ($bud_categ == 'Operational Expenses') {
+include 'op_exp.php';
+}
+  //include 'ass_add.php';
+ //include 'ext_budget.php';
+}
+
+?>

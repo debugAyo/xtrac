@@ -1,0 +1,82 @@
+mysqli_select_db($conn,"hospital");
+
+  $sql = 'CREATE TABLE other_scan( '.
+      'sn INT NOT NULL AUTO_INCREMENT, '.
+      'patient_id VARCHAR (20) NOT NULL, '.
+      'officer CHAR(50) NOT NULL, '.
+      'datexam  DATE NOT NULL, '.
+      'examreq  VARCHAR(50) NOT NULL, '.
+      'image    MEDIUMBLOB NOT NULL, '.
+      'symptoms CHAR(50) NOT NULL, '.
+      
+      'primary key ( sn ))';
+      	
+      	if (mysqli_query($conn, $sql)) {
+      	      	echo '<p>';
+    echo "<b><font color=green>Other Scan </font></b>created successfully";
+} else {
+echo '<p>';
+echo '<b>Duplicating Attempt Error: <b> <font color=red>Other Scan</font>';
+   // echo "Error creating table: " . mysqli_error($conn);
+}
+
+  mysqli_select_db($conn,"hospital");
+  
+            
+ $sql = 'CREATE TABLE mammo_scan( '.
+      'sn INT NOT NULL AUTO_INCREMENT, '.
+      'patient_id VARCHAR (20) NOT NULL, '.
+      'officer CHAR(50) NOT NULL, '.
+      'datexam  DATE NOT NULL, '.
+      'examreq  VARCHAR(50) NOT NULL, '.
+      'image    MEDIUMBLOB NOT NULL, '.
+      'symptoms CHAR(50) NOT NULL, '.
+      'lump CHAR(50) NOT NULL, '.
+    	
+		'primary key ( sn ))';
+      	
+      	if (mysqli_query($conn, $sql)) {
+      	      	echo '<p>';
+    echo "<b><font color=green>Mammo Scan </font></b>created successfully";
+} else {
+echo '<p>';
+echo 'Duplicating Attempt Error: <b> <font color=red>Mammo Scan</font>';
+    //echo "Error creating table: " . mysqli_error($conn);
+}
+
+ 
+mysqli_select_db($conn,"hospital");
+
+  $sql = 'CREATE TABLE rad_billing( '.
+      'sn INT NOT NULL AUTO_INCREMENT, '.
+      'patient_id VARCHAR (20) NOT NULL, '.
+      'billdate  DATE NOT NULL, '.
+      'spservice2 CHAR(50) NOT NULL, '.
+      'spservice4  VARCHAR(50) NOT NULL, '.
+      'subtotalhmo2  VARCHAR(50) NOT NULL, '.
+      'subtotalhmo4    VARCHAR(50) NOT NULL, '.
+      'subtotalown2 CHAR(50) NOT NULL, '.
+      'subtotalown4 CHAR(50) NOT NULL, '.
+      'price2 VARCHAR(20) NOT NULL, '.
+      'price4 CHAR(50) NOT NULL, '.
+      'total_hmo  VARCHAR(20) NOT NULL, '.
+      'total_own VARCHAR (20) NOT NULL, '.
+      'total VARCHAR(20) NOT NULL, '.
+      'organization  VARCHAR(50) NOT NULL, '.
+      'fam_name  VARCHAR(50) NOT NULL, '.
+      'hmo VARCHAR(20) NOT NULL, '.
+      'department CHAR(50) NOT NULL, '.
+      'docode VARCHAR(20) NOT NULL, '.
+            
+		'primary key ( sn ))';
+      	
+      	if (mysqli_query($conn, $sql)) {
+      	      	echo '<p>';
+    echo "<b><font color=green>RAD Billing </font></b>created successfully";
+} else {
+echo '<p>';
+echo '<b>Duplicating Attempt Error: <b> <font color=red>RAD Billing</font>';
+   // echo "Error creating table: " . mysqli_error($conn);
+}
+
+

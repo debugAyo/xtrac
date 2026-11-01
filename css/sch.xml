@@ -1,0 +1,922 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<pages xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+	<link>
+		<sn>1</sn>
+		<title>QUEST UNIVERSITY, Canada </title>
+		<url>auth_sch_search.php</url>
+		<logos><?php <img src=staff/schools/quest_logo.jpg width=100%>?></logos>
+		<course> / Architecture, Electrical Engineering, Civil Engineering, Aeronautic Engineering, Robotic Enigneering</course>
+		
+	</link>
+	<link>
+		<sn>2</sn>
+		<title>KING'S WESTERN UNIVERSITY, Canada </title>
+		<url>auth_sch_search.php</url>
+		<logos><?php <img src=staff/schools/kings_logo.jpg width=100%>?></logos>
+		<course> / Architecture, Electrical Engineering, Civil Engineering, Aeronautic Engineering, Robotic Enigneering</course>
+		
+	</link>
+	<link>
+		<sn>3</sn>
+		<title>ALEXANDER COLLEGE, Canada  </title>
+		<url>auth_sch_search.php</url>
+		<logos><?php <img src=staff/schools/alex_logo.jpg width=100%>?></logos>
+		<course> / Architecture, Electrical Engineering, Civil Engineering, Aeronautic Engineering, Robotic Enigneering</course>
+		
+	</link>
+	<link>
+		<sn>4</sn>
+		<title>TORONTO FILM SCHOOL, Canada  </title>
+		<url>auth_sch_search.php</url>
+		<logos><?php <img src=staff/schools/toronto_film_logo.jpg width=100%>?></logos>
+		<course> / Architecture, Electrical Engineering, Civil Engineering, Aeronautic Engineering, Robotic Enigneering</course>
+		
+	</link>
+	<link>
+		<sn>5</sn>
+		<title>Centennial College, Canada  </title>
+		<url>auth_sch_search.php</url>
+		<logos><?php <img src=staff/schools/centennial_logo.jpg width=100%>?></logos>
+		<course> / Architecture, Electrical Engineering, Civil Engineering, Aeronautic Engineering, Robotic Enigneering</course>
+		
+	</link>
+	<link>
+		<sn>6</sn>
+		<title>New York Institute of Technology, Canada </title>
+		<url>auth_sch_search.php</url>
+		<logos><?php <img src=staff/schools/new_york_ins_logo.jpg width=100%>?></logos>
+		<course> / Architecture, Electrical Engineering, Civil Engineering, Aeronautic Engineering, Robotic Enigneering</course>
+		
+	</link>
+	<link>
+		<sn>7</sn>
+		<title>Lauretian University, Canada  </title>
+		<url>auth_sch_search.php</url>
+		<logos><?php <img src=staff/schools/laurentian_logo.jpg width=100%>?></logos>
+		<course> / Architecture, Electrical Engineering, Civil Engineering, Aeronautic Engineering, Robotic Enigneering</course>
+		
+	</link>
+	<link>
+		<sn>8</sn>
+		<title>Medipol University, Turkey  </title>
+		<url>auth_sch_search.php</url>
+		<logos><?php <img src=staff/schools/medipo_logo.jpg width=100%>?></logos>
+		<course> / Architecture, Electrical Engineering, Civil Engineering, Aeronautic Engineering, Robotic Enigneering</course>
+	</link>
+	<link>
+		<sn>9</sn>
+		<title>GULF MEDICAL UNIVERSITY, United Arab Emirates </title>
+		<url>auth_sch_search.php</url>
+		<logos><?php <img src=staff/schools/gulf_logo.jpg width=100%>?></logos>
+		<course> / Architecture, Electrical Engineering, Civil Engineering, Aeronautic Engineering, Robotic Enigneering</course>
+	</link>
+	<link>
+		<sn>10</sn>	
+		<title>COLLEGE OF AJMAN, United Arab Emirates</title>
+		<url>auth_sch_search.php</url>
+		<logos><?php <img src=staff/schools/ajman_logo.jpg width=100%>?></logos>
+		<course> / Architecture, Electrical Engineering, Civil Engineering, Aeronautic Engineering, Robotic Enigneering</course>
+	</link>
+	<link>
+	    <sn>11</sn>
+		<title>Conestoga College, Canada</title>
+		<url>auth_sch_search.php</url>
+		<logos><?php <img src=staff/schools/conestoga_logo.jpg width=100%>?></logos>
+		<course> / Architecture, Electrical Engineering, Civil Engineering, Aeronautic Engineering, Robotic Enigneering</course>
+	</link>
+	<link>
+	    <sn>12</sn>
+		<title>Niagara college, Canada</title>
+		<url>auth_sch_search.php</url>
+		<logos><?php <img src=staff/schools/niagara_logo.jpg width=100%>?></logos>
+		<course> / Architecture, Electrical Engineering, Civil Engineering, Aeronautic Engineering, Robotic Enigneering</course>
+	</link>
+	
+	<link>
+	    <sn>13</sn>
+		<title>University of Windsor, Canada </title>
+		<url>auth_sch_search.php</url>
+		<logos><?php <img src=staff/schools/windsor_logo.jpg width=100%>?></logos>
+		<course> / Architecture, Electrical Engineering, Civil Engineering, Aeronautic Engineering, Robotic Enigneering</course>
+	</link>
+	<link>
+		<sn>14</sn>
+		<title>COLLEGE OF CANYONS, United States</title>
+		<url>auth_sch_search.php</url>
+		<logos><?php <img src=staff/schools/canyons_logo.jpg width=100%>?></logos>
+		<course> / Architecture, Electrical Engineering, Civil Engineering, Aeronautic Engineering, Robotic Enigneering</course>
+	</link>
+	<link>
+		<sn>15</sn>
+		<title>IDYLLWILD ARTS ACADEMY, United States </title>
+		<url>auth_sch_search.php</url>
+		<logos><?php <img src=staff/schools/idywildatrs_logo.jpg width=100%>?></logos>
+		<course> / Architecture, Electrical Engineering, Civil Engineering, Aeronautic Engineering, Robotic Enigneering</course>
+	</link>
+	<link>
+		<sn>16</sn>
+		<title>THORNTON DONOVAN SCHOOL, United States</title>
+		<url>auth_sch_search.php</url>
+		<logos><?php <img src=staff/schools/thornton_logo.jpg width=100%>?></logos>
+		<course> / Architecture, Electrical Engineering, Civil Engineering, Aeronautic Engineering, Robotic Enigneering</course>
+	</link>
+	<link>
+	<sn>17</sn>
+		<title>Fairleigh Dickinson University, Canada </title>
+		<url>auth_sch_search.php</url>
+		<logos><?php <img src=staff/schools/fairleigh_logo.jpg width=100%>?></logos>
+		<course> / Architecture, Electrical Engineering, Civil Engineering, Aeronautic Engineering, Robotic Enigneering</course>
+	</link>
+	<link>
+		<sn>18</sn>
+		<title>American University Canada</title>
+		<url>auth_sch_search.php</url>
+		<logos><?php <img src=staff/schools/aud_logo.jpg width=100%>?></logos>
+		<course> / Architecture, Electrical Engineering, Civil Engineering, Aeronautic Engineering, Robotic Enigneering</course>
+	</link>
+	<link>
+		<sn>19</sn>
+		<title>TIFFIN UNIVERSITY, United States </title>
+		<url>auth_sch_search.php</url>
+		<logos><?php <img src=staff/schools/tiffin_logo.jpg width=100%>?></logos>
+		<course> / Architecture, Electrical Engineering, Civil Engineering, Aeronautic Engineering, Robotic Enigneering</course>
+	</link>
+	<link>
+		<sn>20</sn>
+		<title>WEBSTER UNIVERSITY, United States </title>
+		<url>auth_sch_search.php</url>
+		<logos><?php <img src=staff/schools/webster_logo.jpg width=100%>?></logos>
+		<course> / Architecture, Electrical Engineering, Civil Engineering, Aeronautic Engineering, Robotic Enigneering</course>
+	</link>
+	
+	<link>
+		<sn>21</sn>
+		<title>LINCOLN UNIVERSITY United States </title>
+		<url>auth_sch_search.php</url>
+		<logos><?php <img src=staff/schools/lincoln_logo.jpg width=100%>?></logos>
+		<course> / Architecture, Electrical Engineering, Civil Engineering, Aeronautic Engineering, Robotic Enigneering</course>
+	</link>
+	<link>
+		<sn>22</sn>
+		<title>BIRMINGHAM INTERNATIONAL COLLEGIATE, Canada</title>
+		<url>auth_sch_search.php</url>
+		<logos><?php <img src=staff/schools/birmingham_logo.jpg width=100%>?></logos>
+		<course> / Architecture, Electrical Engineering, Civil Engineering, Aeronautic Engineering, Robotic Enigneering</course>
+	</link>
+	<link>
+		<sn>23</sn>
+		<title>St. Boniface Diocesan High School, Canada </title>
+		<url>auth_sch_search.php</url>
+		<logos><?php <img src=staff/schools/sdhs_logo.jpg width=100%>?></logos>
+		<course> / Architecture, Electrical Engineering, Civil Engineering, Aeronautic Engineering, Robotic Enigneering</course>
+	</link>
+	<link>
+		<sn>24</sn>
+		<title>PACIFIC LINK COLLEGE, Canada</title>
+		<url>auth_sch_search.php</url>
+		<logos><?php <img src=staff/schools/plc_logo.jpg width=100%>?></logos>
+		<course> / Architecture, Electrical Engineering, Civil Engineering, Aeronautic Engineering, Robotic Enigneering</course>
+	</link>
+
+	<link>
+		<sn>25</sn>
+		<title>NORQUEST COLLEGE Canada </title>
+		<url>auth_sch_search.php</url>
+		<logos><?php <img src=staff/schools/norquest_logo.jpg width=100%>?></logos>
+		<course> / Architecture, Electrical Engineering, Civil Engineering, Aeronautic Engineering, Robotic Enigneering</course>
+	</link>
+	
+		<link>
+		<sn>26</sn>
+		<title>Outstanding International Academy, Canada</title>
+		<url>auth_sch_search.php</url>
+		<logos><?php <img src=staff/schools/outstanding_logo.jpg width=100%>?></logos>
+		<course> / Architecture, Electrical Engineering, Civil Engineering, Aeronautic Engineering, Robotic Enigneering</course>
+	</link>
+	<link>
+		<sn>27</sn>
+		<title>Algoma University Canada</title>
+		<url>auth_sch_search.php</url>
+		<logos><?php <img src=staff/schools/algoma.jpg width=100%>?></logos>
+		<course> / Architecture, Electrical Engineering, Civil Engineering, Aeronautic Engineering, Robotic Enigneering</course>
+	</link>
+	<link>
+		<sn>28</sn>
+		<title>CURTIN UNIVERSITY, United Arab Emirates </title>
+		<url>auth_sch_search.php</url>
+		<logos><?php <img src=staff/schools/curtin_logo.jpg width=100%>?></logos>
+		<course> / Architecture, Electrical Engineering, Civil Engineering, Aeronautic Engineering, Robotic Enigneering</course>
+	</link>
+	<link>
+		<sn>29</sn>
+		<title>HTMI DUBAI, United Arab Emirates </title>
+		<url>auth_sch_search.php</url>
+		<logos><?php <img src=staff/schools/htmi_logo.jpg width=100%>?></logos>
+		<course> / Architecture, Electrical Engineering, Civil Engineering, Aeronautic Engineering, Robotic Enigneering</course>
+	</link>
+	<link>
+		<sn>30</sn>
+		<title>CARDIFF SIXTH COLLEGE, United Kingdom</title>
+		<url>auth_sch_search.php</url>
+		<logos><?php <img src=staff/schools/cardiff_logo.jpg width=100%>?></logos>
+		<course> / Architecture, Electrical Engineering, Civil Engineering, Aeronautic Engineering, Robotic Enigneering</course>
+	</link>
+	<link>
+		<sn>31</sn>
+		<title>ONLINE BUSINESS SCHOOL, United Kingdom</title>
+		<url>auth_sch_search.php</url>
+		<logos><?php <img src=pstaff/schools/online_bis_logo.jpg width=100%>?></logos>
+	</link>
+	<link>
+		<sn>32</sn>
+		<title>LONDON SCHOOL OF BUSINESS, United Kingdom</title>
+		<url>auth_sch_search.php</url>
+		<logos><?php <img src=staff/schools/london_bis_logo.jpg width=100%>?></logos>
+	</link>
+	<link>
+		<sn>33</sn>
+		<title>C3S BUSINESS SCHOOL, Spain</title>
+		<url>auth_sch_search.php</url>
+		<logos><?php <img src=staff/schools/c3s_logo.jpg width=100%>?></logos>
+	</link>
+	<link>
+		<sn>34</sn>
+		<title>EU BUSINESS SCHOOL, Spain </title>
+		<url>auth_sch_search.php</url>
+		<logos><?php <img src=staff/schools/eu_bis_logo.jpg width=100%>?></logos>
+	</link>
+	<link>
+		<sn>35</sn>
+		<title>UNIVERSIDAD EUROPEA, Spain </title>
+		<url>auth_sch_search.php</url>
+		<logos><?php <img src=staff/schools/universidad_logo.jpg width=100%>?></logos>
+	</link>
+	<link>
+		<sn>36</sn>
+		<title>LEMAN MANHATTAN PREPARATORY SCHOOL, United States</title>
+		<url>auth_sch_search.php</url>
+		<logos><?php <img src=staff/schools/leman_logo.jpg width=100%>?></logos>
+	</link>
+	<link>
+		<sn>37</sn>
+		<title>OHLONE COLLEGE, United States </title>
+		<url>auth_sch_search.php</url>
+		<logos><?php <img src=staff/schools/ohlone_logo.jpg width=100%>?></logos>
+	</link>
+	<link>
+		<sn>38</sn>
+		<title>CONCORDIA UNIVERSITY, United States </title>
+		<url>auth_sch_search.php</url>
+		<logos><?php <img src=staff/schools/concordia_logo.jpg width=100%>?></logos>
+	</link>
+	<link>
+		<sn>39</sn>
+		<title>GONZAGA UNIVERSITY, United States</title>
+		<url>auth_sch_search.php</url>
+		<logos><?php <img src=staff/schools/gozanga_logo.jpg width=100%>?></logos>
+	</link>
+	<link>
+		<sn>40</sn>
+		<title>GANNON UNIVERSITY, United States </title>
+		<url>auth_sch_search.php</url>
+		<logos><?php <img src=staff/schools/gannon_logo.jpg width=100%>?></logos>
+	</link>
+	
+		<link>
+		<sn>41</sn>
+		<title>FENERBAHCHE UNIVERSITY, Turkey </title>
+		<url>auth_sch_search.php</url>
+		<logos><?php <img src=staff/schools/fenerbahce_logo.jpg width=100%>?></logos>
+		<course> / Architecture, Electrical Engineering, Civil Engineering, Aeronautic Engineering, Robotic Enigneering</course>
+		
+	</link>
+	<link>
+		<sn>42</sn>
+		<title>ATILIM UNIVERSITY, Turkey </title>
+		<url>auth_sch_search.php</url>
+		<logos><?php <img src=staff/schools/atilim_logo.jpg width=100%>?></logos>
+		<course> / Architecture, Electrical Engineering, Civil Engineering, Aeronautic Engineering, Robotic Enigneering</course>
+		
+	</link>
+	<link>
+		<sn>43</sn>
+		<title>ISTANBUL TICARET UNIVERSITY, Turkey  </title>
+		<url>auth_sch_search.php</url>
+		<logos><?php <img src=staff/schools/ticaret_logo.jpg width=100%>?></logos>
+		<course> / Architecture, Electrical Engineering, Civil Engineering, Aeronautic Engineering, Robotic Enigneering</course>
+		
+	</link>
+	<link>
+		<sn>44</sn>
+		<title>DOGUS UNIVERSITY, Turkey </title>
+		<url>auth_sch_search.php</url>
+		<logos><?php <img src=staff/schools/dogus_logo.jpg width=100%>?></logos>
+		<course> / Architecture, Electrical Engineering, Civil Engineering, Aeronautic Engineering, Robotic Enigneering</course>
+		
+	</link>
+	<link>
+		<sn>45</sn>
+		<title>BEYKENT UNIVERSITY, Turkey </title>
+		<url>auth_sch_search.php</url>
+		<logos><?php <img src=staff/schools/beykent_logo.jpg width=100%>?></logos>
+		<course> / Architecture, Electrical Engineering, Civil Engineering, Aeronautic Engineering, Robotic Enigneering</course>
+		
+	</link>
+	<link>
+		<sn>46</sn>
+		<title>ISTINYE UNIVERSITY, Turkey </title>
+		<url>auth_sch_search.php</url>
+		<logos><?php <img src=staff/schools/isu_logo.jpg width=100%>?></logos>
+		<course> / Architecture, Electrical Engineering, Civil Engineering, Aeronautic Engineering, Robotic Enigneering</course>
+		
+	</link>
+	<link>
+		<sn>47</sn>
+		<title>KADIR HAS UNIVERSITY, Turkey  </title>
+		<url>auth_sch_search.php</url>
+		<logos><?php <img src=staff/schools/kadir_logo.jpg width=100%>?></logos>
+		<course> / Architecture, Electrical Engineering, Civil Engineering, Aeronautic Engineering, Robotic Enigneering</course>
+		
+	</link>
+	<link>
+		<sn>48</sn>
+		<title>ILIA STATE UNIVERSITY, United States  </title>
+		<url>auth_sch_search.php</url>
+		<logos><?php <img src=staff/schools/heliae_logo.jpg width=100%>?></logos>
+		<course> / Architecture, Electrical Engineering, Civil Engineering, Aeronautic Engineering, Robotic Enigneering</course>
+	</link>
+	<link>
+		<sn>49</sn>
+		<title>ALTE UNIVERSITY, United States </title>
+		<url>auth_sch_search.php</url>
+		<logos><?php <img src=staff/schools/alte_logo.jpg width=100%>?></logos>
+		<course> / Architecture, Electrical Engineering, Civil Engineering, Aeronautic Engineering, Robotic Enigneering</course>
+	</link>
+	<link>
+		<sn>50</sn>	
+		<title>NEW VISION UNIVERSITY, United States</title>
+		<url>auth_sch_search.php</url>
+		<logos><?php <img src=staff/schools/newvision_logo.jpg width=100%>?></logos>
+		<course> / Architecture, Electrical Engineering, Civil Engineering, Aeronautic Engineering, Robotic Enigneering</course>
+	</link>
+	<link>
+	    <sn>51</sn>
+		<title>BATUMI UNIVERSITY, United States</title>
+		<url>auth_sch_search.php</url>
+		<logos><?php <img src=staff/schools/batumi_logo.jpg width=100%>?></logos>
+		<course> / Architecture, Electrical Engineering, Civil Engineering, Aeronautic Engineering, Robotic Enigneering</course>
+	</link>
+	<link>
+	    <sn>52</sn>
+		<title>TIO UNIVERSITY AMSTERDAM, Netherlands</title>
+		<url>auth_sch_search.php</url>
+		<logos><?php <img src=staff/schools/tio_logo.jpg width=100%>?></logos>
+		<course> / Architecture, Electrical Engineering, Civil Engineering, Aeronautic Engineering, Robotic Enigneering</course>
+	</link>
+	
+	<link>
+	    <sn>53</sn>
+		<title>INTER COLLEGE UNIVERSITY Netherlands</title>
+		<url>auth_sch_search.php</url>
+		<logos><?php <img src=staff/schools/intercollege_logo.jpg width=100%>?></logos>
+		<course> / Architecture, Electrical Engineering, Civil Engineering, Aeronautic Engineering, Robotic Enigneering</course>
+	</link>
+	<link>
+		<sn>54</sn>
+		<title>SABA SCHOOL OF MEDICINE, Netherlands</title>
+		<url>auth_sch_search.php</url>
+		<logos><?php <img src=staff/schools/saba_logo.jpg width=100%>?></logos>
+		<course> / Architecture, Electrical Engineering, Civil Engineering, Aeronautic Engineering, Robotic Enigneering</course>
+	</link>
+	<link>
+		<sn>55</sn>
+		<title>LINNEAUS UNIVERSITY, Sweden </title>
+		<url>auth_sch_search.php</url>
+		<logos><?php <img src=staff/schools/linnaeus_logo.jpg width=100%>?></logos>
+		<course> / Architecture, Electrical Engineering, Civil Engineering, Aeronautic Engineering, Robotic Enigneering</course>
+	</link>
+	<link>
+		<sn>56</sn>
+		<title>SALEM INT. BOARDING SCHOOL, Germany</title>
+		<url>auth_sch_search.php</url>
+		<logos><?php <img src=staff/schools/salem_logo.jpg width=100%>?></logos>
+		<course> / Architecture, Electrical Engineering, Civil Engineering, Aeronautic Engineering, Robotic Enigneering</course>
+	</link>
+	<link>
+	<sn>57</sn>
+		<title>FOM HUSHSCHULE UNIVEERSITY, Germany </title>
+		<url>auth_sch_search.php</url>
+		<logos><?php <img src=staff/schools/fom_logo.jpg width=100%>?></logos>
+		<course> / Architecture, Electrical Engineering, Civil Engineering, Aeronautic Engineering, Robotic Enigneering</course>
+	</link>
+	<link>
+		<sn>58</sn>
+		<title>INT. UNIVERSITY OF APPLIED SCIENCE, Germany</title>
+		<url>auth_sch_search.php</url>
+		<logos><?php <img src=staff/schools/berlin_logo.jpg width=100%>?></logos>
+		<course> / Architecture, Electrical Engineering, Civil Engineering, Aeronautic Engineering, Robotic Enigneering</course>
+	</link>
+	<link>
+		<sn>59</sn>
+		<title>CBS INTERNATONAL SCHOOL, Germany </title>
+		<url>auth_sch_search.php</url>
+		<logos><?php <img src=staff/schools/cbs_logo.jpg width=100%>?></logos>
+		<course> / Architecture, Electrical Engineering, Civil Engineering, Aeronautic Engineering, Robotic Enigneering</course>
+	</link>
+	<link>
+		<sn>60</sn>
+		<title>IPAG BUSINESS SCHOOL, France </title>
+		<url>auth_sch_search.php</url>
+		<logos><?php <img src=staff/schools/ipag_logo.jpg width=100%>?></logos>
+		<course> / Architecture, Electrical Engineering, Civil Engineering, Aeronautic Engineering, Robotic Enigneering</course>
+	</link>
+	
+	<link>
+		<sn>61</sn>
+		<title>RAFFLES UNIVERSITY, Malaysia </title>
+		<url>auth_sch_search.php</url>
+		<logos><?php <img src=staff/schools/raffles_logo.jpg width=100%>?></logos>
+		<course> / Architecture, Electrical Engineering, Civil Engineering, Aeronautic Engineering, Robotic Enigneering</course>
+	</link>
+	<link>
+		<sn>62</sn>
+		<title>UCSI UNIVERSITY, Malaysia</title>
+		<url>auth_sch_search.php</url>
+		<logos><?php <img src=staff/schools/ucsi_logo.jpg width=100%>?></logos>
+		<course> / Architecture, Electrical Engineering, Civil Engineering, Aeronautic Engineering, Robotic Enigneering</course>
+	</link>
+	<link>
+		<sn>63</sn>
+		<title>MANIPAL UNIVERSITY, Malaysia </title>
+		<url>auth_sch_search.php</url>
+		<logos><?php <img src=staff/schools/manipal_logo.jpg width=100%>?></logos>
+		<course> / Architecture, Electrical Engineering, Civil Engineering, Aeronautic Engineering, Robotic Enigneering</course>
+	</link>
+	<link>
+		<sn>64</sn>
+		<title>UNIVERSITY OF CYBERJAYA, Malaysia</title>
+		<url>auth_sch_search.php</url>
+		<logos><?php <img src=staff/schools/cyberjaya_logo.jpg width=100%>?></logos>
+		<course> / Architecture, Electrical Engineering, Civil Engineering, Aeronautic Engineering, Robotic Enigneering</course>
+	</link>
+
+	<link>
+		<sn>65</sn>
+		<title>WOOSONG UNIVERSITY,  Democratic People's Republic of Korea </title>
+		<url>auth_sch_search.php</url>
+		<logos><?php <img src=staff/schools/woosong_logo.jpg width=100%>?></logos>
+		<course> / Architecture, Electrical Engineering, Civil Engineering, Aeronautic Engineering, Robotic Enigneering</course>
+	</link>
+	
+		<link>
+		<sn>66</sn>
+		<title>CITY UNITY COLLEGE, Greece</title>
+		<url>auth_sch_search.php</url>
+		<logos><?php <img src=staff/schools/city_unity_logo.jpg width=100%>?></logos>
+		<course> / Architecture, Electrical Engineering, Civil Engineering, Aeronautic Engineering, Robotic Enigneering</course>
+	</link>
+	<link>
+		<sn>67</sn>
+		<title>SILC BUSINESS SCHOOL SHANGAI, China</title>
+		<url>auth_sch_search.php</url>
+		<logos><?php <img src=staff/schools/uts_logo.jpg width=100%>?></logos>
+		<course> / Architecture, Electrical Engineering, Civil Engineering, Aeronautic Engineering, Robotic Enigneering</course>
+	</link>
+	<link>
+		<sn>68</sn>
+		<title>CANADIAN UNIVERSITY, United Arab Emirates </title>
+		<url>auth_sch_search.php</url>
+		<logos><?php <img src=staff/schools/canadian_logo.jpg width=100%>?></logos>
+		<course> / Architecture, Electrical Engineering, Civil Engineering, Aeronautic Engineering, Robotic Enigneering</course>
+	</link>
+	<link>
+		<sn>69</sn>
+		<title>ES DUBAI, United Arab Emirates </title>
+		<url>auth_sch_search.php</url>
+		<logos><?php <img src=staff/schools/es_dubai_logo.jpg width=100%>?></logos>
+		<course> / Architecture, Electrical Engineering, Civil Engineering, Aeronautic Engineering, Robotic Enigneering</course>
+	</link>
+	<link>
+		<sn>70</sn>
+		<title>MANIPAL ACADEMY, United Arab Emirates</title>
+		<url>auth_sch_search.php</url>
+		<logos><?php <img src=staff/schools/manipal_acad_logo.jpg width=100%>?></logos>
+		<course> / Architecture, Electrical Engineering, Civil Engineering, Aeronautic Engineering, Robotic Enigneering</course>
+	</link>
+	<link>
+		<sn>71</sn>
+		<title>SYNERGY UNIVERSITY, United Arab Emirates</title>
+		<url>auth_sch_search.php</url>
+		<logos><?php <img src=staff/schools/synergy_logo.jpg width=100%>?></logos>
+	</link>
+	<link>
+		<sn>72</sn>
+		<title>BIRLA INSTITUTE OF SCIAND TECH, United Arab Emirates</title>
+		<url>auth_sch_search.php</url>
+		<logos><?php <img src=staff/schools/bits_logo.jpg width=100%>?></logos>
+	</link>
+	<link>
+		<sn>73</sn>
+		<title>ISLAMIC AZAD UNIVERSITY, United Arab Emirates</title>
+		<url>auth_sch_search.php</url>
+		<logos><?php <img src=staff/schools/azad_logo.jpg width=100%>?></logos>
+	</link>
+	<link>
+		<sn>74</sn>
+		<title>Bilgi University Istanbul, Turkey </title>
+		<url>auth_sch_search.php</url>
+		<logos><?php <img src=staff/schools/bilgi_logo.jpg width=100%>?></logos>
+	</link>
+	<link>
+		<sn>75</sn>
+		<title>Ozyegin University, Istanbul, Turkey </title>
+		<url>auth_sch_search.php</url>
+		<logos><?php <img src=staff/schools/oxyegin_logo.jpg width=100%>?></logos>
+	</link>
+	<link>
+		<sn>76</sn>
+		<title>Maltepe University Istanbul,  Turkey</title>
+		<url>auth_sch_search.php</url>
+		<logos><?php <img src=staff/schools/maltepe_logo.jpg width=100%>?></logos>
+	</link>
+	<link>
+		<sn>77</sn>
+		<title>Halic University Istanbul , Turkey </title>
+		<url>auth_sch_search.php</url>
+		<logos><?php <img src=staff/schools/halic_logo.jpg width=100%>?></logos>
+	</link>
+	<link>
+		<sn>78</sn>
+		<title>Istanbul Galata University, Turkey </title>
+		<url>auth_sch_search.php</url>
+		<logos><?php <img src=staff/schools/galata_logo.jpg width=100%>?></logos>
+	</link>
+	<link>
+		<sn>79</sn>
+		<title>University of Debrecen, Hungary</title>
+		<url>auth_sch_search.php</url>
+		<logos><?php <img src=staff/schools/debreceni_logo.jpg width=100%>?></logos>
+	</link>
+	<link>
+		<sn>80</sn>
+		<title>The University of Miskolc, Hungary</title>
+		<url>auth_sch_search.php</url>
+		<logos><?php <img src=staff/schools/miskolci_logo.jpg width=100%>?></logos>
+	</link>
+	<link>
+		<sn>81</sn>
+		<title>University of Economics and Human Sciences, Poland</title>
+		<url>auth_sch_search.php</url>
+		<logos><?php <img src=staff/schools/warsaw_logo.jpg width=100%>?></logos>
+	</link>
+	<link>
+		<sn>82</sn>
+		<title>WARSAW ECONOMIC INSTITUTE, Poland </title>
+		<url>auth_sch_search.php</url>
+		<logos><?php <img src=staff/schools/wec_logo.jpg width=100%>?></logos>
+		<course> / Architecture, Electrical Engineering, Civil Engineering, Aeronautic Engineering, Robotic Enigneering</course>
+		
+	</link>
+	<link>
+		<sn>83</sn>
+		<title>Medical University of Americans, United States  </title>
+		<url>auth_sch_search.php</url>
+		<logos><?php <img src=staff/schools/mua_logo.jpg width=100%>?></logos>
+		<course> / Architecture, Electrical Engineering, Civil Engineering, Aeronautic Engineering, Robotic Enigneering</course>
+		
+	</link>
+	<link>
+		<sn>84</sn>
+		<title>Stirling University, United Kingdom  </title>
+		<url>auth_sch_search.php</url>
+		<logos><?php <img src=staff/schools/stirling_logo.jpg width=100%>?></logos>
+		<course> / Architecture, Electrical Engineering, Civil Engineering, Aeronautic Engineering, Robotic Enigneering</course>
+		
+	</link>
+	<link>
+		<sn>85</sn>
+		<title>ARAB ACADEMY FOR SCIENCE, TECHNOLOGY AND MARITIME TRANSPORT, United Arab Emirates  </title>
+		<url>auth_sch_search.php</url>
+		<logos><?php <img src=staff/schools/arab_acad_logo.jpg width=100%>?></logos>
+		<course> / Architecture, Electrical Engineering, Civil Engineering, Aeronautic Engineering, Robotic Enigneering</course>
+		
+	</link>
+	<link>
+		<sn>86</sn>
+		<title>Emirates Aviation University, United Arab Emirates </title>
+		<url>auth_sch_search.php</url>
+		<logos><?php <img src=staff/schools/emirates_aviation_logo.jpg width=100%>?></logos>
+		<course> / Architecture, Electrical Engineering, Civil Engineering, Aeronautic Engineering, Robotic Enigneering</course>
+		
+	</link>
+	<link>
+		<sn>87</sn>
+		<title>HERIOT WATT UNIVERSITY DUBAI CAMPUS, United Arab Emirates  </title>
+		<url>auth_sch_search.php</url>
+		<logos><?php <img src=staff/schools/heriot_logo.jpg width=100%>?></logos>
+		<course> / Architecture, Electrical Engineering, Civil Engineering, Aeronautic Engineering, Robotic Enigneering</course>
+		
+	</link>
+	<link>
+		<sn>88</sn>
+		<title>University of Wollongong, United Arab Emirates  </title>
+		<url>auth_sch_search.php</url>
+		<logos><?php <img src=staff/schools/wollong_logo.jpg width=100%>?></logos>
+		<course> / Architecture, Electrical Engineering, Civil Engineering, Aeronautic Engineering, Robotic Enigneering</course>
+	</link>
+	<link>
+		<sn>89</sn>
+		<title>University Concept Aviation Training Institute, United Arab Emirates </title>
+		<url>auth_sch_search.php</url>
+		<logos><?php <img src=staff/schools/vision_logo.jpg width=100%>?></logos>
+		<course> / Architecture, Electrical Engineering, Civil Engineering, Aeronautic Engineering, Robotic Enigneering</course>
+	</link>
+	<link>
+		<sn>90</sn>	
+		<title>St. George University, United States</title>
+		<url>auth_sch_search.php</url>
+		<logos><?php <img src=staff/schools/st_george_logo.jpg width=100%>?></logos>
+		<course> / Architecture, Electrical Engineering, Civil Engineering, Aeronautic Engineering, Robotic Enigneering</course>
+	</link>
+	<link>
+	    <sn>91</sn>
+		<title>Neapolis Academy, Cyprus</title>
+		<url>auth_sch_search.php</url>
+		<logos><?php <img src=staff/schools/neapolis_logo.jpg width=100%>?></logos>
+		<course> / Architecture, Electrical Engineering, Civil Engineering, Aeronautic Engineering, Robotic Enigneering</course>
+	</link>
+	<link>
+	    <sn>92</sn>
+		<title>Girne American University, Cyprus</title>
+		<url>auth_sch_search.php</url>
+		<logos><?php <img src=staff/schools/girne_logo.jpg width=100%>?></logos>
+		<course> / Architecture, Electrical Engineering, Civil Engineering, Aeronautic Engineering, Robotic Enigneering</course>
+	</link>
+	
+	<link>
+	    <sn>93</sn>
+		<title>Rauf Denktas University, North Cyprus, Turkey </title>
+		<url>auth_sch_search.php</url>
+		<logos><?php <img src=staff/schools/denktas_logo.jpg width=100%>?></logos>
+		<course> / Architecture, Electrical Engineering, Civil Engineering, Aeronautic Engineering, Robotic Enigneering</course>
+	</link>
+	<link>
+		<sn>94</sn>
+		<title>Eastern Mediterranean University, North Cyprus, Turkey</title>
+		<url>auth_sch_search.php</url>
+		<logos><?php <img src=staff/schools/emu_logo.jpg width=100%>?></logos>
+		<course> / Architecture, Electrical Engineering, Civil Engineering, Aeronautic Engineering, Robotic Enigneering</course>
+	</link>
+	<link>
+		<sn>95</sn>
+		<title>Cyprus West University, Cyprus </title>
+		<url>auth_sch_search.php</url>
+		<logos><?php <img src=staff/schools/cwu_logo.jpg width=100%>?></logos>
+		<course> / Architecture, Electrical Engineering, Civil Engineering, Aeronautic Engineering, Robotic Enigneering</course>
+	</link>
+	<link>
+		<sn>96</sn>
+		<title>Middle East Technical University, Northern Cyprus, Turkey</title>
+		<url>auth_sch_search.php</url>
+		<logos><?php <img src=staff/schools/metu_logo.jpg width=100%>?></logos>
+		<course> / Architecture, Electrical Engineering, Civil Engineering, Aeronautic Engineering, Robotic Enigneering</course>
+	</link>
+	<link>
+		<sn>97</sn>
+		<title>Cyprus International University, Cyprus </title>
+		<url>auth_sch_search.php</url>
+		<logos><?php <img src=staff/schools/ciu_logo.jpg width=100%>?></logos>
+		<course> / Architecture, Electrical Engineering, Civil Engineering, Aeronautic Engineering, Robotic Enigneering</course>
+	</link>
+	<link>
+		<sn>98</sn>
+		<title>Final International University, Cyprus</title>
+		<url>auth_sch_search.php</url>
+		<logos><?php <img src=staff/schools/final_logo.jpg width=100%>?></logos>
+		<course> / Architecture, Electrical Engineering, Civil Engineering, Aeronautic Engineering, Robotic Enigneering</course>
+	</link>
+	<link>
+		<sn>99</sn>
+		<title>European University of Lefke, Cyprus </title>
+		<url>auth_sch_search.php</url>
+		<logos><?php <img src=staff/schools/eul_logo.jpg width=100%>?></logos>
+		<course> / Architecture, Electrical Engineering, Civil Engineering, Aeronautic Engineering, Robotic Enigneering</course>
+	</link>
+	<link>
+		<sn>100</sn>
+		<title>Near East University, Cyprus</title>
+		<url>auth_sch_search.php</url>
+		<logos><?php <img src=staff/schools/neu_logo.jpg width=100%>?></logos>
+		<course> / Architecture, Electrical Engineering, Civil Engineering, Aeronautic Engineering, Robotic Enigneering</course>
+	</link>
+
+	<link>
+		<sn>101</sn>
+		<title>American University of Barbados, Barbados</title>
+		<url>auth_sch_search.php</url>
+		<logos><?php <img src=staff/schools/aub_logo.jpg width=100%>?></logos>
+		<course> / Architecture, Electrical Engineering, Civil Engineering, Aeronautic Engineering, Robotic Enigneering</course>
+	</link>
+	<link>
+		<sn>102</sn>
+		<title>Luiss Libera University - Rome, Italy</title>
+		<url>auth_sch_search.php</url>
+		<logos><?php <img src=staff/schools/luiss_logo.jpg width=100%>?></logos>
+		<course> / Architecture, Electrical Engineering, Civil Engineering, Aeronautic Engineering, Robotic Enigneering</course>
+	</link>
+	<link>
+		<sn>103</sn>
+		<title>Xenophon College - Rome, Italy </title>
+		<url>auth_sch_search.php</url>
+		<logos><?php <img src=staff/schools/xenophon_logo.jpg width=100%>?></logos>
+		<course> / Architecture, Electrical Engineering, Civil Engineering, Aeronautic Engineering, Robotic Enigneering</course>
+	</link>
+	<link>
+		<sn>104</sn>
+		<title>MiddleSex University, United Arab Emirates</title>
+		<url>auth_sch_search.php</url>
+		<logos><?php <img src=staff/schools/mud_logo.jpg width=100%>?></logos>
+		<course> / Architecture, Electrical Engineering, Civil Engineering, Aeronautic Engineering, Robotic Enigneering</course>
+	</link>
+
+	<link>
+		<sn>105</sn>
+		<title>Muhammed Bin Rashid University of Medicine, United Arab Emirates </title>
+		<url>auth_sch_search.php</url>
+		<logos><?php <img src=staff/schools/mbru_logo.jpg width=100%>?></logos>
+		<course> / Architecture, Electrical Engineering, Civil Engineering, Aeronautic Engineering, Robotic Enigneering</course>
+	</link>
+	
+		<link>
+		<sn>106</sn>
+		<title>Murdock University, United Arab Emirates</title>
+		<url>auth_sch_search.php</url>
+		<logos><?php <img src=staff/schools/murdoch_logo.jpg width=100%>?></logos>
+		<course> / Architecture, Electrical Engineering, Civil Engineering, Aeronautic Engineering, Robotic Enigneering</course>
+	</link>
+	<link>
+		<sn>107</sn>
+		<title>Nest Academy of Management of Education, United Arab Emirates</title>
+		<url>auth_sch_search.php</url>
+		<logos><?php <img src=staff/schools/nest_logo.jpg width=100%>?></logos>
+		<course> / Architecture, Electrical Engineering, Civil Engineering, Aeronautic Engineering, Robotic Enigneering</course>
+	</link>
+	<link>
+		<sn>108</sn>
+		<title>Rak Medical University, United Arab Emirates </title>
+		<url>auth_sch_search.php</url>
+		<logos><?php <img src=staff/schools/rak_logo.jpg width=100%>?></logos>
+		<course> / Architecture, Electrical Engineering, Civil Engineering, Aeronautic Engineering, Robotic Enigneering</course>
+	</link>
+	<link>
+		<sn>109</sn>
+		<title>SP Jain School of Global Mgt, United Arab Emirates </title>
+		<url>auth_sch_search.php</url>
+		<logos><?php <img src=staff/schools/spj_logo.jpg width=100%>?></logos>
+		<course> / Architecture, Electrical Engineering, Civil Engineering, Aeronautic Engineering, Robotic Enigneering</course>
+	</link>
+	<link>
+		<sn>110</sn>
+		<title>UK College of Business and Computing, United Arab Emirates</title>
+		<url>auth_sch_search.php</url>
+		<logos><?php <img src=staff/schools/ukcbc_logo.jpg width=100%>?></logos>
+		<course> / Architecture, Electrical Engineering, Civil Engineering, Aeronautic Engineering, Robotic Enigneering</course>
+	</link>
+	<link>
+		<sn>111</sn>
+		<title>University of Birmingham Dubai, United Arab Emirates</title>
+		<url>auth_sch_search.php</url>
+		<logos><?php <img src=pstaff/schools/ubd_logo.jpg width=100%>?></logos>
+	</link>
+	<link>
+		<sn>112</sn>
+		<title>Villars Palace Academy - Switserland, Switzerland</title>
+		<url>auth_sch_search.php</url>
+		<logos><?php <img src=staff/schools/villars_logo.jpg width=100%>?></logos>
+	</link>
+	<link>
+		<sn>113</sn>
+		<title>Sahrda University, India</title>
+		<url>auth_sch_search.php</url>
+		<logos><?php <img src=staff/schools/sharda_logo.jpg width=100%>?></logos>
+	</link>
+	<link>
+		<sn>114</sn>
+		<title>World University of Bangladesh - Dakha, India </title>
+		<url>auth_sch_search.php</url>
+		<logos><?php <img src=staff/schools/wub_logo.jpg width=100%>?></logos>
+	</link>
+	<link>
+		<sn>115</sn>
+		<title>Poornima University, India </title>
+		<url>auth_sch_search.php</url>
+		<logos><?php <img src=staff/schools/poornima_logo.jpg width=100%>?></logos>
+	</link>
+	<link>
+		<sn>116</sn>
+		<title>Rimt University, India</title>
+		<url>auth_sch_search.php</url>
+		<logos><?php <img src=staff/schools/rimt_logo.jpg width=100%>?></logos>
+	</link>
+	<link>
+		<sn>117</sn>
+		<title>Galgotias University, India </title>
+		<url>auth_sch_search.php</url>
+		<logos><?php <img src=staff/schools/galgotias_logo.jpg width=100%>?></logos>
+	</link>
+	<link>
+		<sn>118</sn>
+		<title>Dev Bhoom Utta Rakhand University, India </title>
+		<url>auth_sch_search.php</url>
+		<logos><?php <img src=staff/schools/dbu_logo.jpg width=100%>?></logos>
+	</link>
+	<link>
+		<sn>119</sn>
+		<title>Altinbas University, Taiwan, Province of China</title>
+		<url>auth_sch_search.php</url>
+		<logos><?php <img src=staff/schools/altinbas_logo.jpg width=100%>?></logos>
+	</link>
+	<link>
+		<sn>120</sn>
+		<title>Bachesehir University, Turkey </title>
+		<url>auth_sch_search.php</url>
+		<logos><?php <img src=staff/schools/bau.jpg width=100%>?></logos>
+	</link>
+	
+		<link>
+		<sn>121</sn>
+		<title>Istanbul Aydin, Turkey </title>
+		<url>auth_sch_search.php</url>
+		<logos><?php <img src=staff/schools/aydin_logo.jpg width=100%>?></logos>
+		<course> / Architecture, Electrical Engineering, Civil Engineering, Aeronautic Engineering, Robotic Enigneering</course>
+		
+	</link>
+	<link>
+		<sn>122</sn>
+		<title>Istanbul Gelism University, Turkey </title>
+		<url>auth_sch_search.php</url>
+		<logos><?php <img src=staff/schools/gelisim_logo.jpg width=100%>?></logos>
+		<course> / Architecture, Electrical Engineering, Civil Engineering, Aeronautic Engineering, Robotic Enigneering</course>
+		
+	</link>
+	<link>
+		<sn>123</sn>
+		<title>Isik University, Turkey </title>
+		<url>auth_sch_search.php</url>
+		<logos><?php <img src=staff/schools/isik_logo.jpg width=100%>?></logos>
+		<course> / Architecture, Electrical Engineering, Civil Engineering, Aeronautic Engineering, Robotic Enigneering</course>
+		
+	</link>
+	<link>
+		<sn>124</sn>
+		<title>Uskuadar university, Turkey</title>
+		<url>auth_sch_search.php</url>
+		<logos><?php <img src=staff/schools/uskudar_logo.jpg width=100%>?></logos>
+		<course> / Architecture, Electrical Engineering, Civil Engineering, Aeronautic Engineering, Robotic Enigneering</course>
+		
+	</link>
+	<link>
+		<sn>125</sn>
+		<title>Istanbul Okan University, Turkey </title>
+		<url>auth_sch_search.php</url>
+		<logos><?php <img src=staff/schools/okan_logo.jpg width=100%>?></logos>
+		<course> / Architecture, Electrical Engineering, Civil Engineering, Aeronautic Engineering, Robotic Enigneering</course>
+		
+	</link>
+	<link>
+		<sn>126</sn>
+		<title>Istanbul Bilgi University, Turkey </title>
+		<url>auth_sch_search.php</url>
+		<logos><?php <img src=staff/schools/bilgi_logo.jpg width=100%>?></logos>
+		<course> / Architecture, Electrical Engineering, Civil Engineering, Aeronautic Engineering, Robotic Enigneering</course>
+		
+	</link>
+	<link>
+		<sn>127</sn>
+		<title>Institute of Tourism Studies, Malta </title>
+		<url>auth_sch_search.php</url>
+		<logos><?php <img src=staff/schools/its_logo.jpg width=100%>?></logos>
+		<course> / Architecture, Electrical Engineering, Civil Engineering, Aeronautic Engineering, Robotic Enigneering</course>
+		
+	</link>
+	<link>
+		<sn>128</sn>
+		<title>Macquarie Grammar School, Australia  </title>
+		<url>auth_sch_search.php</url>
+		<logos><?php <img src=staff/schools/mac_logo.jpg width=100%>?></logos>
+		<course> / Architecture, Electrical Engineering, Civil Engineering, Aeronautic Engineering, Robotic Enigneering</course>
+	</link>
+	<link>
+		<sn>129</sn>
+		<title>Palmerston North Boysâ€™ High School, New Zealand </title>
+		<url>auth_sch_search.php</url>
+		<logos><?php <img src=staff/schools/palmerston_logo.jpg width=100%>?></logos>
+		<course> / Architecture, Electrical Engineering, Civil Engineering, Aeronautic Engineering, Robotic Enigneering</course>
+	</link>
+	
+
+
+
+
+	</pages>

@@ -1,0 +1,422 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>eHealthCare - Nurse Platform</title>
+<script language="JavaScript">
+<!--
+function FP_swapImg() {//v1.0
+ var doc=document,args=arguments,elm,n; doc.$imgSwaps=new Array(); for(n=2; n<args.length;
+ n+=2) { elm=FP_getObjectByID(args[n]); if(elm) { doc.$imgSwaps[doc.$imgSwaps.length]=elm;
+ elm.$src=elm.src; elm.src=args[n+1]; } }
+}
+
+function FP_preloadImgs() {//v1.0
+ var d=document,a=arguments; if(!d.FP_imgs) d.FP_imgs=new Array();
+ for(var i=0; i<a.length; i++) { d.FP_imgs[i]=new Image; d.FP_imgs[i].src=a[i]; }
+}
+
+function FP_getObjectByID(id,o) {//v1.0
+ var c,el,els,f,m,n; if(!o)o=document; if(o.getElementById) el=o.getElementById(id);
+ else if(o.layers) c=o.layers; else if(o.all) el=o.all[id]; if(el) return el;
+ if(o.id==id || o.name==id) return o; if(o.childNodes) c=o.childNodes; if(c)
+ for(n=0; n<c.length; n++) { el=FP_getObjectByID(id,c[n]); if(el) return el; }
+ f=o.forms; if(f) for(n=0; n<f.length; n++) { els=f[n].elements;
+ for(m=0; m<els.length; m++){ el=FP_getObjectByID(id,els[n]); if(el) return el; } }
+ return null;
+}
+// -->
+</script>
+</head>
+
+<body onload="FP_preloadImgs(/*url*/'button2B.jpg', /*url*/'button2C.jpg', /*url*/'button2E.jpg', /*url*/'button2F.jpg', /*url*/'button3D1.jpg', /*url*/'button3E1.jpg', /*url*/'button43.jpg', /*url*/'button44.jpg', /*url*/'button46.jpg', /*url*/'button47.jpg', /*url*/'../genmed/button47.jpg', /*url*/'../genmed/button46.jpg', /*url*/'../genmed/button44.jpg', /*url*/'../genmed/button43.jpg', /*url*/'../genmed/button3E1.jpg', /*url*/'../genmed/button3D1.jpg', /*url*/'../genmed/button2F.jpg', /*url*/'../genmed/button2E.jpg', /*url*/'../genmed/button2C.jpg', /*url*/'../genmed/button2B.jpg')">
+
+<div align="center">
+	<table cellpadding="0" cellspacing="0" width="938" height="498" id="table6">
+		<!-- MSTableType="layout" -->
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td height="11"></td>
+			</tr>
+		<tr>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td valign="top" colspan="4" rowspan="2" height="70">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" height="100%" id="table7">
+				<!-- MSCellFormattingTableID="10" -->
+				<tr>
+					<td valign="top" height="100%" width="100%">
+					<!-- MSCellFormattingType="content" -->
+					<p align="center">
+					<img border="0" src="../../img/name.jpg" width="354" height="53">&nbsp;
+					</td>
+				</tr>
+			</table>
+	</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td height="33"></td>
+			</tr>
+		<tr>
+			<td valign="top" colspan="4">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" height="100%" id="table24">
+				<!-- MSCellFormattingTableID="9" -->
+				<tr>
+					<td valign="top" width="100%" height="100%">
+					<!-- MSCellFormattingType="content" -->
+					<?php 
+	echo '<font size=1, face=Arial><right>';			
+ $b = time (); 
+ print date("g:i:s A D, F jS Y",$b) . "<br>";
+ echo '</font>';
+?></td>
+					</tr>
+			</table>
+			</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td height="37"></td>
+			</tr>
+		<tr>
+			<td valign="top" bgcolor="#00CC66" colspan="5">&nbsp;</td>
+			<td valign="top" colspan="4">
+			<a href="../../index.php">
+			<img border="0" id="img19" src="../genmed/button45.jpg" height="20" width="100" alt="Home" onmouseover="FP_swapImg(1,0,/*id*/'img19',/*url*/'../genmed/button46.jpg')" onmouseout="FP_swapImg(0,0,/*id*/'img19',/*url*/'../genmed/button45.jpg')" onmousedown="FP_swapImg(1,0,/*id*/'img19',/*url*/'../genmed/button47.jpg')" onmouseup="FP_swapImg(0,0,/*id*/'img19',/*url*/'../genmed/button46.jpg')" fp-style="fp-btn: Border Left 2; fp-font: Arial; fp-font-style: Bold Italic; fp-font-size: 8; fp-orig: 0" fp-title="Home"></a><a href="../../aboutus.php"><img border="0" id="img18" src="../genmed/button42.jpg" height="20" width="100" alt="About Us" onmouseover="FP_swapImg(1,0,/*id*/'img18',/*url*/'../genmed/button43.jpg')" onmouseout="FP_swapImg(0,0,/*id*/'img18',/*url*/'../genmed/button42.jpg')" onmousedown="FP_swapImg(1,0,/*id*/'img18',/*url*/'../genmed/button44.jpg')" onmouseup="FP_swapImg(0,0,/*id*/'img18',/*url*/'../genmed/button43.jpg')" fp-style="fp-btn: Border Left 2; fp-font: Arial; fp-font-style: Bold Italic; fp-font-size: 8; fp-orig: 0" fp-title="About Us"></a><a href="../../services.php"><img border="0" id="img17" src="../genmed/button3C1.jpg" height="20" width="100" alt="Services" fp-style="fp-btn: Border Left 2; fp-font: Arial; fp-font-style: Bold Italic; fp-font-size: 8; fp-orig: 0" fp-title="Services" onmouseover="FP_swapImg(1,0,/*id*/'img17',/*url*/'../genmed/button3D1.jpg')" onmouseout="FP_swapImg(0,0,/*id*/'img17',/*url*/'../genmed/button3C1.jpg')" onmousedown="FP_swapImg(1,0,/*id*/'img17',/*url*/'../genmed/button3E1.jpg')" onmouseup="FP_swapImg(0,0,/*id*/'img17',/*url*/'../genmed/button3D1.jpg')"></a><b><a href="../../book_appointment.php"><img border="0" id="img16" src="../genmed/button2D.jpg" height="20" width="100" alt="Booking" fp-style="fp-btn: Border Left 2; fp-font: Arial; fp-font-style: Bold Italic; fp-font-size: 8; fp-orig: 0" fp-title="Booking" onmouseover="FP_swapImg(1,0,/*id*/'img16',/*url*/'../genmed/button2E.jpg')" onmouseout="FP_swapImg(0,0,/*id*/'img16',/*url*/'../genmed/button2D.jpg')" onmousedown="FP_swapImg(1,0,/*id*/'img16',/*url*/'../genmed/button2F.jpg')" onmouseup="FP_swapImg(0,0,/*id*/'img16',/*url*/'../genmed/button2E.jpg')"></a></b><a href="../../contact.php"><img border="0" id="img15" src="../genmed/button2A.jpg" height="20" width="100" alt="Contact" fp-style="fp-btn: Border Left 2; fp-font-style: Bold Italic; fp-font-size: 8; fp-orig: 0" fp-title="Contact" onmouseover="FP_swapImg(1,0,/*id*/'img15',/*url*/'../genmed/button2B.jpg')" onmouseout="FP_swapImg(0,0,/*id*/'img15',/*url*/'../genmed/button2A.jpg')" onmousedown="FP_swapImg(1,0,/*id*/'img15',/*url*/'../genmed/button2C.jpg')" onmouseup="FP_swapImg(0,0,/*id*/'img15',/*url*/'../genmed/button2B.jpg')"></a></td>
+			<td valign="top" bgcolor="#00CC66" colspan="2" height="20">&nbsp;</td>
+			</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td height="5"></td>
+			</tr>
+		<tr>
+			<td valign="top" bgcolor="#CDCDB4" colspan="10">&nbsp;</td>
+			<td height="20"></td>
+			</tr>
+		<tr>
+			<td valign="top" colspan="10">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" height="100%" id="table9">
+				<!-- MSCellFormattingTableID="5" -->
+				<tr>
+					<td valign="top" height="100%" width="100%">
+					<!-- MSCellFormattingType="content" -->
+					<table cellpadding="0" cellspacing="0" width="932" height="237" id="table10">
+						<!-- MSTableType="layout" -->
+						<tr>
+							<td height="14"></td>
+							</tr>
+						<tr>
+	<td height="23" valign="top">
+	<table cellpadding="0" cellspacing="0" border="0" width="100%" height="100%">
+		<!-- MSCellFormattingTableID="2" -->
+		<tr>
+			<td valign="top" width="100%" height="100%">
+			<!-- MSCellFormattingType="content" -->
+			
+						
+			<?php
+echo '<font size=2, face=tahoma>';
+$psswrd = $_POST['psswrd'];
+
+if (!$psswrd)
+{
+echo 'You cannot send empty values.';
+exit;
+}
+//$link = mysql_connect("becedceb.startlogicmysql.com", "sunnywealth","<9ce12Day>");
+$db = mysql_connect("localhost", "root","");
+
+if (!$db)
+//if (!$link)
+{
+echo 'Cannot connect to database.';
+exit;
+}
+
+//mysql_select_db("hospital",$link);
+mysql_select_db("hospital",$db);
+//$result = mysql_query("SELECT * FROM staff_info WHERE staff_id='$_POST[psswrd]'",$link) or die("Couldn't query the user-database."); 
+$result = mysql_query("SELECT * FROM records WHERE staff_id='$_POST[psswrd]'",$db) or die("Couldn't query the user-database."); 
+while ($myrow = mysql_fetch_array($result))
+{
+echo '<font size=1, face=tahoma><b>';
+echo '<p><center>Welcome!&nbsp;&nbsp;';
+echo $myrow["Staff_name"];
+//echo "<b>Welcome</b> $psswrd";
+include 'rec_platform.php';
+}
+echo '</font>';
+exit();
+?>
+</td>
+			</tr>
+	</table>
+</td>
+						</tr>
+						<tr>
+							<td height="200" width="932">&nbsp;</td>
+						</tr>
+					</table>
+					</td>
+				</tr>
+			</table>
+			</td>
+			<td height="242"></td>
+			</tr>
+		<tr>
+			<td valign="top" bgcolor="#00CC66" colspan="2">&nbsp;</td>
+			<td valign="top" colspan="8" bgcolor="#339966">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" height="100%" id="table20">
+				<!-- MSCellFormattingTableID="4" -->
+				<tr>
+					<td valign="top" bgcolor="#339966" height="100%" width="100%">
+					<!-- MSCellFormattingType="content" -->
+					<p align="left"><b><i>
+					<font face="Corbel" size="4" color="#FFFFFF">
+<marquee behavior="alternate">Now, it is a 
+					lot easier for you to access our HealthCare services online:</marquee></font></i></b></td>
+				</tr>
+			</table>
+			</td>
+			<td height="27"></td>
+			</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td height="7"></td>
+			</tr>
+		<tr>
+			<td valign="top" rowspan="3">
+			<p align="center">
+					<img border="0" src="../../img/who-logo.jpg" width="101" height="44"></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td height="7"></td>
+			</tr>
+		<tr>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td valign="top" bgcolor="#CDCDB4" colspan="3">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" height="100%" id="table27">
+				<!-- MSCellFormattingTableID="19" -->
+				<tr>
+					<td bgcolor="#666666" colspan="3" height="1">
+					<img alt="" width="1" height="1" src="../MsSpacer.gif"></td>
+				</tr>
+				<tr>
+					<td bgcolor="#666666" width="1">
+					<img alt="" width="1" height="1" src="../MsSpacer.gif"></td>
+					<td valign="top" bgcolor="#CCCCCC" width="100%">
+					<!-- MSCellFormattingType="content" -->
+					&nbsp;</td>
+					<td bgcolor="#666666" height="100%" width="1">
+					<img alt="" width="1" height="1" src="../MsSpacer.gif"></td>
+				</tr>
+				<tr>
+					<td bgcolor="#666666" colspan="3" height="1">
+					<img alt="" width="1" height="1" src="../MsSpacer.gif"></td>
+				</tr>
+			</table>
+			</td>
+			<td>&nbsp;</td>
+			<td valign="top" colspan="3" bgcolor="#CCFF99">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" height="100%" id="table26">
+				<!-- MSCellFormattingTableID="18" -->
+				<tr>
+					<td bgcolor="#CCCCCC" colspan="3" height="1">
+					<img alt="" width="1" height="1" src="../MsSpacer.gif"></td>
+				</tr>
+				<tr>
+					<td bgcolor="#CCCCCC" width="1">
+					<img alt="" width="1" height="1" src="../MsSpacer.gif"></td>
+					<td valign="top" bgcolor="#CDCDB4" width="100%">
+					<!-- MSCellFormattingType="content" -->
+					<p align="center">
+					<font face="Arial" style="font-size: 8pt; font-weight: 700">
+					<a style="text-decoration: none" href="../genmed/index.php">
+					<font color="#000000">Medicine &amp; Surgery</font></a></a></font><font style="font-weight: 700" color="#006699"><a style="text-decoration: none" href="../../consultant/index.php"><font color="#000000" face="Arial" style="font-size: 8pt">
+					</font>
+					</a>
+					</font>
+					<font face="Arial" style="font-size: 8pt; font-weight: 700" color="#006699">
+					-</font><font face="Arial" style="font-size: 8pt; font-weight: 700">
+					<a href="../Laboratory/index.php" style="text-decoration: none">
+					<font color="#000000">Laboratory</font></a><font style="font-size: 8pt; font-weight: 700" color="#006699"><a style="text-decoration: none" href="../Laboratory/index.php"><font color="#000000" face="Arial">
+					</font>
+					</a>
+					</font>
+					<font face="Arial" style="font-size: 8pt; font-weight: 700" color="#006699">
+					- 
+					</font> 
+					<font color="#006699" style="font-size: 8pt; font-weight: 700">
+					<a style="text-decoration: none" href="../Pharmacy/index.php">
+					<font color="#000000" face="Arial">Pharmacy</font></a></font><font face="Corbel" style="font-size: 9pt; font-weight: 700" color="#006699"><font face="Arial" style="font-size: 8pt; font-weight: 700"></a></font><font style="font-size: 8pt; font-weight: 700" color="#006699"><a style="text-decoration: none" href="../Pharmacy/index.php"><font color="#000000" face="Arial">
+					</font>
+					</a>
+					</font>
+					<font face="Arial" style="font-size: 8pt; font-weight: 700">
+					-
+					</font>
+					<font style="font-size: 8pt; font-weight: 700" color="#006699">
+					<a style="text-decoration: none" href="../Admin/index.php">
+					<font color="#000000" face="Arial">Admin </font></a>
+					</font>
+					<font face="Arial" style="font-size: 8pt; font-weight: 700">
+					- 
+					</font>
+					<font style="font-size: 8pt; font-weight: 700" color="#006699"> 
+					<a style="text-decoration: none" href="../Accounts/index.php">
+					<font color="#000000" face="Arial">Accounts</font></a></font><font face="Arial" style="font-size: 8pt; font-weight: 700">-</font><font style="font-size: 8pt; font-weight: 700" color="#006699"><a style="text-decoration: none" href="../Store/index.php"><font color="#000000" face="Arial"> Store 
+					</font></a>
+					</font>
+					<font face="Arial" style="font-size: 8pt; font-weight: 700">
+					- 
+					</font> 
+					<font style="font-size: 8pt; font-weight: 700" color="#006699">
+					<a style="text-decoration: none" href="../Accounts/index.php">
+					<font color="#000000" face="Arial">&nbsp;</font></a></font><font face="Arial" style="font-size: 8pt; font-weight: 700"> 
+					</font> 
+					<font color="#006699" style="font-size: 8pt; font-weight: 700">
+					<a style="text-decoration: none" href="../Radiology/index.php">
+					<font color="#000000" face="Arial">Radiology</font></a></font></font></td>
+					<td bgcolor="#CCCCCC" height="100%" width="1">
+					<img alt="" width="1" height="1" src="../MsSpacer.gif"></td>
+				</tr>
+				<tr>
+					<td bgcolor="#CCCCCC" colspan="3" height="1">
+					<img alt="" width="1" height="1" src="../MsSpacer.gif"></td>
+				</tr>
+			</table>
+			</td>
+			<td height="29"></td>
+			</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td height="8"></td>
+			</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td height="13"></td>
+			</tr>
+		<tr>
+			<td valign="top" colspan="10">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" height="100%" id="table21">
+				<!-- MSCellFormattingTableID="7" -->
+				<tr>
+					<td valign="top" height="100%" width="100%">
+					<!-- MSCellFormattingType="content" -->
+					<p align="center">
+					<font face="Tahoma" style="font-size: 8.5pt" color="#333333">
+					Home 
+					| 
+					About Us 
+					| 
+					Consultancy 
+					| 
+					Book Appointment 
+					| 
+					Contact</font></td>
+				</tr>
+			</table>
+			</td>
+			<td height="14"></td>
+			</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td height="3"></td>
+			</tr>
+		<tr>
+			<td valign="top" colspan="10">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" height="100%" id="table22">
+				<!-- MSCellFormattingTableID="6" -->
+				<tr>
+					<td valign="top" height="100%" width="100%">
+					<!-- MSCellFormattingType="content" -->
+					<p align="center"><font color="#C0C0C0"><font face="Tahoma">
+					<span style="font-size: 8.5pt">O. Sunnyvic</span></font><sup><font face="Tahoma"><span style="font-size: 8.5pt"> 
+					®</span></font></sup></font></td>
+				</tr>
+			</table>
+			</td>
+			<td height="17"></td>
+			</tr>
+		<tr>
+			<td width="157"></td>
+			<td width="21"></td>
+			<td width="30"></td>
+			<td width="12"></td>
+			<td width="38"></td>
+			<td width="137"></td>
+			<td width="15"></td>
+			<td width="325"></td>
+			<td width="23"></td>
+			<td width="175"></td>
+			<td width="5" height="5"></td>
+			</tr>
+	</table>
+</div>
+
+</body>
+
+</html>
