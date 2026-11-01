@@ -1,13 +1,5 @@
 <?php
-
-$servername = "localhost";
-		$username = "root";
-		$password = "";
-		$dbName = "nirsal";
-		$conn = new mysqli($servername, $username, $password, $dbName);
-		
-		if ($conn->connect_error) {
-		  die("Connection failed: " . $conn->connect_error);
-		}
-
-?>
+// Thin wrapper — real connection logic lives in config/db.php
+require_once __DIR__ . '/../config/db.php';
+$conn = xtrac_connect('plotter2');
+$dbName = 'nirsal';

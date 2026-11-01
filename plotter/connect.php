@@ -1,15 +1,5 @@
 <?php
-
-$dbhost = 'localhost';
-$dbuser = 'root';
-$dbpass = '';
+// Thin wrapper — real connection logic lives in config/db.php
+require_once __DIR__ . '/../config/db.php';
+$conn = xtrac_connect('plotter');
 $dbname = 'test';
-$conn = mysqli_connect($dbhost, $dbuser, $dbpass);
-   
-   if(! $conn ) {
-      die('Could not connect: ' . mysqli_error());
-   }
-
-mysqli_select_db($conn,"$dbname");
-
-?>
