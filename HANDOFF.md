@@ -64,7 +64,8 @@
   conversion — see below. Remaining raw-SQL debt: **115 files, documented**
 - [x] **Phase 5** (AI features): OpenRouter client with daily usage caps, chat,
   report insights, ticket triage, menu/dispatch wiring — see below
-- [ ] **Phase 6**: README (comprehensive)
+- [x] **Phase 6**: README (comprehensive) — install, architecture, roles,
+  security model, AI setup, verification tools, known limitations
 - [ ] **Phase 7**: full lint audit + demo notes + final commit + push
 
 ## Phase 5 — AI features (committed)
