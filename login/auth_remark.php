@@ -5,8 +5,10 @@ $appcode = $_POST['appcode'];
 //}
 
 include '../link/connect.php';
-$sql = "UPDATE user_login SET reg_status = '$myremark' WHERE app_no='$appcode'";
-if ($conn->query($sql) === TRUE) {
+$sql = "UPDATE user_login SET reg_status = ? WHERE app_no=?";
+$stmt = mysqli_prepare($conn, $sql);
+mysqli_stmt_bind_param($stmt, 'ss', $myremark, $appcode);
+if (mysqli_stmt_execute($stmt)) {
 echo 'Thank you, information successfully updated';
 }
 

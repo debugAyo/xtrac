@@ -45,42 +45,10 @@ include 'connect.php';
 
 ## Remember to insert some protection against MYSQL injections ##
 
-$list = mysqli_real_escape_string($conn, $_POST['list']);
-$dev_type = mysqli_real_escape_string($conn, $_POST['dev_type']);
-$maint_typ  = mysqli_real_escape_string($conn, $_POST['maint_typ']);
-$rackmnt = mysqli_real_escape_string($conn, $_POST['rackmnt']);
-$maint_not  = mysqli_real_escape_string($conn, $_POST['maint_not']);
-$hd = mysqli_real_escape_string($conn, $_POST['hd']);
-$mandt  = mysqli_real_escape_string($conn, $_POST['mandt']);
-$ram = mysqli_real_escape_string($conn, $_POST['ram']);
-$dev_name  = mysqli_real_escape_string($conn, $_POST['dev_name']);
-$cpu_mod  = mysqli_real_escape_string($conn, $_POST['cpu_mod']);
-$man_name  = mysqli_real_escape_string($conn, $_POST['man_name']);
-$cpu = mysqli_real_escape_string($conn, $_POST['cpu']);
-$serial  = mysqli_real_escape_string($conn, $_POST['serial']);
-$cor_cpu = mysqli_real_escape_string($conn, $_POST['cor_cpu']);
-$mac  = mysqli_real_escape_string($conn, $_POST['mac']);
-$dev_mod = mysqli_real_escape_string($conn, $_POST['dev_mod']);
-$ipaddr  = mysqli_real_escape_string($conn, $_POST['ipaddr']);
-$pur_price  = mysqli_real_escape_string($conn, $_POST['pur_price']);
-$warnty  = mysqli_real_escape_string($conn, $_POST['warnty']);
-$cur_price = mysqli_real_escape_string($conn, $_POST['cur_price']);
-$prodt  = mysqli_real_escape_string($conn, $_POST['prodt']);
-$dev_version = mysqli_real_escape_string($conn, $_POST['dev_version']);
-$dev_id  = mysqli_real_escape_string($conn, $_POST['dev_id']);
-$cur_version = mysqli_real_escape_string($conn, $_POST['cur_version']);
-$dev_stat  = mysqli_real_escape_string($conn, $_POST['dev_stat']);
-$vendor = mysqli_real_escape_string($conn, $_POST['vendor']);
-$dept  = mysqli_real_escape_string($conn, $_POST['dept']);
-$phone = mysqli_real_escape_string($conn, $_POST['phone']);
-$location  = mysqli_real_escape_string($conn, $_POST['location']);
-$owner = mysqli_real_escape_string($conn,$_POST['owner']);
-$recomm = mysqli_real_escape_string($conn,$_POST['recomm']);
-$depend = mysqli_real_escape_string($conn,$_POST['depend']);
-$log_usr = mysqli_real_escape_string($conn,$_POST['log_usr']);
-
-
-$result = mysqli_query($conn,"SELECT * FROM additem WHERE devid='$dev_id'");
+$stmt = mysqli_prepare($conn, "SELECT * FROM additem WHERE devid=?");
+mysqli_stmt_bind_param($stmt, 's', $dev_id);
+mysqli_stmt_execute($stmt);
+$result = mysqli_stmt_get_result($stmt);
         if(mysqli_num_rows($result)>0)
         {
         echo '<br>';
@@ -91,11 +59,11 @@ $result = mysqli_query($conn,"SELECT * FROM additem WHERE devid='$dev_id'");
 else
 { 
 
-$sql = "INSERT INTO additem (category,devtype,maintype,rackmount,maintnote,hardrive,mandate,ramsize,devname,cpumode,manuname,lifecycle,serial,corecpu,macaddr,assmode,ipaddress,purprice,waranty,curprice,prodate,curdate,deversion,devid,curversion,devstat,vendor,deptmnt,phone,location,pic,endlife,owner,recommnd,dependnt,loguser)
-VALUES ('$list','$dev_type','$maint_typ','$rackmnt','$maint_not','$hd','$mandt','$ram','$dev_name','$cpu_mod','$man_name','$cpu','$serial','$cor_cpu','$mac','$dev_mod','$ipaddr','$pur_price','$warnty','$cur_price','$prodt',CURDATE(),'$dev_version','$dev_id','$cur_version','$dev_stat','$vendor','$dept','$phone','$location','$logo','$expdate','$owner','$recomm','$depend','$log_usr')";
-$result = mysqli_query($conn, $sql);
+$stmt = mysqli_prepare($conn, "INSERT INTO additem (category,devtype,maintype,rackmount,maintnote,hardrive,mandate,ramsize,devname,cpumode,manuname,lifecycle,serial,corecpu,macaddr,assmode,ipaddress,purprice,waranty,curprice,prodate,curdate,deversion,devid,curversion,devstat,vendor,deptmnt,phone,location,pic,endlife,owner,recommnd,dependnt,loguser)
+VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,CURDATE(),?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
+mysqli_stmt_bind_param($stmt, 'sssssssssssssssssssssssssssssssssss', $list, $dev_type, $maint_typ, $rackmnt, $maint_not, $hd, $mandt, $ram, $dev_name, $cpu_mod, $man_name, $cpu, $serial, $cor_cpu, $mac, $dev_mod, $ipaddr, $pur_price, $warnty, $cur_price, $prodt, $dev_version, $dev_id, $cur_version, $dev_stat, $vendor, $dept, $phone, $location, $logo, $expdate, $owner, $recomm, $depend, $log_usr);
 
-if ($result > 0)
+if (mysqli_stmt_execute($stmt))
 {
 //include 'item_prev.php';
   include 'sto_ass_add.php';

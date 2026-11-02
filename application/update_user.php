@@ -99,8 +99,11 @@ if (isset($_POST['submit'])) {
 $id=$_POST['id'];
 
 }	
-	$query="SELECT * FROM user_login WHERE id = '$id'";
-$result = mysqli_query($conn,$query) or die(mysqli_error());
+	$query="SELECT * FROM user_login WHERE id = ?";
+$stmt = mysqli_prepare($conn,$query);
+mysqli_stmt_bind_param($stmt, 'i', $id);
+mysqli_stmt_execute($stmt) or die(mysqli_error());
+$result = mysqli_stmt_get_result($stmt);
 while ($row = mysqli_fetch_array($result))
 {
 

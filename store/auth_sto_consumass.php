@@ -65,25 +65,10 @@ include '../link/connect.php';
 
 ## Remember to insert some protection against MYSQL injections ##
 
-$dev_id = mysqli_real_escape_string($conn, $_POST['dev_id']);
-$dev_name = mysqli_real_escape_string($conn, $_POST['dev_name']);
-$dev_typ = mysqli_real_escape_string($conn, $_POST['dev_typ']);
-$descrp =  mysqli_real_escape_string($conn,$_POST['descrp']);
-$mandt =  mysqli_real_escape_string($conn,$_POST['mandt']);
-$batch_num =  mysqli_real_escape_string($conn,$_POST['batch_num']);
-$unit =  mysqli_real_escape_string($conn,$_POST['unit']);
 $qty1 = mysqli_real_escape_string($conn, $_POST['qty1']);
 $rate1 = mysqli_real_escape_string($conn, $_POST['rate1']);
-$dept = mysqli_real_escape_string($conn, $_POST['dept']);
 $owner = mysqli_real_escape_string($conn, $_POST['owner']);
-$manuname = mysqli_real_escape_string($conn, $_POST['manuname']);
-$prodt = mysqli_real_escape_string($conn, $_POST['prodt']);
 $log_usr = mysqli_real_escape_string($conn, $_POST['log_usr']);
-$list = mysqli_real_escape_string($conn, $_POST['list']);
-$purprice = mysqli_real_escape_string($conn, $_POST['purprice']);
-$warnty = mysqli_real_escape_string($conn, $_POST['warnty']);
-$location = mysqli_real_escape_string($conn, $_POST['location']);
-$cpu = mysqli_real_escape_string($conn, $_POST['cpu']);
 
 //$dev_stat = mysqli_real_escape_string($conn, $_POST['dev_stat']);
 //$recomm = mysqli_real_escape_string($conn, $_POST['recomm']);
@@ -92,7 +77,10 @@ $cpu = mysqli_real_escape_string($conn, $_POST['cpu']);
 
 
 
-$result = mysqli_query($conn,"SELECT * FROM additem WHERE devid='$dev_id'");
+$stmt = mysqli_prepare($conn, "SELECT * FROM additem WHERE devid=?");
+mysqli_stmt_bind_param($stmt, 's', $dev_id);
+mysqli_stmt_execute($stmt);
+$result = mysqli_stmt_get_result($stmt);
         if(mysqli_num_rows($result)>0)
         {
         echo '<br>';
@@ -110,12 +98,11 @@ else
 //$sql = "INSERT INTO additem (category,devtype,devname,manuname,deptmnt,lifecycle,batchnumber,mandate,unit,quant,descript,purprice,waranty,prodate,curdate,devid,devstat,recommnd,location,pic,endlife,owner,loguser)
 //VALUES ('$list','$dev_typ','$dev_name','$manuname','$dept','$cpu','$batch_num','$mandt','$unit','$qty','$descrp','$purprice','$warnty','$prodt',CURDATE(),'$dev_id','Active','Retain this Item','$location','$logo','$expdate','$owner','$log_usr')";
 
-$sql = "INSERT INTO additem (category,devid,devtype,devname,manuname,deptmnt,lifecycle,batchnumber,mandate,unit,quant,rate,descript,purprice,waranty,prodate,curdate,devstat,recommnd,location,endlife,pic)
-VALUES ('$list','$dev_id','$dev_typ','$dev_name','$manuname','$dept','$cpu','$batch_num','$mandt','$unit','$qty','$rate','$descrp','$purprice','$warnty','$prodt',NOW(),'$dev_stat','$recomm','$location','$expdate','$logo')";
+$stmt = mysqli_prepare($conn, "INSERT INTO additem (category,devid,devtype,devname,manuname,deptmnt,lifecycle,batchnumber,mandate,unit,quant,rate,descript,purprice,waranty,prodate,curdate,devstat,recommnd,location,endlife,pic)
+VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,NOW(),?,?,?,?,?)");
+mysqli_stmt_bind_param($stmt, 'sssssssssssssssssssss', $list, $dev_id, $dev_typ, $dev_name, $manuname, $dept, $cpu, $batch_num, $mandt, $unit, $qty, $rate, $descrp, $purprice, $warnty, $prodt, $dev_stat, $recomm, $location, $expdate, $logo);
 
-$result = mysqli_query($conn, $sql);
-
-if ($result > 0)
+if (mysqli_stmt_execute($stmt))
 
 
 {

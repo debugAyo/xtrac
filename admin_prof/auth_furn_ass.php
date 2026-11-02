@@ -201,29 +201,29 @@ include '../link/connect.php';
 
 ## Remember to insert some protection against MYSQL injections ##
 
-$asset_id=mysqli_real_escape_string($conn,$_POST['asset_id']);
-$ass_cat=mysqli_real_escape_string($conn,$_POST['ass_cat']);
-$ass_typ=mysqli_real_escape_string($conn,$_POST['ass_typ']);
-$asset_name=mysqli_real_escape_string($conn,$_POST['asset_name']);
-$serial_no=mysqli_real_escape_string($conn,$_POST['serial_no']);
-$descrpt=mysqli_real_escape_string($conn,$_POST['descrpt']);
-$dimension=mysqli_real_escape_string($conn,$_POST['dimension']);
-$ass_color=mysqli_real_escape_string($conn,$_POST['ass_color']);
-$manuname=mysqli_real_escape_string($conn,$_POST['manuname']);
-$ass_mode=mysqli_real_escape_string($conn,$_POST['ass_mode']);
-$manudate=mysqli_real_escape_string($conn,$_POST['manudate']);
-$ass_cond=mysqli_real_escape_string($conn,$_POST['ass_cond']);
-$procdate=mysqli_real_escape_string($conn,$_POST['procdate']);
-$purprice=mysqli_real_escape_string($conn,$_POST['purprice']);
-$purprice=mysqli_real_escape_string($conn,$_POST['purprice']);
-$vendor=mysqli_real_escape_string($conn,$_POST['vendor']);
-$location=mysqli_real_escape_string($conn,$_POST['location']);
-$spec_locat=mysqli_real_escape_string($conn,$_POST['spec_locat']);
-$warnty_info=mysqli_real_escape_string($conn,$_POST['warnty_info']);
-$owner=mysqli_real_escape_string($conn,$_POST['owner']);
-$end_life=mysqli_real_escape_string($conn,$_POST['end_life']);
-$dev_stat=mysqli_real_escape_string($conn,$_POST['dev_stat']); 
-$log_usr=mysqli_real_escape_string($conn,$_POST['log_usr']);
+$asset_id=$_POST['asset_id'];
+$ass_cat=$_POST['ass_cat'];
+$ass_typ=$_POST['ass_typ'];
+$asset_name=$_POST['asset_name'];
+$serial_no=$_POST['serial_no'];
+$descrpt=$_POST['descrpt'];
+$dimension=$_POST['dimension'];
+$ass_color=$_POST['ass_color'];
+$manuname=$_POST['manuname'];
+$ass_mode=$_POST['ass_mode'];
+$manudate=$_POST['manudate'];
+$ass_cond=$_POST['ass_cond'];
+$procdate=$_POST['procdate'];
+$purprice=$_POST['purprice'];
+$purprice=$_POST['purprice'];
+$vendor=$_POST['vendor'];
+$location=$_POST['location'];
+$spec_locat=$_POST['spec_locat'];
+$warnty_info=$_POST['warnty_info'];
+$owner=$_POST['owner'];
+$end_life=$_POST['end_life'];
+$dev_stat=$_POST['dev_stat']; 
+$log_usr=$_POST['log_usr'];
 
 	 
 $result = mysqli_query($conn,"SELECT * FROM additem WHERE devid='$asset_id'");

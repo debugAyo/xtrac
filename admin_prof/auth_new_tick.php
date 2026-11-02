@@ -35,16 +35,16 @@ exit();
 }
 include '../link/connect.php';
 
-$tick_name=mysqli_real_escape_string($conn,$_POST['tick_name']);
-$int_service=mysqli_real_escape_string($conn,$_POST['int_service']);
-$cal_address=mysqli_real_escape_string($conn,$_POST['cal_address']);
-$cal_name=mysqli_real_escape_string($conn,$_POST['cal_name']);
-$cal_phone=mysqli_real_escape_string($conn,$_POST['cal_phone']);
-$open_dt=mysqli_real_escape_string($conn,$_POST['open_dt']);
-$desc=mysqli_real_escape_string($conn,$_POST['desc']);
-$impct=mysqli_real_escape_string($conn,$_POST['impct']);
-$prior=mysqli_real_escape_string($conn,$_POST['prior']);
-$stat=mysqli_real_escape_string($conn,$_POST['stat']);
+$tick_name=$_POST['tick_name'];
+$int_service=$_POST['int_service'];
+$cal_address=$_POST['cal_address'];
+$cal_name=$_POST['cal_name'];
+$cal_phone=$_POST['cal_phone'];
+$open_dt=$_POST['open_dt'];
+$desc=$_POST['desc'];
+$impct=$_POST['impct'];
+$prior=$_POST['prior'];
+$stat=$_POST['stat'];
 
 include '../link/connect.php';
 

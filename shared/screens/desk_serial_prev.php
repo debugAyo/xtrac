@@ -6,15 +6,21 @@
 
 //$id = $_POST['id'];
 
-$sql="SELECT * FROM additem WHERE serial='$track_serial'";
-$result=mysqli_query($conn,$sql);
+$sql="SELECT * FROM additem WHERE serial=?";
+$stmt = mysqli_prepare($conn, $sql);
+mysqli_stmt_bind_param($stmt, 's', $track_serial);
+mysqli_stmt_execute($stmt);
+$result = mysqli_stmt_get_result($stmt);
 
 $rows=mysqli_fetch_array($result);
 
 $id = $rows['sn'];
 
 include '../link/connect.php';
- $image = mysqli_query($conn,"SELECT * FROM additem WHERE sn='$id'");
+ $stmt = mysqli_prepare($conn, "SELECT * FROM additem WHERE sn=?");
+mysqli_stmt_bind_param($stmt, 's', $id);
+mysqli_stmt_execute($stmt);
+ $image = mysqli_stmt_get_result($stmt);
 
 while($row = mysqli_fetch_assoc($image))
 {
@@ -25,8 +31,11 @@ echo '<p><img src="'. $row['pic']. '" style="width:100%; height:auto; border:0px
 ?>
 
 <?php
-$sql="SELECT * FROM additem WHERE serial='$track_serial'";
-$result=mysqli_query($conn,$sql);
+$sql="SELECT * FROM additem WHERE serial=?";
+$stmt = mysqli_prepare($conn, $sql);
+mysqli_stmt_bind_param($stmt, 's', $track_serial);
+mysqli_stmt_execute($stmt);
+$result = mysqli_stmt_get_result($stmt);
 while ($row= mysqli_fetch_array($result))
 {
 

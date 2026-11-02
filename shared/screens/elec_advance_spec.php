@@ -2,7 +2,10 @@
 require_once "../link/connect.php";
 $speciality_id = $_POST["speciality_id"];
 
-$result = mysqli_query($conn,"SELECT * FROM elec_spec_categ WHERE id='$speciality_id'");
+$stmt = mysqli_prepare($conn, "SELECT * FROM elec_spec_categ WHERE id=?");
+mysqli_stmt_bind_param($stmt, 's', $speciality_id);
+mysqli_stmt_execute($stmt);
+$result = mysqli_stmt_get_result($stmt);
 $row = mysqli_fetch_array($result);
 $categ = $row['category_id'];
 /*
@@ -22,7 +25,10 @@ $opt = 'Select Examination State';
 <?php
 require_once "../link/connect.php";
 $speciality_id = $_POST["speciality_id"];
-$result = mysqli_query($conn,"SELECT * FROM elec_adv_spec_categ WHERE spec_categ_id = '$speciality_id'");
+$stmt = mysqli_prepare($conn, "SELECT * FROM elec_adv_spec_categ WHERE spec_categ_id = ?");
+mysqli_stmt_bind_param($stmt, 's', $speciality_id);
+mysqli_stmt_execute($stmt);
+$result = mysqli_stmt_get_result($stmt);
 ?>
 
 <?php

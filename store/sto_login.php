@@ -4,7 +4,11 @@
 
 include 'connect.php';
 
-$result = mysqli_query($conn, "SELECT * FROM store_staff WHERE email='$email' && staff_id='$pin'");  
+$sql = "SELECT * FROM store_staff WHERE email=? && staff_id=?";
+$stmt = mysqli_prepare($conn, $sql);
+mysqli_stmt_bind_param($stmt, 'ss', $email, $pin);
+mysqli_stmt_execute($stmt);
+$result = mysqli_stmt_get_result($stmt);
  $myrow=mysqli_fetch_array($result); 
  
 echo '<br><p style="margin-top: 0; margin-bottom: 5px"><form method="POST" action="sto_ass_req.php">

@@ -1,4 +1,9 @@
 <?php
+require_once __DIR__ . '/../shared/security.php';
+
+$cal_name=''; $cal_phone=''; $cal_email=''; $cal_status=''; $username='';
+$password=''; $confirm_pass=''; $gender=''; $date_ob=''; $marital=''; $id='';
+
 if (isset($_POST['submit'])) {
 $cal_name=$_POST['cal_name'];
 $cal_phone=$_POST['cal_phone'];
@@ -14,43 +19,55 @@ $id=$_POST['id'];
 }
 
 
-if ($password==$confirm_pass) {
-$passwd = md5($password);
-
+$passwd = null;
+if ($password !== '' || $confirm_pass !== '') {
+    if ($password !== $confirm_pass) {
+        echo 'Passwords do not match.';
+        exit();
+    }
+    $passwd = password_hash($password, PASSWORD_BCRYPT);
 }
 
 include '../link/connect.php';
 
-$cal_name=mysqli_real_escape_string($conn,$_POST['cal_name']);
-$cal_phone=mysqli_real_escape_string($conn,$_POST['cal_phone']);
-$cal_email=mysqli_real_escape_string($conn,$_POST['cal_email']);
-$cal_status=mysqli_real_escape_string($conn,$_POST['cal_status']);
-$username=mysqli_real_escape_string($conn,$_POST['username']);
-$password=mysqli_real_escape_string($conn,$_POST['password']);
-$gender=mysqli_real_escape_string($conn,$_POST['gender']);
-$date_ob=mysqli_real_escape_string($conn,$_POST['date_ob']);
-$marital=mysqli_real_escape_string($conn,$_POST['marital']);
+if ($passwd !== null) {
+    $sql = "UPDATE user_login SET name=?,privilege=?,email=?,phone=?,username=?,password=?,date_ob=?,marital=?,gender=? WHERE id=?";
+    $stmt = mysqli_prepare($conn, $sql);
+    mysqli_stmt_bind_param($stmt, 'sssssssssi',
+        $cal_name, $cal_status, $cal_email, $cal_phone, $username,
+        $passwd, $date_ob, $marital, $gender, $id);
+} else {
+    $sql = "UPDATE user_login SET name=?,privilege=?,email=?,phone=?,username=?,date_ob=?,marital=?,gender=? WHERE id=?";
+    $stmt = mysqli_prepare($conn, $sql);
+    mysqli_stmt_bind_param($stmt, 'ssssssssi',
+        $cal_name, $cal_status, $cal_email, $cal_phone, $username,
+        $date_ob, $marital, $gender, $id);
+}
 
-$sql = "UPDATE user_login SET name='$cal_name',privilege='$cal_status',email='$cal_email',phone='$cal_phone',username='$username',password='$passwd',date_ob='$date_ob',marital='$marital',gender='$gender' WHERE id='$id'";	 
-if ($conn->query($sql) === TRUE) {
+if (mysqli_stmt_execute($stmt)) {
 
 /*the new addtions starts here */
 
 $mssg = 'User Information Successfully Updated. Please ensure you protect your password';
 
-$sql = "INSERT INTO signup_feedback (call_phone,recipient,msg_content,date) VALUES('$cal_phone','$cal_email','$mssg',NOW())";
-if ($conn->query($sql) === TRUE) {
+$stmt2 = mysqli_prepare($conn,
+    "INSERT INTO signup_feedback (call_phone,recipient,msg_content,date) VALUES(?,?,?,NOW())");
+mysqli_stmt_bind_param($stmt2, 'sss', $cal_phone, $cal_email, $mssg);
+if (mysqli_stmt_execute($stmt2)) {
 
 include '../application/testing.php';
 //include 'sign_mails.php';
 //include 'signup_confirm_email.php';
 
 }
+mysqli_stmt_close($stmt2);
 
 /*It also ends here */
 
-$query="SELECT * FROM user_login WHERE username='$username'";
-$result = mysqli_query($conn,$query) or die(mysqli_error());
+$stmt3 = mysqli_prepare($conn, "SELECT * FROM user_login WHERE username = ?");
+mysqli_stmt_bind_param($stmt3, 's', $username);
+mysqli_stmt_execute($stmt3);
+$result = mysqli_stmt_get_result($stmt3);
 
 if(mysqli_num_rows($result) > 0) {
 
@@ -62,12 +79,15 @@ $fname = $row['name'];
 
    include '../application/success_signup.php';
 }
-     
-    
-} 
+mysqli_stmt_close($stmt3);
+
+
+}
 
 else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
+    echo "Error: " . htmlspecialchars(mysqli_stmt_error($stmt));
 }
+
+mysqli_stmt_close($stmt);
 
 ?>

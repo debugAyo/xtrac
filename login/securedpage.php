@@ -48,7 +48,10 @@ $_SESSION['LAST_ACTIVITY'] = time(); // update last activity time stamp
   <div class="w3-threequarter"> 
   <?php
 require_once "../link/connect.php";
-$result = mysqli_query($conn,"SELECT * FROM user_login WHERE username = '" . $_SESSION['username'] . "'");
+$stmt = mysqli_prepare($conn, "SELECT * FROM user_login WHERE username = ?");
+mysqli_stmt_bind_param($stmt, 's', $_SESSION['username']);
+mysqli_stmt_execute($stmt);
+$result = mysqli_stmt_get_result($stmt);
 while($row = mysqli_fetch_array($result)) {
 //$fname = $row['surname'].'&nbsp;'.  $row['othernames'];
 $fname = $row['name'];
@@ -64,7 +67,7 @@ $gender = $row['sex'];
 
  $list ='';
 
-  echo '<p style="margin-top: 0%; font-size:14px"><i class="fa fa-caret-right"></i> Welcome! '.$fname.'</p>';
+  echo '<p style="margin-top: 0%; font-size:14px"><i class="fa fa-caret-right"></i> Welcome! '.htmlspecialchars($fname).'</p>';
 
 				
 			if (isset($_POST['list'])) {

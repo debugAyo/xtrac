@@ -7,8 +7,11 @@ include '../link/connect.php';
 $date = date("m-Y");
 
 
-$sql="SELECT * FROM additem WHERE devid='$dev_id'";
-$result=mysqli_query($conn,$sql);
+$sql="SELECT * FROM additem WHERE devid=?";
+$stmt = mysqli_prepare($conn, $sql);
+mysqli_stmt_bind_param($stmt, 's', $dev_id);
+mysqli_stmt_execute($stmt);
+$result = mysqli_stmt_get_result($stmt);
 
 $rows=mysqli_fetch_array($result);
 
@@ -23,7 +26,10 @@ $id = $rows['sn'];
 //Print it out.
 //echo $passwordHashed;
 			include '../link/connect.php';
- $image = mysqli_query($conn,"SELECT * FROM additem WHERE sn='$id'");
+ $image_stmt = mysqli_prepare($conn, "SELECT * FROM additem WHERE sn=?");
+mysqli_stmt_bind_param($image_stmt, 's', $id);
+mysqli_stmt_execute($image_stmt);
+ $image = mysqli_stmt_get_result($image_stmt);
 // $image = mysqli_query($conn,"SELECT * FROM e_registration WHERE sn='31'");
 while($row = mysqli_fetch_assoc($image))
 {
@@ -39,8 +45,11 @@ echo '<br>';
 
 //$sql = "SELECT *, COUNT(id) FROM schedule GROUP BY pname, sname, email, platform, ctname, class, date, time HAVING email='$phone' && date LIKE '%$date%' ORDER BY date DESC";
 
-$sql = "SELECT * FROM additem WHERE devid = '$dev_id'";
-$result = mysqli_query($conn, $sql);
+$sql = "SELECT * FROM additem WHERE devid = ?";
+$stmt = mysqli_prepare($conn, $sql);
+mysqli_stmt_bind_param($stmt, 's', $dev_id);
+mysqli_stmt_execute($stmt);
+$result = mysqli_stmt_get_result($stmt);
 
 if(mysqli_num_rows($result) >0)
 {

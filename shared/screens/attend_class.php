@@ -8,7 +8,10 @@ $subjectid = $_POST['subjectid'];
 
 include '../link/connect.php';
 
-			$result = mysqli_query($conn, "SELECT * FROM online_class WHERE classId='$classid' && course_name='$subjectid'");
+			$stmt = mysqli_prepare($conn, "SELECT * FROM online_class WHERE classId=? && course_name=?");
+			mysqli_stmt_bind_param($stmt, 'ss', $classid, $subjectid);
+			mysqli_stmt_execute($stmt);
+			$result = mysqli_stmt_get_result($stmt);
 			
 			if ($result->num_rows > 0) {
 				

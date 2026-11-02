@@ -7,8 +7,11 @@ include '../link/connect.php';
 $date = date("m-Y");
 
 
-$sql = "SELECT * FROM documentation WHERE app_no = '$appcode'";
-$result = mysqli_query($conn, $sql);
+$sql = "SELECT * FROM documentation WHERE app_no = ?";
+$stmt = mysqli_prepare($conn, $sql);
+mysqli_stmt_bind_param($stmt, 's', $appcode);
+mysqli_stmt_execute($stmt);
+$result = mysqli_stmt_get_result($stmt);
 
 if(mysqli_num_rows($result) >0)
 {
@@ -23,8 +26,11 @@ while ($row = mysqli_fetch_array($result)) {
 
 //$sql = "SELECT *, COUNT(id) FROM schedule GROUP BY pname, sname, email, platform, ctname, class, date, time HAVING email='$phone' && date LIKE '%$date%' ORDER BY date DESC";
 
-$sql = "SELECT * FROM user_login WHERE app_no = '$appcode'";
-$result = mysqli_query($conn, $sql);
+$sql = "SELECT * FROM user_login WHERE app_no = ?";
+$stmt = mysqli_prepare($conn, $sql);
+mysqli_stmt_bind_param($stmt, 's', $appcode);
+mysqli_stmt_execute($stmt);
+$result = mysqli_stmt_get_result($stmt);
 
 if(mysqli_num_rows($result) >0)
 {
@@ -73,8 +79,11 @@ echo '<table width="100%" cellspacing="0" >
 
 
 echo '</table>';		
-$sql = "SELECT * FROM documentation WHERE app_no = '$appcode'";
-$result = mysqli_query($conn, $sql);
+$sql = "SELECT * FROM documentation WHERE app_no = ?";
+$stmt = mysqli_prepare($conn, $sql);
+mysqli_stmt_bind_param($stmt, 's', $appcode);
+mysqli_stmt_execute($stmt);
+$result = mysqli_stmt_get_result($stmt);
 
 if(mysqli_num_rows($result) >0)
 {

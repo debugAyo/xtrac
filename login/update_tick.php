@@ -9,9 +9,12 @@
 	}
 	
 include '../link/connect.php';
-$sql="SELECT * FROM new_ticket WHERE ticket_no='$tick_no'";
+$sql="SELECT * FROM new_ticket WHERE ticket_no=?";
+$stmt = mysqli_prepare($conn, $sql);
+mysqli_stmt_bind_param($stmt, 's', $tick_no);
 
-$result = mysqli_query($conn,$sql) or die(mysqli_error());
+mysqli_stmt_execute($stmt) or die(mysqli_error());
+$result = mysqli_stmt_get_result($stmt);
 
 while ($row=mysqli_fetch_array($result)) {
 $cal_address = $row['call_address'];
@@ -43,8 +46,11 @@ $serv_spec = $row['spec'];
 /*$query="SELECT new_ticket.id, new_ticket.ticket_no, new_ticket.tickname, new_ticket.call_name, new_ticket.call_phone, new_ticket.priority, new_ticket.impact, new_ticket.descrp, new_ticket.tickassign_name, new_ticket.tickassign_phone, new_ticket.opendate, new_ticket.call_address, new_ticket.spec, artisan_reg.name, artisan_reg.phone, artisan_reg.email, artisan_reg.spec, artisan_reg.date, artisan_reg.street_address, artisan_reg.status FROM new_ticket INNER JOIN artisan_reg ON new_ticket.spec = artisan_reg.spec WHERE new_ticket.call_name='$cal_name' && new_ticket.ticket_no='$ticketno' && artisan_reg.street_address LIKE '%$cal_address%' && new_ticket.status='Awaiting Response' && artisan_reg.status='Available'";*/
 
 include '../link/connect.php';
-$query="SELECT new_ticket.*, artisan_reg.pro_name,artisan_reg.pro_phone,artisan_reg.pro_email,artisan_reg.spec,artisan_reg.pro_locat,artisan_reg.pro_city,artisan_reg.pro_state,artisan_reg.status FROM new_ticket INNER JOIN artisan_reg ON new_ticket.spec = artisan_reg.spec WHERE new_ticket.call_name='$cal_name' && new_ticket.ticket_no='$ticketno' &&  artisan_reg.status='Available'";
-$result=mysqli_query($conn,$query);
+$query="SELECT new_ticket.*, artisan_reg.pro_name,artisan_reg.pro_phone,artisan_reg.pro_email,artisan_reg.spec,artisan_reg.pro_locat,artisan_reg.pro_city,artisan_reg.pro_state,artisan_reg.status FROM new_ticket INNER JOIN artisan_reg ON new_ticket.spec = artisan_reg.spec WHERE new_ticket.call_name=? && new_ticket.ticket_no=? &&  artisan_reg.status='Available'";
+$stmt = mysqli_prepare($conn, $query);
+mysqli_stmt_bind_param($stmt, 'ss', $cal_name, $ticketno);
+mysqli_stmt_execute($stmt);
+$result = mysqli_stmt_get_result($stmt);
 while ($row = mysqli_fetch_array($result))
 {	
 

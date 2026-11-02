@@ -19,14 +19,19 @@
 
 include '../link/connect.php';
 
-$query="SELECT * FROM delegated_artisan WHERE call_name = '$fname' && status = 'Available'";
-$result = mysqli_query($conn,$query) or die(mysqli_error());
+$query="SELECT * FROM delegated_artisan WHERE call_name = ? && status = 'Available'";
+$stmt = mysqli_prepare($conn, $query);
+mysqli_stmt_bind_param($stmt, 's', $fname);
+mysqli_stmt_execute($stmt) or die(mysqli_error());
+$result = mysqli_stmt_get_result($stmt);
 
 if(mysqli_num_rows($result) < 1)
 {
 
-$sql = "INSERT INTO delegated_artisan (ticket_no, tickname, call_name, call_phone, tickassign_name, tickassign_phone, opendate, call_address, spec, photo, pro_name, pro_phone, pro_email, pro_spec, date, pro_locat, pro_city, pro_state, status) SELECT new_ticket.ticket_no, new_ticket.tickname, new_ticket.call_name, new_ticket.call_phone, new_ticket.tickassign_name, new_ticket.tickassign_phone, new_ticket.opendate, new_ticket.call_address, new_ticket.spec, artisan_reg.photo, artisan_reg.pro_name, artisan_reg.pro_phone, artisan_reg.pro_email, artisan_reg.spec, artisan_reg.date, artisan_reg.pro_locat, artisan_reg.pro_city, artisan_reg.pro_state, artisan_reg.status FROM new_ticket INNER JOIN artisan_reg ON new_ticket.spec = artisan_reg.spec WHERE new_ticket.call_name = '$fname'";
-if ($conn->query($sql) === TRUE) {
+$sql = "INSERT INTO delegated_artisan (ticket_no, tickname, call_name, call_phone, tickassign_name, tickassign_phone, opendate, call_address, spec, photo, pro_name, pro_phone, pro_email, pro_spec, date, pro_locat, pro_city, pro_state, status) SELECT new_ticket.ticket_no, new_ticket.tickname, new_ticket.call_name, new_ticket.call_phone, new_ticket.tickassign_name, new_ticket.tickassign_phone, new_ticket.opendate, new_ticket.call_address, new_ticket.spec, artisan_reg.photo, artisan_reg.pro_name, artisan_reg.pro_phone, artisan_reg.pro_email, artisan_reg.spec, artisan_reg.date, artisan_reg.pro_locat, artisan_reg.pro_city, artisan_reg.pro_state, artisan_reg.status FROM new_ticket INNER JOIN artisan_reg ON new_ticket.spec = artisan_reg.spec WHERE new_ticket.call_name = ?";
+$stmt = mysqli_prepare($conn, $sql);
+mysqli_stmt_bind_param($stmt, 's', $fname);
+if (mysqli_stmt_execute($stmt) === TRUE) {
 
 include 'artisan.php';
 

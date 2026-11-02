@@ -79,8 +79,11 @@ $date = date("m-Y");
 
 /* filter result by curent month and year and preview in descending order*/
 
-$sql = "SELECT * FROM user_login WHERE my_state = '$myselect' ORDER BY name ASC";
-$result = mysqli_query($conn, $sql);
+$sql = "SELECT * FROM user_login WHERE my_state = ? ORDER BY name ASC";
+$stmt = mysqli_prepare($conn, $sql);
+mysqli_stmt_bind_param($stmt, 's', $myselect);
+mysqli_stmt_execute($stmt);
+$result = mysqli_stmt_get_result($stmt);
 
 if(mysqli_num_rows($result) >0)
 {

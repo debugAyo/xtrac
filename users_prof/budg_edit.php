@@ -8,8 +8,11 @@ if (isset($_POST['submit'])) {
 }
 
 include '../link/connect.php';
-$sql="SELECT * FROM budgets WHERE id='$id'";
-$result=mysqli_query($conn, $sql);
+$sql="SELECT * FROM budgets WHERE id=?";
+$stmt = mysqli_prepare($conn, $sql);
+mysqli_stmt_bind_param($stmt, 's', $id);
+mysqli_stmt_execute($stmt);
+$result = mysqli_stmt_get_result($stmt);
 while ($row=mysqli_fetch_array($result)) {
 
 ?>

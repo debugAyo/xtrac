@@ -25,26 +25,29 @@ include '../link/connect.php';
 
 ## Remember to insert some protection against MYSQL injections ##
 
-$dev_id = mysqli_real_escape_string($conn,$_POST['dev_id']);
-$dev_name = mysqli_real_escape_string($conn,$_POST['dev_name']);
-$dev_type = mysqli_real_escape_string($conn,$_POST['dev_type']);
-$dev_mod = mysqli_real_escape_string($conn,$_POST['dev_mod']);
-$man_name = mysqli_real_escape_string($conn,$_POST['man_name']);
-$prodt = mysqli_real_escape_string($conn,$_POST['prodt']);
-$owner = mysqli_real_escape_string($conn,$_POST['owner']);
-$log_usr = mysqli_real_escape_string($conn,$_POST['log_usr']);
-$ass_cat = mysqli_real_escape_string($conn,$_POST['ass_cat']);
-$reg_num = mysqli_real_escape_string($conn,$_POST['reg_num']);
-$purprice = mysqli_real_escape_string($conn,$_POST['purprice']);
-$warnty = mysqli_real_escape_string($conn,$_POST['warnty']);
-$location = mysqli_real_escape_string($conn,$_POST['location']);
-$mk_year = mysqli_real_escape_string($conn,$_POST['mk_year']);
-$cpu = mysqli_real_escape_string($conn,$_POST['cpu']);
-$dev_stat = mysqli_real_escape_string($conn,$_POST['dev_stat']);
+$dev_id = $_POST['dev_id'];
+$dev_name = $_POST['dev_name'];
+$dev_type = $_POST['dev_type'];
+$dev_mod = $_POST['dev_mod'];
+$man_name = $_POST['man_name'];
+$prodt = $_POST['prodt'];
+$owner = $_POST['owner'];
+$log_usr = $_POST['log_usr'];
+$ass_cat = $_POST['ass_cat'];
+$reg_num = $_POST['reg_num'];
+$purprice = $_POST['purprice'];
+$warnty = $_POST['warnty'];
+$location = $_POST['location'];
+$mk_year = $_POST['mk_year'];
+$cpu = $_POST['cpu'];
+$dev_stat = $_POST['dev_stat'];
 //$recomm = mysqli_real_escape_string($conn, $_POST['recomm']);
 
 
-$result = mysqli_query($conn,"SELECT * FROM additem WHERE devid='$dev_id'");
+$stmt = mysqli_prepare($conn, "SELECT * FROM additem WHERE devid=?");
+mysqli_stmt_bind_param($stmt, 's', $dev_id);
+mysqli_stmt_execute($stmt);
+$result = mysqli_stmt_get_result($stmt);
         if(mysqli_num_rows($result)>0)
         {
         echo '<br>';
@@ -59,9 +62,12 @@ $result = mysqli_query($conn,"SELECT * FROM additem WHERE devid='$dev_id'");
 else
 { 
 $sql = "INSERT INTO additem (category,devtype,devname,manuname,lifecycle,regnumber,assmode,makeyear,purprice,waranty,prodate,curdate,devid,devstat,recommnd,location,pic,endlife,owner,loguser)
-VALUES ('$ass_cat','$dev_type','$dev_name','$man_name','$cpu','$reg_num','$dev_mod','$mk_year','$purprice','$warnty','$prodt',NOW(),'$dev_id','$dev_stat','$recomm','$location','$ass_pic_res','$expdate','$owner','$log_usr')";
+VALUES (?,?,?,?,?,?,?,?,?,?,?,NOW(),?,?,?,?,?,?,?,?)";
 
-if ($conn->query($sql) === TRUE) {
+$stmt = mysqli_prepare($conn, $sql);
+mysqli_stmt_bind_param($stmt, 'ssssssssssssssssss', $ass_cat, $dev_type, $dev_name, $man_name, $cpu, $reg_num, $dev_mod, $mk_year, $purprice, $warnty, $prodt, $dev_id, $dev_stat, $recomm, $location, $ass_pic_res, $expdate, $owner, $log_usr);
+
+if (mysqli_stmt_execute($stmt)) {
   echo "<h6 class='w3-green w3-text-white w3-center'>New record created successfully</h6>";
    echo '<br>';
    include 'build_ass.php';

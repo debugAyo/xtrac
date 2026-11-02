@@ -8,8 +8,11 @@ if (isset($_POST['submit'])) {
 }
 
 include '../link/connect.php';
-$sql="SELECT * FROM user_login WHERE id='$id'";
-$result=mysqli_query($conn, $sql);
+$sql="SELECT * FROM user_login WHERE id=?";
+$stmt = mysqli_prepare($conn, $sql);
+mysqli_stmt_bind_param($stmt, 'i', $id);
+mysqli_stmt_execute($stmt);
+$result = mysqli_stmt_get_result($stmt);
 while ($row=mysqli_fetch_array($result)) {
 
 ?>

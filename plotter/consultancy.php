@@ -2,16 +2,22 @@
 	$dropdown = $_POST['dropdown'];	
 		include '../link/connect.php';
 
-$sql = "SELECT * FROM project_title WHERE id='$dropdown'";
-		$result = mysqli_query($conn, $sql);
+$sql = "SELECT * FROM project_title WHERE id=?";
+		$stmt = mysqli_prepare($conn, $sql);
+		mysqli_stmt_bind_param($stmt, 's', $dropdown);
+		mysqli_stmt_execute($stmt);
+		$result = mysqli_stmt_get_result($stmt);
 			while ($row=mysqli_fetch_array($result)) {
 			
 			$program = $row['protitle'];
 			}
 			
 
-$sql = "SELECT * FROM logistics_report WHERE protitle='$dropdown' GROUP BY state";
-$result = mysqli_query($conn, $sql);
+$sql = "SELECT * FROM logistics_report WHERE protitle=? GROUP BY state";
+$stmt = mysqli_prepare($conn, $sql);
+mysqli_stmt_bind_param($stmt, 's', $dropdown);
+mysqli_stmt_execute($stmt);
+$result = mysqli_stmt_get_result($stmt);
 
 if(mysqli_num_rows($result) > 0 ) {
 

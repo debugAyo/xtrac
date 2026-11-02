@@ -1,5 +1,7 @@
 <?php
 
+require_once __DIR__ . '/../shared/security.php';
+
 if (isset ($_POST['submit'])) {
 $title=$_POST['title'];
 $dept=$_POST['dept'];
@@ -15,10 +17,11 @@ $gender=$_POST['gender'];
 }
 
 
-if ($pass==$confirm_pass) {
-$password = md5($pass);
-
+if (!isset($pass) || !isset($confirm_pass) || $pass !== $confirm_pass) {
+    echo 'Passwords do not match.';
+    exit();
 }
+$password = password_hash($pass, PASSWORD_BCRYPT);
 
 $rand_tick=(rand() );
 
@@ -62,8 +65,10 @@ $pass_res = 'null.pdf';
 
 include '../link/connect.php';
 
-$query="SELECT * FROM user_login WHERE username='$username'";
-$result = mysqli_query($conn,$query) or die(mysqli_error());
+$stmt = mysqli_prepare($conn, "SELECT * FROM user_login WHERE username = ?");
+mysqli_stmt_bind_param($stmt, 's', $username);
+mysqli_stmt_execute($stmt);
+$result = mysqli_stmt_get_result($stmt);
 
 if(mysqli_num_rows($result) > 0) {
 
@@ -74,30 +79,34 @@ include 'user_exist.php';
 exit();
 }
 }
+mysqli_stmt_close($stmt);
 
-$title=mysqli_real_escape_string($conn,$_POST['title']);
-$dept=mysqli_real_escape_string($conn,$_POST['dept']);
-$acct_type=mysqli_real_escape_string($conn,$_POST['acct_type']);
-$username=mysqli_real_escape_string($conn,$_POST['username']);
-$pass=mysqli_real_escape_string($conn,$_POST['pass']);
-$cal_name=mysqli_real_escape_string($conn,$_POST['cal_name']);
-$cal_phone=mysqli_real_escape_string($conn,$_POST['cal_phone']);
-$cal_email=mysqli_real_escape_string($conn,$_POST['cal_email']);
-$gender=mysqli_real_escape_string($conn,$_POST['gender']);
+$title=isset($_POST['title']) ? $_POST['title'] : $title;
+$dept=isset($_POST['dept']) ? $_POST['dept'] : $dept;
+$acct_type=isset($_POST['acct_type']) ? $_POST['acct_type'] : $acct_type;
+$username=isset($_POST['username']) ? $_POST['username'] : $username;
+$cal_name=isset($_POST['cal_name']) ? $_POST['cal_name'] : $cal_name;
+$cal_phone=isset($_POST['cal_phone']) ? $_POST['cal_phone'] : $cal_phone;
+$cal_email=isset($_POST['cal_email']) ? $_POST['cal_email'] : $cal_email;
+$gender=isset($_POST['gender']) ? $_POST['gender'] : $gender;
 
-$sql="INSERT INTO user_login (title,fname,sex,staff_id,dept,access_prvlg,phone,email,username,password,img,date_reg)
-	VALUES('$title','$cal_name','$gender','$rand_tick','$dept','$acct_type','$cal_phone','$cal_email','$username','$password','$pass_res',NOW())";
+$sql = "INSERT INTO user_login (title,fname,sex,staff_id,dept,access_prvlg,phone,email,username,password,img,date_reg)
+	VALUES(?,?,?,?,?,?,?,?,?,?,?,NOW())";
+$stmt = mysqli_prepare($conn, $sql);
+mysqli_stmt_bind_param($stmt, 'sssssssssss',
+    $title, $cal_name, $gender, $rand_tick, $dept, $acct_type,
+    $cal_phone, $cal_email, $username, $password, $pass_res);
 
-if ($conn->query($sql) === TRUE) {
+if (mysqli_stmt_execute($stmt)) {
 
-echo 'User <b>' . $username . ' </b>Successfully Created.';
+echo 'User <b>' . htmlspecialchars($username) . ' </b>Successfully Created.';
 include '../application/signup.php';
 }
 
 else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
+    echo "Error: " . htmlspecialchars(mysqli_stmt_error($stmt));
 }
 
+mysqli_stmt_close($stmt);
 
 ?>
-

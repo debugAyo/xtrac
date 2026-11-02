@@ -80,9 +80,11 @@ include 'connect.php';
 
 //$sql = "SELECT * FROM additem WHERE  devstat LIKE '%" . $status . "%' OR devid LIKE '%" . $search_label  ."%' OR serial LIKE '%" . $search_serial  ."%' OR ipaddress LIKE '%" . $search_ipaddr  ."%'OR devname LIKE '%" . $search_assname  ."%'";  
    
-  $sql = "SELECT * FROM additem WHERE  devstat ='$status'";   
+  $stmt = mysqli_prepare($conn, "SELECT * FROM additem WHERE  devstat =?");
    //-run  the query against the mysqli query function  
- $result=mysqli_query($conn,$sql);  
+ mysqli_stmt_bind_param($stmt, 's', $status);
+ mysqli_stmt_execute($stmt);
+ $result = mysqli_stmt_get_result($stmt);
  
   if(mysqli_num_rows($result)==0)
 			{
@@ -133,8 +135,10 @@ echo '</table>';
 //mysqli_close();
  echo "<p style='margin-left: 10px'><font face='arial narrow' size='2' color='#008000'>";
 echo "<br>";
-$sql="SELECT * FROM additem WHERE devstat ='$status'";
-$result=mysqli_query($conn,$sql);
+$stmt = mysqli_prepare($conn, "SELECT * FROM additem WHERE devstat =?");
+mysqli_stmt_bind_param($stmt, 's', $status);
+mysqli_stmt_execute($stmt);
+$result = mysqli_stmt_get_result($stmt);
 $num_rows = mysqli_num_rows($result);
 echo "Total Assets Displayed:";
 echo "</font>";

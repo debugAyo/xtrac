@@ -15,11 +15,14 @@ exit();
 
 include '../link/connect.php';
 
-$pro_name=mysqli_real_escape_string($conn,$_POST['pro_name']);
-$int_service=mysqli_real_escape_string($conn,$_POST['int_service']);
+$pro_name=$_POST['pro_name'];
+$int_service=$_POST['int_service'];
 
-$query="SELECT * FROM user_login WHERE fname='$pro_name'";
-$result = mysqli_query($conn,$query) or die(mysqli_error());
+$query="SELECT * FROM user_login WHERE fname=?";
+$stmt = mysqli_prepare($conn,$query);
+mysqli_stmt_bind_param($stmt,'s',$pro_name);
+mysqli_stmt_execute($stmt) or die(mysqli_error());
+$result = mysqli_stmt_get_result($stmt);
 
 if(mysqli_num_rows($result) > 0) {
 
@@ -34,8 +37,11 @@ $pro_pic = $row['img'];
 }
 }
 
-$query="SELECT * FROM inc_speciality WHERE id='$int_service'";
-$result = mysqli_query($conn,$query) or die(mysqli_error());
+$query="SELECT * FROM inc_speciality WHERE id=?";
+$stmt = mysqli_prepare($conn,$query);
+mysqli_stmt_bind_param($stmt,'s',$int_service);
+mysqli_stmt_execute($stmt) or die(mysqli_error());
+$result = mysqli_stmt_get_result($stmt);
 
 if(mysqli_num_rows($result) > 0) {
 
@@ -48,10 +54,11 @@ $pro_spec = $row['spec_name'];
 
 
 $sql="INSERT INTO inc_artisan_reg (regno, photo, spec, pro_name, pro_phone, pro_email, date) 
-		VALUES('$pro_id','$pro_pic','$pro_spec','$pro_name','$pro_phone','$pro_email',NOW())";
+		VALUES(?,?,?,?,?,?,NOW())";
 					
-
-if ($conn->query($sql) === TRUE) {
+$stmt = mysqli_prepare($conn,$sql);
+mysqli_stmt_bind_param($stmt,'sssssss',$pro_id,$pro_pic,$pro_spec,$pro_name,$pro_phone,$pro_email);
+if (mysqli_stmt_execute($stmt)) {
 
 {
 

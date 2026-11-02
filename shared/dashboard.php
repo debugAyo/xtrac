@@ -18,10 +18,20 @@ if (!defined('XTRAC_ROLE')) {
 }
 
 // --- Session guard (identical semantics to the original securedpage.php) ---
-session_start();
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
+require_once __DIR__ . '/security.php';
 
 if (!isset($_SESSION['username'])) {
     header('Location: index.php');
+    exit();
+}
+
+// Role guard: the session must carry the role the wrapper declares.
+if (empty($_SESSION['role']) || $_SESSION['role'] !== XTRAC_ROLE) {
+    header('Location: ../login/index.php');
     exit();
 }
 
@@ -33,6 +43,46 @@ if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 
 }
 $_SESSION['LAST_ACTIVITY'] = time();
 
+// CSRF: reject forged cross-site POSTs before dispatching anything.
+if (!xtrac_csrf_verify()) {
+    http_response_code(403);
+    exit('Invalid or missing CSRF token. Please go back, refresh the page and try again.');
+}
+
+// Issue the session token now so every rendered form carries it.
+xtrac_csrf_token();
+
+// Buffer all output and inject the CSRF hidden field into every <form>
+// that does not already carry one. This protects all legacy forms
+// without editing hundreds of screen files.
+ob_start(function ($buffer) {
+    if (session_status() !== PHP_SESSION_ACTIVE || empty($_SESSION['xtrac_csrf'])) {
+        return $buffer;
+    }
+    $token = htmlspecialchars($_SESSION['xtrac_csrf'], ENT_QUOTES, 'UTF-8');
+    $hidden = '<input type="hidden" name="xtrac_csrf" value="' . $token . '">';
+
+    // Pass 1: well-formed forms (open ... close). Inject after the
+    // opening tag unless a token already exists in the form body;
+    // mark every processed form so pass 2 leaves it alone.
+    $buffer = preg_replace_callback('/<form\b[^>]*>.*?<\/form>/is', function ($m) use ($hidden) {
+        if (stripos($m[0], 'xtrac_csrf') !== false) {
+            return preg_replace('/<form\b/i', '<form data-xtrac-csrf="1"', $m[0], 1);
+        }
+        return preg_replace('/<form\b([^>]*)>/i', '<form data-xtrac-csrf="1"$1>' . $hidden, $m[0], 1);
+    }, $buffer);
+
+    // Pass 2: unclosed forms (common in the legacy markup).
+    $buffer = preg_replace_callback('/<form\b[^>]*>/i', function ($m) use ($hidden) {
+        if (stripos($m[0], 'data-xtrac-csrf') !== false || stripos($m[0], 'name="xtrac_csrf"') !== false) {
+            return $m[0];
+        }
+        return preg_replace('/<form\b/i', '<form data-xtrac-csrf="1"', $m[0], 1) . $hidden;
+    }, $buffer);
+
+    return $buffer;
+});
+
 require_once __DIR__ . '/menu.php';
 require_once __DIR__ . '/dispatch.php';
 
@@ -41,7 +91,10 @@ include 'config/header.php';
 
 // --- Load the current user's profile ---
 require_once '../link/connect.php';
-$result = mysqli_query($conn, "SELECT * FROM user_login WHERE username = '" . $_SESSION['username'] . "'");
+$stmt = mysqli_prepare($conn, "SELECT * FROM user_login WHERE username = ?");
+mysqli_stmt_bind_param($stmt, 's', $_SESSION['username']);
+mysqli_stmt_execute($stmt);
+$result = mysqli_stmt_get_result($stmt);
 $fname = ''; $categ = ''; $calphone = ''; $caladdress = ''; $calemail = '';
 $gender = ''; $appcode = '';
 while ($row = mysqli_fetch_array($result)) {

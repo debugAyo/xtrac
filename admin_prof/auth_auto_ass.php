@@ -184,54 +184,60 @@ include '../link/connect.php';
 
 
 ## Remember to insert some protection against MYSQL injections ##
-$asset_id=mysqli_real_escape_string($conn,$_POST['asset_id']);
-$ass_cat=mysqli_real_escape_string($conn,$_POST['ass_cat']);
-$veh_categ=mysqli_real_escape_string($conn,$_POST['veh_categ']);
-$veh_type=mysqli_real_escape_string($conn,$_POST['veh_type']);
-$asset_name=mysqli_real_escape_string($conn,$_POST['asset_name']);
-$vin=mysqli_real_escape_string($conn,$_POST['vin']);
-$manuname=mysqli_real_escape_string($conn,$_POST['manuname']);
-$ass_mode=mysqli_real_escape_string($conn,$_POST['ass_mode']);
-$mk_year=mysqli_real_escape_string($conn,$_POST['mk_year']);
-$owner=mysqli_real_escape_string($conn,$_POST['owner']);
-$procdate=mysqli_real_escape_string($conn,$_POST['procdate']);
-$purprice=mysqli_real_escape_string($conn,$_POST['purprice']);
-$odometer=mysqli_real_escape_string($conn,$_POST['odometer']);
-$spec_version=mysqli_real_escape_string($conn,$_POST['spec_version']); 
-$lic_plate=mysqli_real_escape_string($conn,$_POST['lic_plate']); 
-$location=mysqli_real_escape_string($conn,$_POST['location']);
-$warnty=mysqli_real_escape_string($conn,$_POST['warnty']);
-$warnty_info=mysqli_real_escape_string($conn,$_POST['warnty_info']);
-$reg_exp_dt=mysqli_real_escape_string($conn,$_POST['reg_exp_dt']);
-$owner_info=mysqli_real_escape_string($conn,$_POST['owner_info']);
-$engine_typ=mysqli_real_escape_string($conn,$_POST['engine_typ']); 
-$fuel_typ=mysqli_real_escape_string($conn,$_POST['fuel_typ']);
-$transmit_typ=mysqli_real_escape_string($conn,$_POST['transmit_typ']); 
-$drive_typ=mysqli_real_escape_string($conn,$_POST['drive_typ']); 
-$gen_status=mysqli_real_escape_string($conn,$_POST['gen_status']);
-$nxt_sched=mysqli_real_escape_string($conn,$_POST['nxt_sched']);
-$interior=mysqli_real_escape_string($conn,$_POST['interior']);
-$exterior=mysqli_real_escape_string($conn,$_POST['exterior']); 
-$safety=mysqli_real_escape_string($conn,$_POST['safety']); 
-$insurer=mysqli_real_escape_string($conn,$_POST['insurer']); 
-$policy_no=mysqli_real_escape_string($conn,$_POST['policy_no']);
-$ins_start_dt=mysqli_real_escape_string($conn,$_POST['ins_start_dt']);
-$ins_end_dt=mysqli_real_escape_string($conn,$_POST['ins_end_dt']); 
-$prev_owner=mysqli_real_escape_string($conn,$_POST['prev_owner']);
-$accd_hist=mysqli_real_escape_string($conn,$_POST['accd_hist']); 
-$emiss_hist=mysqli_real_escape_string($conn,$_POST['emiss_hist']); 
-$end_life=mysqli_real_escape_string($conn,$_POST['end_life']);
-$veh_stat=mysqli_real_escape_string($conn,$_POST['veh_stat']); 
-$log_usr=mysqli_real_escape_string($conn,$_POST['log_usr']);
+$asset_id=$_POST['asset_id'];
+$ass_cat=$_POST['ass_cat'];
+$veh_categ=$_POST['veh_categ'];
+$veh_type=$_POST['veh_type'];
+$asset_name=$_POST['asset_name'];
+$vin=$_POST['vin'];
+$manuname=$_POST['manuname'];
+$ass_mode=$_POST['ass_mode'];
+$mk_year=$_POST['mk_year'];
+$owner=$_POST['owner'];
+$procdate=$_POST['procdate'];
+$purprice=$_POST['purprice'];
+$odometer=$_POST['odometer'];
+$spec_version=$_POST['spec_version']; 
+$lic_plate=$_POST['lic_plate']; 
+$location=$_POST['location'];
+$warnty=$_POST['warnty'];
+$warnty_info=$_POST['warnty_info'];
+$reg_exp_dt=$_POST['reg_exp_dt'];
+$owner_info=$_POST['owner_info'];
+$engine_typ=$_POST['engine_typ']; 
+$fuel_typ=$_POST['fuel_typ'];
+$transmit_typ=$_POST['transmit_typ']; 
+$drive_typ=$_POST['drive_typ']; 
+$gen_status=$_POST['gen_status'];
+$nxt_sched=$_POST['nxt_sched'];
+$interior=$_POST['interior'];
+$exterior=$_POST['exterior']; 
+$safety=$_POST['safety']; 
+$insurer=$_POST['insurer']; 
+$policy_no=$_POST['policy_no'];
+$ins_start_dt=$_POST['ins_start_dt'];
+$ins_end_dt=$_POST['ins_end_dt']; 
+$prev_owner=$_POST['prev_owner'];
+$accd_hist=$_POST['accd_hist']; 
+$emiss_hist=$_POST['emiss_hist']; 
+$end_life=$_POST['end_life'];
+$veh_stat=$_POST['veh_stat']; 
+$log_usr=$_POST['log_usr'];
 
-$result = mysqli_query($conn,"SELECT * FROM auto_categ WHERE id='$veh_categ'");
+$stmt = mysqli_prepare($conn,"SELECT * FROM auto_categ WHERE id=?");
+mysqli_stmt_bind_param($stmt,'s',$veh_categ);
+mysqli_stmt_execute($stmt);
+$result = mysqli_stmt_get_result($stmt);
         if(mysqli_num_rows($result)>0)
         {
 			while ($row=mysqli_fetch_array($result)) {
 				$veh_cat=$row['cat_name'];
               }
 		}
-$result = mysqli_query($conn,"SELECT * FROM auto_spec_categ WHERE id='$veh_type'");
+$stmt = mysqli_prepare($conn,"SELECT * FROM auto_spec_categ WHERE id=?");
+mysqli_stmt_bind_param($stmt,'s',$veh_type);
+mysqli_stmt_execute($stmt);
+$result = mysqli_stmt_get_result($stmt);
         if(mysqli_num_rows($result)>0)
        {
 			while ($row=mysqli_fetch_array($result)) {
@@ -240,7 +246,10 @@ $result = mysqli_query($conn,"SELECT * FROM auto_spec_categ WHERE id='$veh_type'
 		}
 	   
 	 
-$result = mysqli_query($conn,"SELECT * FROM additem WHERE devid='$asset_id'");
+$stmt = mysqli_prepare($conn,"SELECT * FROM additem WHERE devid=?");
+mysqli_stmt_bind_param($stmt,'s',$asset_id);
+mysqli_stmt_execute($stmt);
+$result = mysqli_stmt_get_result($stmt);
         if(mysqli_num_rows($result)>0)
         {
         echo '<br>';

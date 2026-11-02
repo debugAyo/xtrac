@@ -4,16 +4,23 @@
 echo '<font size=2, face=tahoma>';
 //$id = $_POST['id'];
 
-$sql="SELECT * FROM additem WHERE devid='$dev_id'";
-$result=mysqli_query($conn,$sql);
+$sql="SELECT * FROM additem WHERE devid=?";
+$stmt = mysqli_prepare($conn, $sql);
+mysqli_stmt_bind_param($stmt, 's', $dev_id);
+mysqli_stmt_execute($stmt);
+$result = mysqli_stmt_get_result($stmt);
 
 $rows=mysqli_fetch_array($result);
 
 $id = $rows['sn'];
 
 
-include '../link/connect.php';
- $image = mysqli_query($conn,"SELECT * FROM additem WHERE sn='$id'");
+ include '../link/connect.php';
+ $sql = "SELECT * FROM additem WHERE sn=?";
+ $stmt = mysqli_prepare($conn, $sql);
+ mysqli_stmt_bind_param($stmt, 's', $id);
+ mysqli_stmt_execute($stmt);
+ $image = mysqli_stmt_get_result($stmt);
 
 while($row = mysqli_fetch_assoc($image))
 {
@@ -22,8 +29,11 @@ echo '<p><img src="../users_prof/'. $row['pic']. '" style="width:100%; height:au
 ?>
 
 <?php
-$sql="SELECT * FROM additem WHERE devid='$dev_idecho '<p><img src="../users_prof/'. $row['pic']. '" style="width:100%; height:auto; border:0px solid grey; padding:4px"></p>';'";
-$result=mysqli_query($conn,$sql);
+$sql="SELECT * FROM additem WHERE devid=?";
+$stmt = mysqli_prepare($conn, $sql);
+mysqli_stmt_bind_param($stmt, 's', $dev_id);
+mysqli_stmt_execute($stmt);
+$result = mysqli_stmt_get_result($stmt);
 while ($row= mysqli_fetch_array($result))
 {
 

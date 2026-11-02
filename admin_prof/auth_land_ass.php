@@ -271,30 +271,30 @@ include '../link/connect.php';
 
 ## Remember to insert some protection against MYSQL injections ##
 	
-$asset_id=mysqli_real_escape_string($conn,$_POST['asset_id']);
-$ass_cat=mysqli_real_escape_string($conn,$_POST['ass_cat']);
-$ass_typ=mysqli_real_escape_string($conn,$_POST['ass_typ']);
-$asset_name=mysqli_real_escape_string($conn,$_POST['asset_name']);
-$owner=mysqli_real_escape_string($conn,$_POST['owner']);
-$vendor=mysqli_real_escape_string($conn,$_POST['vendor']);
-$descrpt=mysqli_real_escape_string($conn,$_POST['descrpt']);
-$location=mysqli_real_escape_string($conn,$_POST['location']);
-$procdate=mysqli_real_escape_string($conn,$_POST['procdate']);
-$purprice=mysqli_real_escape_string($conn,$_POST['purprice']);
-$dimension=mysqli_real_escape_string($conn,$_POST['dimension']);
-$legal_iss=mysqli_real_escape_string($conn,$_POST['legal_iss']);
-$pro_struct=mysqli_real_escape_string($conn,$_POST['pro_struct']);
-$utility=mysqli_real_escape_string($conn,$_POST['utility']);
-$landscape=mysqli_real_escape_string($conn,$_POST['landscape']);
-$deprecat=mysqli_real_escape_string($conn,$_POST['deprecat']);
-$pro_eval=mysqli_real_escape_string($conn,$_POST['pro_eval']);
-$tenancy_det=mysqli_real_escape_string($conn,$_POST['tenancy_det']);
-$pro_man=mysqli_real_escape_string($conn,$_POST['pro_man']);
-$interior=mysqli_real_escape_string($conn,$_POST['interior']);
-$exterior=mysqli_real_escape_string($conn,$_POST['exterior']);
-$end_life=mysqli_real_escape_string($conn,$_POST['end_life']);
-$dev_stat=mysqli_real_escape_string($conn,$_POST['dev_stat']); 
-$log_usr=mysqli_real_escape_string($conn,$_POST['log_usr']);
+$asset_id=$_POST['asset_id'];
+$ass_cat=$_POST['ass_cat'];
+$ass_typ=$_POST['ass_typ'];
+$asset_name=$_POST['asset_name'];
+$owner=$_POST['owner'];
+$vendor=$_POST['vendor'];
+$descrpt=$_POST['descrpt'];
+$location=$_POST['location'];
+$procdate=$_POST['procdate'];
+$purprice=$_POST['purprice'];
+$dimension=$_POST['dimension'];
+$legal_iss=$_POST['legal_iss'];
+$pro_struct=$_POST['pro_struct'];
+$utility=$_POST['utility'];
+$landscape=$_POST['landscape'];
+$deprecat=$_POST['deprecat'];
+$pro_eval=$_POST['pro_eval'];
+$tenancy_det=$_POST['tenancy_det'];
+$pro_man=$_POST['pro_man'];
+$interior=$_POST['interior'];
+$exterior=$_POST['exterior'];
+$end_life=$_POST['end_life'];
+$dev_stat=$_POST['dev_stat']; 
+$log_usr=$_POST['log_usr'];
 
 
 $result = mysqli_query($conn,"SELECT * FROM additem WHERE devid='$asset_id'");

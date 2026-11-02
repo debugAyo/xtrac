@@ -1,5 +1,10 @@
 <?php
 
+require_once __DIR__ . '/../shared/security.php';
+
+$staffid=''; $id=''; $title=''; $dept=''; $acct_type=''; $username='';
+$pass=''; $confirm_pass=''; $cal_name=''; $cal_phone=''; $cal_email=''; $gender='';
+
 if (isset ($_POST['submit'])) {
 
 $staffid=$_POST['staffid'];
@@ -18,9 +23,14 @@ $gender=$_POST['gender'];
 }
 
 
-if ($pass==$confirm_pass) {
-$password = md5($pass);
-
+// Update the password only when one was supplied; require confirmation match.
+$password = null;
+if ($pass !== '' || $confirm_pass !== '') {
+    if ($pass !== $confirm_pass) {
+        echo 'Passwords do not match.';
+        exit();
+    }
+    $password = password_hash($pass, PASSWORD_BCRYPT);
 }
 
 
@@ -64,46 +74,33 @@ $pass_res = 'null.pdf';
 
 include '../link/connect.php';
 
-/*$query="SELECT * FROM user_login WHERE username='$username'";
-$result = mysqli_query($conn,$query) or die(mysqli_error());
-
-if(mysqli_num_rows($result) > 0) {
-
-while($row = mysqli_fetch_array($result)) {
-
-include 'user_exist.php';
-
-exit();
+if ($password !== null) {
+    $sql = "UPDATE user_login SET title=?, fname=?, sex=?, staff_id=?, dept=?, access_prvlg=?, phone=?, email=?, username=?, password=?, img=?, date_reg=NOW() WHERE id=?";
+    $stmt = mysqli_prepare($conn, $sql);
+    mysqli_stmt_bind_param($stmt, 'sssssssssssi',
+        $title, $cal_name, $gender, $staffid, $dept, $acct_type,
+        $cal_phone, $cal_email, $username, $password, $pass_res, $id);
+} else {
+    $sql = "UPDATE user_login SET title=?, fname=?, sex=?, staff_id=?, dept=?, access_prvlg=?, phone=?, email=?, username=?, img=?, date_reg=NOW() WHERE id=?";
+    $stmt = mysqli_prepare($conn, $sql);
+    mysqli_stmt_bind_param($stmt, 'sssssssssssi',
+        $title, $cal_name, $gender, $staffid, $dept, $acct_type,
+        $cal_phone, $cal_email, $username, $pass_res, $id);
 }
-}
-*/
 
-$title=mysqli_real_escape_string($conn,$_POST['title']);
-$dept=mysqli_real_escape_string($conn,$_POST['dept']);
-$acct_type=mysqli_real_escape_string($conn,$_POST['acct_type']);
-$username=mysqli_real_escape_string($conn,$_POST['username']);
-$pass=mysqli_real_escape_string($conn,$_POST['pass']);
-$cal_name=mysqli_real_escape_string($conn,$_POST['cal_name']);
-$cal_phone=mysqli_real_escape_string($conn,$_POST['cal_phone']);
-$cal_email=mysqli_real_escape_string($conn,$_POST['cal_email']);
-$gender=mysqli_real_escape_string($conn,$_POST['gender']);
+$result = mysqli_stmt_execute($stmt);
 
-
-$sql="UPDATE user_login SET title='$title', fname='$cal_name', sex='$gender', staff_id='$staffid', dept='$dept', access_prvlg='$acct_type', phone='$cal_phone', email='$cal_email', username='$username', password='$password', img='$pass_res', date_reg=NOW() WHERE id='$id'";
-
-$result = mysqli_query($conn, $sql);
-
-if ($result > 0)
+if ($result)
 {
 
-echo 'User <b>' . $username . ' </b>Successfully Updated.';
+echo 'User <b>' . htmlspecialchars($username) . ' </b>Successfully Updated.';
 include '../application/user_man.php';
 }
 
 else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
+    echo "Error: " . htmlspecialchars(mysqli_stmt_error($stmt));
 }
 
+mysqli_stmt_close($stmt);
 
 ?>
-

@@ -1,5 +1,7 @@
 <?php
 
+require_once __DIR__ . '/../security.php';
+
 if (isset($_POST['submit'])) {
 
 $cal_name=$_POST['cal_name'];
@@ -18,8 +20,8 @@ $gender=$_POST['gender'];
 
 }
 
-if ($pass==$confirm_pass) {
-$password = md5($pass);
+if (isset($pass) && isset($confirm_pass) && $pass==$confirm_pass) {
+$password = password_hash($pass, PASSWORD_BCRYPT);
 
 }
 
@@ -71,8 +73,10 @@ $regcode=(rand(100000, 999999) );
 
 include '../link/connect.php';
 	
-	$query="SELECT * FROM user_reg WHERE username='$username'";
-		$result = mysqli_query($conn,$query) or die(mysqli_error());
+	$stmt = mysqli_prepare($conn, "SELECT * FROM user_reg WHERE username = ?");
+	mysqli_stmt_bind_param($stmt, 's', $username);
+	mysqli_stmt_execute($stmt);
+	$result = mysqli_stmt_get_result($stmt);
 
 			if(mysqli_num_rows($result) > 0) {
 
@@ -83,7 +87,8 @@ while($row = mysqli_fetch_array($result)) {
 	exit();
 		}
 			}
-else {
+	mysqli_stmt_close($stmt);
+	{
 	
 	$cal_name=mysqli_real_escape_string($conn, $_POST['cal_name']);
 	$cal_email=mysqli_real_escape_string($conn, $_POST['cal_email']);
@@ -100,18 +105,18 @@ else {
 
 	// SQL query to insert into database
      $sql = "INSERT INTO user_reg (regno,calname,calemail,username,password,calphone,prefcont,caladdress,groupid,birthdt,marstatus,gender,passport) 
-					   VALUES ('$regcode','$cal_name','$cal_email','$username','$password','$cal_phone','$pref_cont','$cal_address','$grp_id','$birth_dt','$mar_status','$gender','$my_pass_res')";
+				   VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)";
+    $stmt = mysqli_prepare($conn, $sql);
+    mysqli_stmt_bind_param($stmt, 'sssssssssssss',
+        $regcode, $cal_name, $cal_email, $username, $password, $cal_phone,
+        $pref_cont, $cal_address, $grp_id, $birth_dt, $mar_status, $gender, $my_pass_res);
 
-  
-
-/*$sql = "INSERT INTO user_reg (regno, calname)
-		VALUES ('$regcode','$cal_name')";*/
-		
-    if ($conn->query($sql) === TRUE) {
+    if (mysqli_stmt_execute($stmt)) {
         /*echo "Files inserted into database successfully.";*/
     } else {
-        echo "Error: " . $conn->error;
+        echo "Error: " . htmlspecialchars(mysqli_stmt_error($stmt));
     }
+    mysqli_stmt_close($stmt);
 
     // Close database connection
     $conn->close();

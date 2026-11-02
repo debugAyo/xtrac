@@ -59,12 +59,16 @@ $stc = '';
 $std = 'checked';
 }
 
-$result = mysqli_query($conn,"SELECT * FROM temp_ans WHERE quest_no='$chk_quest' && candi_no='$appcode'");
+$stmt = mysqli_prepare($conn, "SELECT * FROM temp_ans WHERE quest_no=? && candi_no=?");
+mysqli_stmt_bind_param($stmt, 'ss', $chk_quest, $appcode);
+mysqli_stmt_execute($stmt);
+$result = mysqli_stmt_get_result($stmt);
 
 if(mysqli_num_rows($result) == '1') {
 
-$sql = "UPDATE temp_ans SET opta='$opta', sta='$sta', stb='$stb', stc='$stc', std='$std'  WHERE quest_no='$chk_quest' && candi_no='$appcode'";
-	$result = mysqli_query($conn,$sql);
+$stmt = mysqli_prepare($conn, "UPDATE temp_ans SET opta=?, sta=?, stb=?, stc=?, std=?  WHERE quest_no=? && candi_no=?");
+	mysqli_stmt_bind_param($stmt, 'sssssss', $opta, $sta, $stb, $stc, $std, $chk_quest, $appcode);
+	mysqli_stmt_execute($stmt);
 }
 
 
@@ -81,7 +85,10 @@ $chk_quest = $_POST['chk_quest'];
 $questno = $_POST['submit'];
 
       
-$result = mysqli_query($conn, "SELECT * FROM math_quest WHERE quest_no='$questno' ");
+$stmt = mysqli_prepare($conn, "SELECT * FROM math_quest WHERE quest_no=? ");
+mysqli_stmt_bind_param($stmt, 's', $questno);
+mysqli_stmt_execute($stmt);
+$result = mysqli_stmt_get_result($stmt);
 
 /*$query="SELECT * FROM math_quest WHERE quest_no='$questno' && session='$yr_exam' && semest='$sch_term' && class='$exm_class' && course_name='$course'";*/
 			while($row=mysqli_fetch_assoc($result)) {
@@ -89,7 +96,10 @@ $result = mysqli_query($conn, "SELECT * FROM math_quest WHERE quest_no='$questno
 			
 			if ($img > '0') {
 
-  $image = mysqli_query($conn,"SELECT * FROM math_quest WHERE img='".$img."' && quest_no='$questno'");
+  $stmt = mysqli_prepare($conn, "SELECT * FROM math_quest WHERE img=? && quest_no=?");
+  mysqli_stmt_bind_param($stmt, 'ss', $img, $questno);
+  mysqli_stmt_execute($stmt);
+  $image = mysqli_stmt_get_result($stmt);
   
   $row=mysqli_fetch_assoc($image);
  
@@ -99,8 +109,11 @@ echo '<div><table cellpadding="0" cellspacing="0" width="65%"><tr><td valign="to
 
 $sql = "DELETE FROM temp_ans WHERE quest_no='NULL' OR quest_no='' ";
 if (mysqli_query($conn,$sql)) {  
-	      	       
-$result = mysqli_query($conn,"SELECT * FROM temp_ans WHERE quest_no='$questno' && candi_no='$appcode' ORDER BY quest_no DESC");
+	      	      
+$stmt = mysqli_prepare($conn, "SELECT * FROM temp_ans WHERE quest_no=? && candi_no=? ORDER BY quest_no DESC");
+mysqli_stmt_bind_param($stmt, 'ss', $questno, $appcode);
+mysqli_stmt_execute($stmt);
+$result = mysqli_stmt_get_result($stmt);
 
 while($row = mysqli_fetch_array($result)) 
 {

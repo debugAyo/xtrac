@@ -98,9 +98,12 @@ function displayDiv(idx) {
 
 include '../link/connect.php';
 
-$query = "SELECT  * FROM user_login WHERE id = '$id'"; 
+$query = "SELECT  * FROM user_login WHERE id = ?"; 
 
-$result = mysqli_query($conn,$query) or die(mysqli_error());
+$stmt = mysqli_prepare($conn,$query);
+mysqli_stmt_bind_param($stmt, 'i', $id);
+mysqli_stmt_execute($stmt) or die(mysqli_error());
+$result = mysqli_stmt_get_result($stmt);
 
 while($row = mysqli_fetch_array($result)){
 $title=$row['title'];

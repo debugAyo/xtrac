@@ -4,8 +4,11 @@
 echo '<font size=2, face=tahoma>';
 //$id = $_POST['id'];
 
-$sql="SELECT * FROM additem WHERE devid='$dev_id'";
-$result=mysqli_query($conn,$sql);
+$sql="SELECT * FROM additem WHERE devid=?";
+$stmt = mysqli_prepare($conn, $sql);
+mysqli_stmt_bind_param($stmt, 's', $dev_id);
+mysqli_stmt_execute($stmt);
+$result = mysqli_stmt_get_result($stmt);
 
 $rows=mysqli_fetch_array($result);
 
@@ -13,7 +16,10 @@ $id = $rows['sn'];
 
 
 include '../link/connect.php';
- $image = mysqli_query($conn,"SELECT * FROM additem WHERE sn='$id'");
+ $stmt = mysqli_prepare($conn, "SELECT * FROM additem WHERE sn=?");
+mysqli_stmt_bind_param($stmt, 's', $id);
+mysqli_stmt_execute($stmt);
+$image = mysqli_stmt_get_result($stmt);
 
 while($row = mysqli_fetch_assoc($image))
 {
@@ -22,8 +28,11 @@ echo '<p><img src="'. $row['pic']. '" style="width:100%; height:auto; border:0px
 ?>
 
 <?php
-$sql="SELECT * FROM additem WHERE devid='$dev_id'";
-$result=mysqli_query($conn,$sql);
+$sql="SELECT * FROM additem WHERE devid=?";
+$stmt = mysqli_prepare($conn, $sql);
+mysqli_stmt_bind_param($stmt, 's', $dev_id);
+mysqli_stmt_execute($stmt);
+$result = mysqli_stmt_get_result($stmt);
 while ($row= mysqli_fetch_array($result))
 {
 
@@ -64,8 +73,11 @@ echo '<table width="100%" border="0px">
 <?php
 echo '<h4 class="w3-text-light-green w3-hover-text-black">Software Association</h4>';
 
-$sql="SELECT * FROM software_ass WHERE devid='$dev_id'";
-$result=mysqli_query($conn,$sql);
+$sql="SELECT * FROM software_ass WHERE devid=?";
+$stmt = mysqli_prepare($conn, $sql);
+mysqli_stmt_bind_param($stmt, 's', $dev_id);
+mysqli_stmt_execute($stmt);
+$result = mysqli_stmt_get_result($stmt);
 
 
 if ($result->num_rows < 1) {
@@ -81,7 +93,10 @@ $id = $rows['sn'];
 }
 
 include '../link/connect.php';
- $image = mysqli_query($conn,"SELECT * FROM software_ass WHERE sn='$id'");
+ $stmt = mysqli_prepare($conn, "SELECT * FROM software_ass WHERE sn=?");
+mysqli_stmt_bind_param($stmt, 's', $id);
+mysqli_stmt_execute($stmt);
+ $image = mysqli_stmt_get_result($stmt);
 
 while($row = mysqli_fetch_assoc($image))
 {
@@ -91,8 +106,11 @@ echo '<p><img src="'. $row['pic']. '" style="width:100%; height:auto; border:0px
 }
 
 
-$sql="SELECT * FROM software_ass WHERE devid='$dev_id'";
-$result=mysqli_query($conn,$sql);
+$sql="SELECT * FROM software_ass WHERE devid=?";
+$stmt = mysqli_prepare($conn, $sql);
+mysqli_stmt_bind_param($stmt, 's', $dev_id);
+mysqli_stmt_execute($stmt);
+$result = mysqli_stmt_get_result($stmt);
 if ($result->num_rows < 1) {
 	
 	echo '<p  style="font-size:12px">There is no <b>Software information</b> to display</p>';
@@ -143,8 +161,11 @@ echo '<table width="100%" border="0px">
 echo '<h4 class="w3-text-light-green w3-hover-text-black">Parts Association</h4>';
 
 
-$sql="SELECT * FROM parts_ass WHERE devid='$dev_id'";
-$result=mysqli_query($conn,$sql);
+$sql="SELECT * FROM parts_ass WHERE devid=?";
+$stmt = mysqli_prepare($conn, $sql);
+mysqli_stmt_bind_param($stmt, 's', $dev_id);
+mysqli_stmt_execute($stmt);
+$result = mysqli_stmt_get_result($stmt);
 if ($result->num_rows < 1) {
 	
 	echo '<p class="w3-yellow" style="font-size:12px">There is no <b>Parts / Accessory image</b> to display</p>';
@@ -156,7 +177,10 @@ while ($rows=mysqli_fetch_array($result)) {
 $id = $rows['sn'];
 }
 include '../link/connect.php';
- $image = mysqli_query($conn,"SELECT * FROM parts_ass WHERE sn='$id'");
+ $stmt = mysqli_prepare($conn, "SELECT * FROM parts_ass WHERE sn=?");
+mysqli_stmt_bind_param($stmt, 's', $id);
+mysqli_stmt_execute($stmt);
+ $image = mysqli_stmt_get_result($stmt);
 
 while($row = mysqli_fetch_assoc($image))
 {
@@ -166,8 +190,11 @@ echo '<p><img src="'. $row['pic']. '" style="width:100%; height:auto; border:0px
 }
 
 
-$sql="SELECT * FROM parts_ass WHERE devid='$dev_id'";
-$result=mysqli_query($conn,$sql);
+$sql="SELECT * FROM parts_ass WHERE devid=?";
+$stmt = mysqli_prepare($conn, $sql);
+mysqli_stmt_bind_param($stmt, 's', $dev_id);
+mysqli_stmt_execute($stmt);
+$result = mysqli_stmt_get_result($stmt);
 if ($result->num_rows < 1) {
 	
 	echo '<p  style="font-size:12px">There is no <b>Parts / Accessory information</b> to display</p>';
@@ -214,8 +241,11 @@ echo '<table width="100%" border="0px">
 echo '<h4 class="w3-text-light-green w3-hover-text-black">Invoice Association</h4>';
 
 
-$sql="SELECT * FROM invoice_ass WHERE devid='$dev_id'";
-$result=mysqli_query($conn,$sql);
+$sql="SELECT * FROM invoice_ass WHERE devid=?";
+$stmt = mysqli_prepare($conn, $sql);
+mysqli_stmt_bind_param($stmt, 's', $dev_id);
+mysqli_stmt_execute($stmt);
+$result = mysqli_stmt_get_result($stmt);
 if ($result->num_rows < 1) {
 	
 	echo '<p class="w3-yellow" style="font-size:12px">There is no <b>Invoice image</b> to display</p>';
@@ -227,7 +257,10 @@ while ($rows=mysqli_fetch_array($result)) {
 $id = $rows['sn'];
 }
 include '../link/connect.php';
- $image = mysqli_query($conn,"SELECT * FROM invoice_ass WHERE sn='$id'");
+ $stmt = mysqli_prepare($conn, "SELECT * FROM invoice_ass WHERE sn=?");
+mysqli_stmt_bind_param($stmt, 's', $id);
+mysqli_stmt_execute($stmt);
+ $image = mysqli_stmt_get_result($stmt);
 
 while($row = mysqli_fetch_assoc($image))
 {
@@ -238,8 +271,11 @@ echo '<iframe src="'. $row['pic']. '" width="100%" height="400px" title="W3Schoo
 }
 
 
-$sql="SELECT * FROM invoice_ass WHERE devid='$dev_id'";
-$result=mysqli_query($conn,$sql);
+$sql="SELECT * FROM invoice_ass WHERE devid=?";
+$stmt = mysqli_prepare($conn, $sql);
+mysqli_stmt_bind_param($stmt, 's', $dev_id);
+mysqli_stmt_execute($stmt);
+$result = mysqli_stmt_get_result($stmt);
 if ($result->num_rows < 1) {
 	
 	echo '<p  style="font-size:12px">There is no <b>Invoice information</b> to display</p>';
@@ -281,8 +317,11 @@ echo '<table width="100%" border="0px">
 echo '<h4 class="w3-text-light-green w3-hover-text-black">Contract Association</h4>';
 
 
-$sql="SELECT * FROM contract_ass WHERE devid='$dev_id'";
-$result=mysqli_query($conn,$sql);
+$sql="SELECT * FROM contract_ass WHERE devid=?";
+$stmt = mysqli_prepare($conn, $sql);
+mysqli_stmt_bind_param($stmt, 's', $dev_id);
+mysqli_stmt_execute($stmt);
+$result = mysqli_stmt_get_result($stmt);
 if ($result->num_rows < 1) {
 	
 	echo '<p class="w3-yellow" style="font-size:12px">There is no <b>Contract image</b> to display</p>';
@@ -294,7 +333,10 @@ while ($rows=mysqli_fetch_array($result)) {
 $id = $rows['sn'];
 }
 include '../link/connect.php';
- $image = mysqli_query($conn,"SELECT * FROM contract_ass WHERE sn='$id'");
+ $stmt = mysqli_prepare($conn, "SELECT * FROM contract_ass WHERE sn=?");
+mysqli_stmt_bind_param($stmt, 's', $id);
+mysqli_stmt_execute($stmt);
+ $image = mysqli_stmt_get_result($stmt);
 
 while($row = mysqli_fetch_assoc($image))
 {
@@ -305,8 +347,11 @@ echo '<iframe src="'. $row['pic']. '" width="100%" height="400px" ></iframe>';
 }
 
 
-$sql="SELECT * FROM contract_ass WHERE devid='$dev_id'";
-$result=mysqli_query($conn,$sql);
+$sql="SELECT * FROM contract_ass WHERE devid=?";
+$stmt = mysqli_prepare($conn, $sql);
+mysqli_stmt_bind_param($stmt, 's', $dev_id);
+mysqli_stmt_execute($stmt);
+$result = mysqli_stmt_get_result($stmt);
 if ($result->num_rows < 1) {
 	
 	echo '<p  style="font-size:12px">There is no <b>Contract information</b> to display</p>';

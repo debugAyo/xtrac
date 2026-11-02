@@ -43,7 +43,10 @@ $(document).ready(function() {
 $proj_id=$_POST['proj_id'];
 require_once "../link/connect.php";
 
-$result = mysqli_query($conn,"SELECT * FROM projschedules WHERE projectid='$proj_id'");
+$stmt = mysqli_prepare($conn, "SELECT * FROM projschedules WHERE projectid=?");
+mysqli_stmt_bind_param($stmt, 's', $proj_id);
+mysqli_stmt_execute($stmt);
+$result = mysqli_stmt_get_result($stmt);
 while($row = mysqli_fetch_array($result)) {
 	
 	/*$start_time = $row['start'];

@@ -24,8 +24,11 @@ $nxt_kin_no = $_POST['nxt_kin_no'];
 
    include '../connect.php';
 
-$query="SELECT * FROM new_application WHERE call_phone='$cal_phone'";
-$result = mysqli_query($conn,$query) or die(mysqli_error());
+$query="SELECT * FROM new_application WHERE call_phone=?";
+$stmt = mysqli_prepare($conn,$query);
+mysqli_stmt_bind_param($stmt, 's', $cal_phone);
+mysqli_stmt_execute($stmt) or die(mysqli_error());
+$result = mysqli_stmt_get_result($stmt);
 
 if(mysqli_num_rows($result) > 0) {
 
@@ -79,34 +82,45 @@ $mum_name = mysqli_real_escape_string($conn,$_POST['mum_name']);
 $nxt_kin = mysqli_real_escape_string($conn,$_POST['nxt_kin']);
 $nxt_kin_no = mysqli_real_escape_string($conn,$_POST['nxt_kin_no']);
 
-$query="SELECT * FROM category WHERE id='$reg_typ'";
-$result = mysqli_query($conn,$query) or die(mysqli_error());
+$query="SELECT * FROM category WHERE id=?";
+$stmt = mysqli_prepare($conn,$query);
+mysqli_stmt_bind_param($stmt, 'i', $reg_typ);
+mysqli_stmt_execute($stmt) or die(mysqli_error());
+$result = mysqli_stmt_get_result($stmt);
 while($row = mysqli_fetch_array($result)) {
 
 $app_reg_typ = $row['cat_name'];
 
 }
 
-$query="SELECT * FROM speciality WHERE id='$reg_spec'";
-$result = mysqli_query($conn,$query) or die(mysqli_error());
+$query="SELECT * FROM speciality WHERE id=?";
+$stmt = mysqli_prepare($conn,$query);
+mysqli_stmt_bind_param($stmt, 'i', $reg_spec);
+mysqli_stmt_execute($stmt) or die(mysqli_error());
+$result = mysqli_stmt_get_result($stmt);
 while($row = mysqli_fetch_array($result)) {
 
 $app_reg_spec = $row['spec_name'];
 
 }
 
-$query="SELECT * FROM adv_speciality WHERE id='$adv_reg_spec'";
-$result = mysqli_query($conn,$query) or die(mysqli_error());
+$query="SELECT * FROM adv_speciality WHERE id=?";
+$stmt = mysqli_prepare($conn,$query);
+mysqli_stmt_bind_param($stmt, 'i', $adv_reg_spec);
+mysqli_stmt_execute($stmt) or die(mysqli_error());
+$result = mysqli_stmt_get_result($stmt);
 while($row = mysqli_fetch_array($result)) {
 
 $app_adv_reg_spec = $row['adv_spec_name'];
 }
 
 $sql="INSERT INTO new_application (regtype,regspec,adv_regspec,call_name,call_phone,call_address,call_email,fatname,mumname,nextkin,kin_num,birthdate,marital,gender,sponsor,applicat_no) 
-		VALUES('$app_reg_typ','$app_reg_spec','$app_adv_reg_spec','$cal_name','$cal_phone','$cal_address','$cal_email','$fat_name','$$mum_name','$nxt_kin','$nxt_kin_no','$birth_dt','$mar_status','$gender','$sponsor','$rand_tick')";
+		VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 					
+$stmt = mysqli_prepare($conn,$sql);
+mysqli_stmt_bind_param($stmt, 'ssssssssssssssss', $app_reg_typ,$app_reg_spec,$app_adv_reg_spec,$cal_name,$cal_phone,$cal_address,$cal_email,$fat_name,$$mum_name,$nxt_kin,$nxt_kin_no,$birth_dt,$mar_status,$gender,$sponsor,$rand_tick);
 
-if ($conn->query($sql) === TRUE) {
+if (mysqli_stmt_execute($stmt) === TRUE) {
 
 	//echo 'Your Information Successfully Inserted';
   //include 'success_apply.php';

@@ -10,8 +10,11 @@ $acct_no=$_POST['acct_no'];
 
 include '../link/connect.php';
 
-$query="SELECT * FROM acct_category WHERE acctno='$acct_no'";
-$result = mysqli_query($conn,$query) or die(mysqli_error());
+$query="SELECT * FROM acct_category WHERE acctno=?";
+$stmt = mysqli_prepare($conn,$query);
+mysqli_stmt_bind_param($stmt,'s',$acct_no);
+mysqli_stmt_execute($stmt) or die(mysqli_error());
+$result = mysqli_stmt_get_result($stmt);
 
 if(mysqli_num_rows($result) > 0) {
 
@@ -26,14 +29,15 @@ exit();
 
 
 
-$fin_acct_type=mysqli_real_escape_string($conn,$_POST['fin_acct_type']);
-$acct_no=mysqli_real_escape_string($conn,$_POST['acct_no']);
+$fin_acct_type=$_POST['fin_acct_type'];
+$acct_no=$_POST['acct_no'];
 
 $sql="INSERT INTO acct_category (fin_acctype,acctno) 
-		VALUES('$fin_acct_type','$acct_no')";
+		VALUES(?,?)";
 					
-
-if ($conn->query($sql) === TRUE) {
+$stmt = mysqli_prepare($conn,$sql);
+mysqli_stmt_bind_param($stmt,'ss',$fin_acct_type,$acct_no);
+if (mysqli_stmt_execute($stmt)) {
 
 echo $fin_acct_type. 'Account Successfully Created.';
 include 'fin_acct.php';

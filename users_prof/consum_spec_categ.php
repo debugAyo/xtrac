@@ -3,7 +3,10 @@
 require_once "../link/connect.php";
 $category_id = $_POST["category_id"];
 
-$result = mysqli_query($conn,"SELECT * FROM consum_categ WHERE id='$category_id'");
+$stmt = mysqli_prepare($conn, "SELECT * FROM consum_categ WHERE id=?");
+mysqli_stmt_bind_param($stmt, 's', $category_id);
+mysqli_stmt_execute($stmt);
+$result = mysqli_stmt_get_result($stmt);
 while($row = mysqli_fetch_array($result)) {
 $categ = $row['cat_name'];
 
@@ -43,7 +46,10 @@ $opt = 'Select Specialized Consumable Type';
 }
 ?>
 <?php
-$result = mysqli_query($conn,"SELECT * FROM consum_spec_categ where category_id = '$category_id' ORDER BY spec_list ASC");
+$stmt = mysqli_prepare($conn, "SELECT * FROM consum_spec_categ where category_id = ? ORDER BY spec_list ASC");
+mysqli_stmt_bind_param($stmt, 's', $category_id);
+mysqli_stmt_execute($stmt);
+$result = mysqli_stmt_get_result($stmt);
 
 ?>
 

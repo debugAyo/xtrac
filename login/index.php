@@ -1,6 +1,9 @@
 <?php
 // Inialize session
 session_start();
+require_once __DIR__ . '/../shared/security.php';
+// Issue a CSRF token for the login form.
+$xtrac_login_csrf = xtrac_csrf_token();
 // Check, if user is already login, then jump to secured page
 if (isset($_SESSION['username'])) {
 header('Location: securedpage.php');
@@ -127,8 +130,9 @@ header('Location: securedpage.php');
       <h1><i class="fa fa-user fa-headphones-o w3-text-green w3-padding-large" style="font-size: 72px; border: 4px solid green; border-radius:50%"></i></h1>
    <p style="color: black; font-size: 24px; font-weight: bold">Registered User</p>
 <form action="loginproc.php" method="post">
-<input type="text" name="username" id="" value="" placeholder="Username" style="border-radius: 4px; border: 4px #666 solid; ">
-<input type="password" name="password" id="" value="" placeholder="Password" style="border-radius: 4px; border: 4px #666 solid; ">
+  <input type="hidden" name="xtrac_csrf" value="<?php echo htmlspecialchars($xtrac_login_csrf, ENT_QUOTES, 'UTF-8'); ?>">
+  <input type="text" name="username" id="" value="" placeholder="Username" style="border-radius: 4px; border: 4px #666 solid; ">
+  <input type="password" name="password" id="" value="" placeholder="Password" style="border-radius: 4px; border: 4px #666 solid; ">
 <p><button type="submit" class="w3-btn w3-light-green" name="submit" style="border: 0px solid #555; border-radius: 50%" onmouseover title="Submit"><i class="fa fa-check w3-text-white"></i></button>
   <button type="reset" class="w3-btn w3-grey" name="cancel" style="border: 0px solid #555; border-radius: 50%" onmouseover title="Cancel"><i class="fa fa-close w3-text-white"></i></button></p>
 </form>

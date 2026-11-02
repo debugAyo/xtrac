@@ -45,8 +45,8 @@ exit();
 
 include '../link/connect.php';
 
-$ticketno=mysqli_real_escape_string($conn,$_POST['ticketno']);
-$open_dt=mysqli_real_escape_string($conn,$_POST['open_dt']);
+$ticketno=$_POST['ticketno'];
+$open_dt=$_POST['open_dt'];
 $desc=mysqli_real_escape_string($conn,$_POST['desc']);
 $pro_rec=mysqli_real_escape_string($conn,$_POST['pro_rec']);
 $stat=mysqli_real_escape_string($conn,$_POST['stat']);
@@ -54,9 +54,12 @@ $stat=mysqli_real_escape_string($conn,$_POST['stat']);
 /*$sql="INSERT INTO new_ticket (tickname,spec,call_address,call_name,call_phone,opendate,tickassign_name,tickassign_phone,descrp,impact,priority,status,ticket_no) 
 		VALUES('$intservice','$specname','$cal_address','$cal_name','$cal_phone','$open_dt','$sdmname','$sdmphone','$desc','$impct','$prior','$stat','$rand_tick')";*/
 		
-$sql = "UPDATE new_ticket SET opendate='$open_dt', descrp='$resolv', tick_status='Opened' WHERE ticket_no='$ticketno'";					
+$sql = "UPDATE new_ticket SET opendate=?, descrp=?, tick_status='Opened' WHERE ticket_no=?";					
 
-if ($conn->query($sql) === TRUE) {
+$stmt = mysqli_prepare($conn, $sql);
+mysqli_stmt_bind_param($stmt, 'sss', $open_dt, $resolv, $ticketno);
+
+if (mysqli_stmt_execute($stmt)) {
 
 	
   // include 'artisan_search.php';

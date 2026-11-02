@@ -8,8 +8,11 @@ $acct_type=$_POST['acct_type'];
 
 include '../link/connect.php';
 
-$query="SELECT * FROM acct_priv WHERE acctype='$acct_type'";
-$result = mysqli_query($conn,$query) or die(mysqli_error());
+$query="SELECT * FROM acct_priv WHERE acctype=?";
+$stmt = mysqli_prepare($conn,$query);
+mysqli_stmt_bind_param($stmt,'s',$acct_type);
+mysqli_stmt_execute($stmt) or die(mysqli_error());
+$result = mysqli_stmt_get_result($stmt);
 
 if(mysqli_num_rows($result) > 0) {
 
@@ -22,13 +25,14 @@ exit();
 }
 
 
-$acct_type=mysqli_real_escape_string($conn,$_POST['acct_type']);
+$acct_type=$_POST['acct_type'];
 
 $sql="INSERT INTO acct_priv (acctype) 
-		VALUES('$acct_type')";
+		VALUES(?)";
 					
-
-if ($conn->query($sql) === TRUE) {
+$stmt = mysqli_prepare($conn,$sql);
+mysqli_stmt_bind_param($stmt,'s',$acct_type);
+if (mysqli_stmt_execute($stmt)) {
 
 echo 'Account Privilege Type Successfully Created.';
 include 'acct_prvg_levels.php';

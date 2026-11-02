@@ -26,11 +26,14 @@ $categ_name = $row['
 }
 }*/
 
-$sdm_name=mysqli_real_escape_string($conn,$_POST['sdm_name']);
-$tick_name=mysqli_real_escape_string($conn,$_POST['tick_name']);
+$sdm_name=$_POST['sdm_name'];
+$tick_name=$_POST['tick_name'];
 
-$query="SELECT * FROM user_login WHERE fname='$sdm_name'";
-$result = mysqli_query($conn,$query) or die(mysqli_error());
+$query="SELECT * FROM user_login WHERE fname=?";
+$stmt = mysqli_prepare($conn,$query);
+mysqli_stmt_bind_param($stmt,'s',$sdm_name);
+mysqli_stmt_execute($stmt) or die(mysqli_error());
+$result = mysqli_stmt_get_result($stmt);
 
 if(mysqli_num_rows($result) > 0) {
 
@@ -43,11 +46,13 @@ $sdm_email = $row['email'];
 }
 
 
-$sql="UPDATE inc_category SET sdm_name='$sdm_name', sdm_phone='$sdm_phone', sdm_email='$sdm_email' WHERE id='$tick_name'"; 
+$sql="UPDATE inc_category SET sdm_name=?, sdm_phone=?, sdm_email=? WHERE id=?"; 
 
-$result = mysqli_query($conn, $sql);
+$stmt = mysqli_prepare($conn,$sql);
+mysqli_stmt_bind_param($stmt,'ssss',$sdm_name,$sdm_phone,$sdm_email,$tick_name);
+$result = mysqli_stmt_execute($stmt);
 
-if ($result > 0)
+if ($result)
 {
 
 echo 'Service Delivery Manager Successfully Added.';

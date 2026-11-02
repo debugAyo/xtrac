@@ -19,8 +19,11 @@
 
 include '../link/connect.php';
 
-$query="SELECT * FROM delegated_artisan WHERE call_name = '$fname' && status = 'Available'";
-$result = mysqli_query($conn,$query) or die(mysqli_error());
+$query="SELECT * FROM delegated_artisan WHERE call_name = ? && status = 'Available'";
+$stmt = mysqli_prepare($conn,$query);
+mysqli_stmt_bind_param($stmt,'s',$fname);
+mysqli_stmt_execute($stmt) or die(mysqli_error($conn));
+$result = mysqli_stmt_get_result($stmt);
 
 if(mysqli_num_rows($result) < 1)
 {
@@ -29,9 +32,11 @@ if(mysqli_num_rows($result) < 1)
 	
 	//exit();
 
-$sql = "INSERT INTO delegated_artisan (ticket_no, tickname, call_name, call_phone, tickassign_name, tickassign_phone, opendate, call_address, spec, photo, pro_name, pro_phone, pro_email, pro_spec, date, pro_locat, pro_city, pro_state, status) SELECT new_ticket.ticket_no, new_ticket.tickname, new_ticket.call_name, new_ticket.call_phone, new_ticket.tickassign_name, new_ticket.tickassign_phone, new_ticket.opendate, new_ticket.call_address, new_ticket.spec, inc_artisan_reg.photo, inc_artisan_reg.pro_name, inc_artisan_reg.pro_phone, inc_artisan_reg.pro_email, inc_artisan_reg.spec, inc_artisan_reg.date, inc_artisan_reg.pro_locat, inc_artisan_reg.pro_city, inc_artisan_reg.pro_state, inc_artisan_reg.status FROM new_ticket INNER JOIN inc_artisan_reg ON new_ticket.spec = inc_artisan_reg.spec WHERE new_ticket.call_name = '$fname'";
+$sql = "INSERT INTO delegated_artisan (ticket_no, tickname, call_name, call_phone, tickassign_name, tickassign_phone, opendate, call_address, spec, photo, pro_name, pro_phone, pro_email, pro_spec, date, pro_locat, pro_city, pro_state, status) SELECT new_ticket.ticket_no, new_ticket.tickname, new_ticket.call_name, new_ticket.call_phone, new_ticket.tickassign_name, new_ticket.tickassign_phone, new_ticket.opendate, new_ticket.call_address, new_ticket.spec, inc_artisan_reg.photo, inc_artisan_reg.pro_name, inc_artisan_reg.pro_phone, inc_artisan_reg.pro_email, inc_artisan_reg.spec, inc_artisan_reg.date, inc_artisan_reg.pro_locat, inc_artisan_reg.pro_city, inc_artisan_reg.pro_state, inc_artisan_reg.status FROM new_ticket INNER JOIN inc_artisan_reg ON new_ticket.spec = inc_artisan_reg.spec WHERE new_ticket.call_name = ?";
 
-if ($conn->query($sql) === TRUE) {
+$stmt = mysqli_prepare($conn, $sql);
+mysqli_stmt_bind_param($stmt, 's', $fname);
+if (mysqli_stmt_execute($stmt) === TRUE) {
 
 
 include 'artisan.php';

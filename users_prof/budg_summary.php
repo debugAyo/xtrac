@@ -42,8 +42,11 @@ include '../link/connect.php';
 //$query = "SELECT  *, SUM(price1) FROM budgets GROUP BY desc1, fy_row1, qty1, rt1, price1, budtype HAVING year='$year' && budtype='NETWORKING DEVICES' "; 
 
 //$query = "SELECT  *, SUM(price) FROM budgets GROUP BY desc1, fy_row, qty, rate, price, budtype HAVING year='$year' ORDER BY budcateg ASC"; 
-$query = "SELECT  * FROM budgets HAVING year='$year' ORDER BY budcateg ASC"; 
-$result = mysqli_query($conn,$query) or die(mysqli_error());
+$query = "SELECT  * FROM budgets HAVING year=? ORDER BY budcateg ASC"; 
+$stmt = mysqli_prepare($conn,$query);
+mysqli_stmt_bind_param($stmt,'s',$year);
+mysqli_stmt_execute($stmt) or die(mysqli_error($conn));
+$result = mysqli_stmt_get_result($stmt);
 //$num_row = mysqli_num_row($result);
 // Print out result
 
@@ -89,9 +92,11 @@ while($row = mysqli_fetch_array($result)){
 include '../link/connect.php';
 
 
-$query = "SELECT  *, SUM(price), SUM(fy_row) FROM budgets WHERE year='$year' "; 
-
-$result = mysqli_query($conn,$query) or die(mysqli_error());
+$query = "SELECT  *, SUM(price), SUM(fy_row) FROM budgets WHERE year=? "; 
+$stmt = mysqli_prepare($conn,$query);
+mysqli_stmt_bind_param($stmt,'s',$year);
+mysqli_stmt_execute($stmt) or die(mysqli_error($conn));
+$result = mysqli_stmt_get_result($stmt);
 //$num_row = mysqli_num_row($result);
 // Print out result
 while($row = mysqli_fetch_array($result)){

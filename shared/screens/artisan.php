@@ -4,8 +4,10 @@
 
 include '../link/connect.php';
 
-$query="SELECT * FROM delegated_artisan WHERE call_name = '$fname' && status = 'Available' ORDER BY opendate DESC";
-$result = mysqli_query($conn,$query) or die(mysqli_error());
+$stmt = mysqli_prepare($conn, "SELECT * FROM delegated_artisan WHERE call_name = ? && status = 'Available' ORDER BY opendate DESC");
+mysqli_stmt_bind_param($stmt, 's', $fname);
+mysqli_stmt_execute($stmt);
+$result = mysqli_stmt_get_result($stmt);
 
 if(mysqli_num_rows($result) >0)
 {

@@ -7,7 +7,10 @@ $centreid = $_POST['centreid'];
 
 include '../link/connect.php';
 
-			$result = mysqli_query($conn, "SELECT * FROM cbt_info WHERE id='$centreid'");
+			$stmt = mysqli_prepare($conn, "SELECT * FROM cbt_info WHERE id=?");
+			mysqli_stmt_bind_param($stmt, 's', $centreid);
+			mysqli_stmt_execute($stmt);
+			$result = mysqli_stmt_get_result($stmt);
 			
 			if ($result->num_rows > 0) {
 				 echo "<table>";

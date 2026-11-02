@@ -775,8 +775,11 @@ p.round1 {
    <div class="column-b">
    <?php
    include '../connect.php';
-   $query="SELECT * FROM new_application WHERE call_phone='$cal_phone'";
-$result = mysqli_query($conn,$query) or die(mysqli_error());
+   $query="SELECT * FROM new_application WHERE call_phone=?";
+$stmt = mysqli_prepare($conn,$query);
+mysqli_stmt_bind_param($stmt, 's', $cal_phone);
+mysqli_stmt_execute($stmt) or die(mysqli_error());
+$result = mysqli_stmt_get_result($stmt);
 
 if(mysqli_num_rows($result) > 0) {
 

@@ -38,11 +38,14 @@ $rows=mysqli_fetch_array($result);
 
 $devid = $rows['devid'];*/
 
-$sql = "UPDATE additem SET devstat='Obsolete', recommnd='This item is due for replacement' WHERE DATEDIFF(endlife,curdate)<= '2 months' && category='$ass_categ'";
-		$result = mysqli_query($conn,$sql);
+$stmt = mysqli_prepare($conn, "UPDATE additem SET devstat='Obsolete', recommnd='This item is due for replacement' WHERE DATEDIFF(endlife,curdate)<= '2 months' && category=?");
+		mysqli_stmt_bind_param($stmt, 's', $ass_categ);
+		mysqli_stmt_execute($stmt);
 
-$sql="SELECT * FROM additem WHERE category='$ass_categ'";
-$result=mysqli_query($conn,$sql);
+$stmt = mysqli_prepare($conn, "SELECT * FROM additem WHERE category=?");
+mysqli_stmt_bind_param($stmt, 's', $ass_categ);
+mysqli_stmt_execute($stmt);
+$result = mysqli_stmt_get_result($stmt);
 
 echo "<table width='100%' >
 <tr class='w3-light-blue'>
@@ -93,8 +96,10 @@ echo "<br />";
  //$ass_categ=$_POST['ass_categ'];
 include '../link/connect.php';
 
-$sql = "SELECT *, COUNT(sn) AS details FROM additem  GROUP BY devstat, devname HAVING category='$ass_categ' ORDER BY devtype ASC"; 
-$result=mysqli_query($conn,$sql);
+$stmt = mysqli_prepare($conn, "SELECT *, COUNT(sn) AS details FROM additem  GROUP BY devstat, devname HAVING category=? ORDER BY devtype ASC"); 
+mysqli_stmt_bind_param($stmt, 's', $ass_categ);
+mysqli_stmt_execute($stmt);
+$result = mysqli_stmt_get_result($stmt);
 
 echo '<table width="100%" border="0px">
 	<tr class="w3-light-blue w3-padding-large">
@@ -111,8 +116,10 @@ echo '<td style="padding:2px; font-size:10px; text-align:left">' . $row['devstat
 }
 echo '</table>';
 
-$query = "SELECT  * FROM additem WHERE category ='$ass_categ'"; 
-$result = mysqli_query($conn,$query) or die(mysql_error());
+$stmt = mysqli_prepare($conn, "SELECT  * FROM additem WHERE category =?"); 
+mysqli_stmt_bind_param($stmt, 's', $ass_categ);
+mysqli_stmt_execute($stmt) or die(mysqli_error($conn));
+$result = mysqli_stmt_get_result($stmt);
 $num_rows = mysqli_num_rows($result);
 
 echo '<br>';
@@ -131,8 +138,10 @@ echo '<br><br>';
  //$ass_categ=$_POST['ass_categ'];
 include '../link/connect.php';
 
-$sql = "SELECT *, COUNT(sn) AS details FROM additem  GROUP BY category HAVING category='$ass_categ' ORDER BY devtype ASC"; 
-$result=mysqli_query($conn,$sql);
+$stmt = mysqli_prepare($conn, "SELECT *, COUNT(sn) AS details FROM additem  GROUP BY category HAVING category=? ORDER BY devtype ASC"); 
+mysqli_stmt_bind_param($stmt, 's', $ass_categ);
+mysqli_stmt_execute($stmt);
+$result = mysqli_stmt_get_result($stmt);
 
 echo '<table width="100%" border="0px">
 	<tr class="w3-light-blue w3-padding-large">
@@ -155,8 +164,10 @@ echo '<td style="padding:2px; font-size:10px; text-align:left">' . $itemcateg . 
 }
 echo '</table>';
 
-$query = "SELECT  * FROM additem WHERE category ='$ass_categ'"; 
-$result = mysqli_query($conn,$query) or die(mysql_error());
+$stmt = mysqli_prepare($conn, "SELECT  * FROM additem WHERE category =?"); 
+mysqli_stmt_bind_param($stmt, 's', $ass_categ);
+mysqli_stmt_execute($stmt) or die(mysqli_error($conn));
+$result = mysqli_stmt_get_result($stmt);
 $num_rows = mysqli_num_rows($result);
 
 echo '<br>';

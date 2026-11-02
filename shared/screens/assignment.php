@@ -21,8 +21,10 @@ include '../link/connect.php';
 
 //$sql = "SELECT subject_list.*, learning_proof.*  FROM subject_list INNER JOIN learning_proof ON subject_list.id = learning_proof.subjectId ";
 
-$sql = "SELECT * FROM assignments WHERE classroom='$classrm' && id='$id' ORDER BY date DESC ";
-$result = mysqli_query($conn, $sql);
+$stmt = mysqli_prepare($conn, "SELECT * FROM assignments WHERE classroom=? && id=? ORDER BY date DESC ");
+mysqli_stmt_bind_param($stmt, 'ss', $classrm, $id);
+mysqli_stmt_execute($stmt);
+$result = mysqli_stmt_get_result($stmt);
 
 if(mysqli_num_rows($result) >0)
 {

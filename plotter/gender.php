@@ -2,9 +2,12 @@
 		
 		include '../link/connect.php';
 		
-$sql = "SELECT *, COUNT(id) AS gender_pop FROM live_report WHERE consent='Yes' && protitle_id='$dropdown' GROUP BY gender";
+$sql = "SELECT *, COUNT(id) AS gender_pop FROM live_report WHERE consent='Yes' && protitle_id=? GROUP BY gender";
 
-		$result = $conn->query($sql);
+		$stmt = mysqli_prepare($conn, $sql);
+		mysqli_stmt_bind_param($stmt, 's', $dropdown);
+		mysqli_stmt_execute($stmt);
+		$result = mysqli_stmt_get_result($stmt);
 		
 		$jsonArray = array();
 		
