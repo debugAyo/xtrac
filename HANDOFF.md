@@ -32,8 +32,8 @@
 - Remote: **`origin` → https://github.com/debugAyo/xtrac.git** (user-provided).
   Push after every commit. First push established the repo (it was empty).
 - History: `0f753d4` baseline (main) → `1822d8d` Phase 0 → `9a1e0ec` Phase 1 →
-  `996719d` Phase 2 → `7b06c59` Phase 3 → `816181a` Phase 4. All pushed to
-  `origin/xtrac-features`.
+  `996719d` Phase 2 → `7b06c59` Phase 3 → `816181a`+`cf45d05` Phase 4 →
+  `89061fa` Phase 5. All pushed to `origin/xtrac-features`.
 - Secrets never committed: `.gitignore` excludes `shared/ai/config.php` and
   `config/db.local.php`.
 
