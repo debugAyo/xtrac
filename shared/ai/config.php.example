@@ -1,0 +1,39 @@
+<?php
+/**
+ * xTrac AI configuration TEMPLATE — copy to config.php (gitignored) and
+ * fill in your key, or set the OPENROUTER_API_KEY environment variable.
+ * Never commit the real config.php.
+ */
+return array(
+    'api_key' => 'sk-or-v1-YOUR-OPENROUTER-KEY-HERE',
+
+    'base_url' => 'https://openrouter.ai/api/v1',
+
+    // Model per feature (OpenRouter model IDs). deepseek-chat is cheap + fast.
+    'models' => array(
+        'chat'     => 'deepseek/deepseek-chat',
+        'insights' => 'deepseek/deepseek-chat',
+        'triage'   => 'deepseek/deepseek-chat',
+    ),
+
+    // Retry-once target when the primary model is rate-limited (429/503).
+    'fallback_model' => 'deepseek/deepseek-chat',
+
+    'app_name' => 'xTrac AI',
+    'site_url' => '', // optional public URL sent as HTTP-Referer
+
+    'limits' => array(
+        'per_user_per_day' => 30,
+        'global_per_day'   => 200,
+        'max_tokens' => array(
+            'chat'     => 800,
+            'insights' => 1500,
+            'triage'   => 300,
+        ),
+        'timeout' => array(
+            'chat'     => 45,
+            'insights' => 60,
+            'triage'   => 20,
+        ),
+    ),
+);

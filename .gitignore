@@ -1,6 +1,12 @@
 # AI API key config (never commit secrets)
 shared/ai/config.php
 
+# AI usage counters / triage logs (per-deployment runtime data)
+shared/ai/usage/
+
+# Machine-local TLS roots (antivirus/corporate proxies)
+shared/ai/cacert.local.pem
+
 # OS / editor
 Thumbs.db
 .DS_Store

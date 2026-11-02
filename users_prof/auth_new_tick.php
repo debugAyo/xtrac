@@ -78,7 +78,16 @@ $sql="INSERT INTO new_ticket (tickname,spec,call_address,call_name,call_phone,op
 if ($conn->query($sql) === TRUE) {
 
 include 'mails.php';	
-  
+
+require_once __DIR__ . '/../shared/ai/ai_triage_backend.php';
+echo xtrac_ai_triage_hook(array(
+	'ticket_no' => $rand_tick,
+	'category' => isset($intservice) ? $intservice : '',
+	'description' => isset($desc) ? $desc : '',
+	'impact' => isset($impct) ? $impct : '',
+	'reported_priority' => isset($prior) ? $prior : '',
+	'cal_name' => isset($cal_name) ? $cal_name : '',
+));
 
    //header ('location:securedpage.php');
    // exit();

@@ -1,7 +1,7 @@
 # xTrac Modernization — Progress & Handoff
 
 > Read this first if you are a new session continuing this work.
-> Last updated: Phase 4 committed and pushed (fast-path complete).
+> Last updated: Phase 5 (AI features) complete — commit + push pending in log.
 
 ## Standing rules (user-mandated)
 
@@ -17,6 +17,14 @@
 6. **CWD matters:** entry scripts run from module dirs (`users_prof/`,
    `admin_prof/`, `store/`); relative includes resolve against the module dir.
    Never `chdir()` in `shared/dashboard.php`.
+7. **Verification scripts live in `tools/`** (committed, stable — do NOT use
+   the temp dir): `tools/phase4_verify.php` (dispatch/menu/security),
+   `tools/verify_bind.php` (placeholder↔bind consistency),
+   `tools/ai_selftest.php [--live]` (AI config/limiter/parser + one real call).
+8. **This machine's PHP has no php.ini** — curl/openssl/mbstring DLLs exist in
+   `C:\Users\HP\Desktop\Scripts\Laravel\ext` but aren't loaded. Invoke as:
+   `php -d extension_dir=C:\Users\HP\Desktop\Scripts\Laravel\ext -d extension=php_curl.dll -d extension=php_openssl.dll -d extension=php_mbstring.dll <script>`
+   (needed for any AI call and for `php -S` local serving).
 
 ## Git state
 
@@ -35,8 +43,8 @@
 |---|---|---|
 | DB config | `config/db.php`; all `connect.php` are thin wrappers | profiles: main/staff/shelf/plotter/plotter2, env `XTRAC_DB_*` |
 | Shared screens | `shared/screens/` (183 files) | 175 byte-identical users_prof≡admin_prof moved here; originals are shims |
-| Menu | `shared/menu.php` | `xtrac_menu($role)`, `xtrac_render_menu($role,$appcode)`; counts: super 37, admin 39, staff 39, store 30 |
-| Dispatch | `shared/dispatch.php` | `xtrac_dispatch_map($role)`; super 163 / admin 164 / staff 164 / store 163 — **all targets verified to resolve** |
+| Menu | `shared/menu.php` | `xtrac_menu($role)`, `xtrac_render_menu($role,$appcode)`; counts (incl. AI Tools): super 39, admin 41, staff 41, store 31 |
+| Dispatch | `shared/dispatch.php` | `xtrac_dispatch_map($role)`; super 165 / admin 166 / staff 166 / store 165 — **all targets verified to resolve** |
 | Dashboard engine | `shared/dashboard.php` | session guard (30-min), role guard, CSRF verify, ob_start 2-pass form-token injection, prepared profile query, `xtrac_resolve_screen()` |
 | Resolver order | in `shared/dashboard.php` | explicit path `/` → module-local → `shared/screens/` → `../users_prof/` → `../store/` |
 | Role wrappers | `users_prof/securedpage.php` (super), `admin_prof/securedpage.php` (admin), `admin_prof/staff_securedpage.php` (staff), `store/staff_securedpage.php` (store) | each sets `$XTRAC_ROLE` + requires dashboard |
@@ -54,9 +62,42 @@
   screens created; login routing fixed
 - [x] **Phase 4** (committed + pushed): security hardening + partial bulk SQL
   conversion — see below. Remaining raw-SQL debt: **115 files, documented**
-- [ ] **Phase 5**: DeepSeek AI (ask user for API key first — see below)
+- [x] **Phase 5** (AI features): OpenRouter client with daily usage caps, chat,
+  report insights, ticket triage, menu/dispatch wiring — see below
 - [ ] **Phase 6**: README (comprehensive)
 - [ ] **Phase 7**: full lint audit + demo notes + final commit + push
+
+## Phase 5 — AI features (committed)
+
+All AI code lives in `shared/ai/`. **Server-side only:** the OpenRouter key is
+in gitignored `shared/ai/config.php` (template committed as
+`config.php.example`); browsers only call our PHP endpoints, never OpenRouter.
+
+| File | Role |
+|---|---|
+| `config.php` / `config.php.example` | key, base URL, per-feature models, caps (real key never committed) |
+| `client.php` | `xtrac_ai_complete()` cURL wrapper: usage limits, 429→fallback model, max_tokens/timeouts, friendly error mapping (401/402/429/0) |
+| `ai_chat_backend.php` | AJAX endpoint (own session bootstraps + CSRF + 4000-char cap) |
+| `ai_chat.php` | chat screen w/ quota line (`AI Assistant` menu, all roles) |
+| `ai_insights.php` | prepared aggregates → "Analyze with AI" button (`AI Insights`, super/admin/staff) |
+| `ai_triage_backend.php` | `xtrac_ai_triage_hook()` on ticket create: JSONL log + HTML notice; lenient `xtrac_ai_triage_parse()`; NEVER blocks ticket creation |
+| `cacert.pem` | stock Mozilla CA bundle (committed) |
+| `cacert.local.pem` | **gitignored** machine-local roots (this PC's Avast AV intercepts PHP TLS with its own root — that's why a local add-on exists; servers without TLS interception don't need it) |
+| `usage/` | **gitignored** daily JSON counters + triage JSONL logs |
+
+- **Model:** `deepseek/deepseek-chat` for chat/insights/triage on OpenRouter
+  (config-swappable), fallback model on 429/503.
+- **Caps (config `limits`):** 30/user/day, 200/day app-wide; max_tokens
+  800/1500/300; timeouts 45/60/20s. Exceeding → friendly JSON error mentioning
+  the cap + reset time (verified in selftest).
+- **Triage hooks** in `users_prof/auth_new_tick.php` (echoes notice),
+  `admin_prof/auth_new_tick.php` + `login/auth_new_tick.php` (log-only, they
+  redirect). Logs to `usage/triage-*.jsonl`.
+- **Menu/dispatch:** `AI Tools` group (Assistant all 4 roles; Insights
+  super/admin/staff); dispatch entries use explicit `../shared/ai/*.php` paths.
+- **Verification (all green):** `tools/ai_selftest.php --live` = **21/21**
+  including a real OpenRouter call returning PONG; dispatch 0-missing
+  (165/166/166/165); menu **39/41/41/31**; security 30/30; lint OK.
 
 ## Phase 4 — final state (committed)
 
@@ -100,7 +141,8 @@ always run verify_bind (improved version accepts any `$stmtX` var).**
   `e_procure/auto_reg.php:143`,
   `e_procure/portal/Tera-WURFL/DatabaseConnectors/TeraWurflDatabase_MSSQL2005.php:571`)
 - Dispatch: super 163 / admin 164 / staff 164 / store 163 targets, **0 missing**
-- Menu smoke: **37/39/39/30** buttons rendered per role
+- Menu smoke: **37/39/39/30** buttons rendered per role (at Phase 4; now
+  **39/41/41/31** after the Phase 5 AI Tools menu additions)
 - Security helpers: **30/30** assertions
 
 ### Remaining SQL debt — 115 files (documented, NOT blocking)
@@ -167,24 +209,6 @@ byte-identical; `budg_comp.php`/`budg_summary.php` use `HAVING year='$year'`;
 `$$mum_name` variable-variable in `application/auth_new_applicant.php` is
 intentional.
 
-## Phase 5 — AI features (DeepSeek) — ASK FOR THE KEY FIRST
-
-**Ask the user for the DeepSeek API key before starting.**
-
-- Base URL `https://api.deepseek.com`, endpoint `/chat/completions`
-- Models: `deepseek-flash` (chat assistant + ticket triage),
-  `deepseek-v4-pro` (report insights). Legacy `deepseek-chat`/`deepseek-reasoner`
-  retired July 2026 — do not use.
-- Key storage: gitignored `shared/ai/config.php` (create and commit
-  `shared/ai/config.php.example`) or env `DEEPSEEK_API_KEY`.
-- Files to create: `shared/ai/client.php` (cURL wrapper),
-  `config.php(.example)`, `ai_chat.php` + `ai_chat_backend.php` (chat UI/AJAX),
-  `ai_insights.php` (report insights — wire near budget/financial screens),
-  `ai_triage_backend.php` (ticket triage — integration point:
-  `auth_new_tick.php` ticket creation flow).
-- Wire via existing dispatch/menu pattern (new menu entries via
-  `shared/menu.php` + `shared/dispatch.php`).
-
 ## Phase 6 — README
 
 Comprehensive: install (PHP 8.1, MySQL 8, config/db.php profiles), architecture
@@ -221,9 +245,13 @@ HANDOFF update, push.
 # lint modified files (expect 0 failures)
 git status --short | ? { $_ -match '\.php$' } | % { ($_ -replace '^\s*[A-Z?!]{1,2}\s+','').Trim() } | % { php -l $_ }
 
-# full verification suite (dispatch 0-missing, menu 37/39/39/30, security 30/30)
-php C:\Users\HP\AppData\Local\Temp\opencode\phase4_verify.php "C:\Users\HP\Desktop\Scripts\Juanlee\xtrac\xtrac"
+# full suite: dispatch 0-missing, menu 39/41/41/31, security 30/30
+php tools/phase4_verify.php "C:\Users\HP\Desktop\Scripts\Juanlee\xtrac\xtrac"
 
 # bind consistency on any file set (catches placeholder drift)
-php C:\Users\HP\AppData\Local\Temp\opencode\verify_bind.php <absolute file paths...>
+php tools/verify_bind.php <absolute file paths...>
+
+# AI self-test (add the -d extension flags from Standing Rule 8 for --live)
+php tools/ai_selftest.php
+php -d extension_dir=C:\Users\HP\Desktop\Scripts\Laravel\ext -d extension=php_curl.dll -d extension=php_openssl.dll -d extension=php_mbstring.dll tools/ai_selftest.php --live
 ```

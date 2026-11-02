@@ -13,6 +13,8 @@ function xtrac_dispatch_base() {
     'Add New Asset Preview' => 'mylisting.php',
     'Add Support Staff' => '../settings/sup_staff_categ.php',
     'Add Support Staff Form' => '../settings/auth_sup_staff_categ.php',
+    'AI Assistant' => '../shared/ai/ai_chat.php',
+    'AI Insights' => '../shared/ai/ai_insights.php',
     'All Assets Financial Status' => 'all_fin_stat.php',
     'Assessment' => 'risks.php',
     'Asset Category' => 'ass_categ_typ.php',

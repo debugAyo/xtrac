@@ -90,6 +90,16 @@ if (mysqli_stmt_execute($stmt) === TRUE) {
 	
   // include 'artisan_search.php';
 
+require_once __DIR__ . '/../shared/ai/ai_triage_backend.php';
+xtrac_ai_triage_hook(array(
+	'ticket_no' => $rand_tick,
+	'category' => isset($intservice) ? $intservice : '',
+	'description' => isset($desc) ? $desc : '',
+	'impact' => isset($impct) ? $impct : '',
+	'reported_priority' => isset($prior) ? $prior : '',
+	'cal_name' => isset($cal_name) ? $cal_name : '',
+)); // log-only: this branch redirects, the HTML notice would be lost
+
    header ('location:securedpage.php');
     exit();
 } else {

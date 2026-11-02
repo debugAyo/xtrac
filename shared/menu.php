@@ -50,6 +50,8 @@ function xtrac_menu($role)
         'label' => 'Logout', 'icon' => 'fa-sign-out',
         'single' => true, 'list' => 'Logout', 'action' => 'logout.php',
     );
+    $aiAssistant = array('list' => 'AI Assistant', 'icon' => 'fa-robot');
+    $aiInsights = array('list' => 'AI Insights', 'icon' => 'fa-lightbulb-o');
 
     if ($role === 'store') {
         return array(
@@ -79,6 +81,7 @@ function xtrac_menu($role)
                 array('list' => 'New Arrivals',        'icon' => 'fa-cloud'),
             )),
             array('label' => 'Incident Management', 'icon' => 'fa-support', 'items' => $incident),
+            array('label' => 'AI Tools', 'icon' => 'fa-robot', 'items' => array($aiAssistant)),
             $logout,
         );
     }
@@ -116,6 +119,7 @@ function xtrac_menu($role)
                 array('list' => 'Financial Account Settings',    'icon' => 'fa-file-video-o'),
             )),
             array('label' => 'Events Logging', 'icon' => 'fa-group', 'items' => $events),
+            array('label' => 'AI Tools', 'icon' => 'fa-robot', 'items' => array($aiAssistant, $aiInsights)),
             $logout,
         );
     }
@@ -151,6 +155,7 @@ function xtrac_menu($role)
         )),
         array('label' => 'Incident Management', 'icon' => 'fa-support', 'items' => $incident),
         array('label' => 'Events Logging', 'icon' => 'fa-group', 'items' => $events),
+        array('label' => 'AI Tools', 'icon' => 'fa-robot', 'items' => array($aiAssistant, $aiInsights)),
         $logout,
     );
 }
