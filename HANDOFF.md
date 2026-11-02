@@ -66,7 +66,28 @@
   report insights, ticket triage, menu/dispatch wiring — see below
 - [x] **Phase 6**: README (comprehensive) — install, architecture, roles,
   security model, AI setup, verification tools, known limitations
-- [ ] **Phase 7**: full lint audit + demo notes + final commit + push
+- [x] **Phase 7**: full lint audit (**1087/1089 pass**, only the 2 pre-existing
+  e_procure errors) + demo notes (below) + final commit + push
+
+## Demo notes (what to click)
+
+1. **Unified dashboards:** log in as each role (super `users_prof`, admin/staff
+   `admin_prof`, store `store`) — same engine, per-role menu (39/41/41/31
+   buttons); sidebar items dispatch via `shared/dispatch.php` (0 missing).
+2. **Security:** login form carries a CSRF token; passwords are bcrypt (an
+   existing MD5 user upgrades to bcrypt on first login); every legacy form
+   gets a token injected automatically (no screen edits needed).
+3. **AI Assistant:** menu → AI Tools → AI Assistant → ask anything; the quota
+   line shows `x/30` and updates after each message. Set
+   `per_user_per_day` to 1 in `shared/ai/config.php` to demo the friendly
+   limit message live.
+4. **AI Insights:** menu → AI Tools → AI Insights → "Analyze with AI" renders
+   a read-out from live aggregates (one quota unit).
+5. **AI triage:** create a ticket (Create New Ticket) — the success page shows
+   the AI triage notice; the verdict is logged in `shared/ai/usage/triage-*.jsonl`.
+6. **Self-tests for the demo machine:**
+   `php -d extension_dir=C:\Users\HP\Desktop\Scripts\Laravel\ext -d extension=php_curl.dll -d extension=php_openssl.dll -d extension=php_mbstring.dll tools/ai_selftest.php --live`
+   → expect `PASS: 21 FAIL: 0`.
 
 ## Phase 5 — AI features (committed)
 
